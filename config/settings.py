@@ -237,8 +237,8 @@ TINYMCE_DEFAULT_CONFIG = {
 }
 
 # Simple settings flags for download features
-DOWNLOAD_LOGIN_REQUIRED = True
-DOWNLOAD_EXTRA_INFO = True
+DOWNLOAD_LOGIN_REQUIRED = False
+DOWNLOAD_EXTRA_INFO = False
 
 
 try:
