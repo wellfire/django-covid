@@ -1,15 +1,5 @@
 # -*- coding: utf-8 -*-
 
-"""
-Django settings for mpowering project.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/1.6/topics/settings/
-
-For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.6/ref/settings/
-"""
-
 import os
 
 from django.core.urlresolvers import reverse_lazy

@@ -47,7 +47,7 @@ def home_view(request):
     return render(request, 'orb/home.html', {
         'topics': topics,
         'organized_topics': home_resources(),
-        'page_title': _(u'ORB by mPowering'),
+        'page_title': _(u'COVID-19'),
     })
 
 
