@@ -9,7 +9,7 @@ from django.db import models
 from django.db.models import Q
 from django.utils.functional import cached_property
 from django.utils.timezone import now
-from orb_api.api import OrbClient
+#from orb_api.api import OrbClient
 
 from orb.peers.tasks import send_peer_sync_notification_email
 
@@ -50,7 +50,8 @@ class Peer(models.Model):
 
     @cached_property
     def client(self):
-        return OrbClient(self.host, self.api_user, self.api_key, sleep=1)
+        #return OrbClient(self.host, self.api_user, self.api_key, sleep=1)
+        return None
 
     def sync_resources(self, writer=None):
         """
@@ -134,7 +135,7 @@ class PeerQueryLog(models.Model):
 
     created = models.DateTimeField(editable=False, default=now)
     finished = models.DateTimeField(null=True, blank=True, editable=False)
-    peer = models.ForeignKey('Peer', related_name='logs')
+    peer = models.ForeignKey('Peer', related_name='logs', on_delete=models.CASCADE)
     filtered_date = models.DateTimeField(blank=True, null=True)
     new_resources = models.PositiveIntegerField(null=True)
     skipped_local_resources = models.PositiveIntegerField(null=True)

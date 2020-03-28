@@ -2,7 +2,7 @@
 
 import mock
 from django.core.exceptions import PermissionDenied
-from django.core.urlresolvers import reverse, resolve
+from django.urls import reverse, resolve
 from django.http import Http404
 from django.test import TestCase
 

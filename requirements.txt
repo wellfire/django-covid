@@ -3,6 +3,6 @@
 # Isolating Django from the other requirements allows better cross-version
 # (Django) testing.
 
-django==1.11.18
+django==2.2.10
 -r requirements/base.txt
 

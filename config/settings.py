@@ -2,7 +2,7 @@
 
 import os
 
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -40,25 +40,25 @@ INSTALLED_APPS = [
     'haystack',
     'sorl.thumbnail',
     'orb',
-    'orb.courses',
+    #'orb.courses',
     'orb.peers',
     'orb.review',
     'orb.analytics',
     'orb.toolkits',
-    'modeltranslation_exim',
+    #'modeltranslation_exim',
     'django_extensions',
 ]
 
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'orb.middleware.SearchFormMiddleware',
+    #'orb.middleware.SearchFormMiddleware',
 ]
 
 
@@ -242,7 +242,7 @@ DOWNLOAD_EXTRA_INFO = False
 
 
 try:
-    from local_settings import *  # noqa
+    from config.local_settings_p3 import *  # noqa
 except ImportError:
     import warnings
     warnings.warn("Using default settings. Add `config.local_settings.py` for custom settings.")

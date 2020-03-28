@@ -2,7 +2,7 @@
 from orb.forms import HeaderSearchForm
 
 
-class SearchFormMiddleware(object):
+class SearchFormMiddleware():
 
     def process_request(self, request):
 

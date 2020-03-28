@@ -9,12 +9,12 @@ from orb.models import home_resources
 
 
 def get_menu(request):
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         tags = TagOwner.objects.filter(user=request.user)
     else:
         tags = None
 
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         try:
             if request.user.userprofile and request.user.userprofile.is_reviewer:
                 reviewer = True

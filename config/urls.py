@@ -6,7 +6,7 @@ from django.views import static
 admin.autodiscover()
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', admin.site.urls),
     url(r'', include('orb.urls')),
 ]
 

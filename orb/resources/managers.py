@@ -36,7 +36,7 @@ def approved_queryset(queryset, user=AnonymousUser, status="approved", relation=
     creator_filter = {"{0}create_user".format(relation): user}
     updater_filter = {"{0}update_user".format(relation): user}
 
-    if not user.is_authenticated():
+    if not user.is_authenticated:
         return queryset.filter(**status_filter)
     if user.is_staff:
         return queryset

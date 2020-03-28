@@ -15,7 +15,7 @@ from django.conf import settings
 from django.contrib.auth.models import AnonymousUser
 from django.contrib.auth.models import User  # noqa
 from django.core.exceptions import ObjectDoesNotExist
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext
@@ -186,10 +186,10 @@ class Course(TimestampBase):
         default=CourseStatus.draft.name,
     )
     create_user = models.ForeignKey(
-        settings.AUTH_USER_MODEL, related_name="course_create_user"
+        settings.AUTH_USER_MODEL, related_name="course_create_user", blank=True, null=True, on_delete=models.SET_NULL
     )
     update_user = models.ForeignKey(
-        settings.AUTH_USER_MODEL, related_name="course_update_user"
+        settings.AUTH_USER_MODEL, related_name="course_update_user", blank=True, null=True, on_delete=models.SET_NULL
     )
 
     title = models.CharField(max_length=200)
@@ -440,8 +440,8 @@ class OppiaPublisherQuerySet(models.QuerySet):
 class OppiaLog(TimestampBase):
     """Logs attempts to publish a course to Oppia"""
 
-    course = models.ForeignKey("Course", related_name="oppia_logs")
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="oppia_logs")
+    course = models.ForeignKey("Course", related_name="oppia_logs", blank=True, null=True, on_delete=models.SET_NULL)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="oppia_logs", blank=True, null=True, on_delete=models.SET_NULL)
     oppia_host = models.URLField()
     status = models.SmallIntegerField(help_text="HTTP status code of the response")
     success = models.BooleanField(default=False)

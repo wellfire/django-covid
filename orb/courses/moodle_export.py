@@ -29,7 +29,7 @@ The MoodleCourse class is used to export to a Moodle backup format
 import hashlib
 import sys
 import time
-from StringIO import StringIO
+from io import StringIO
 from zipfile import ZipFile
 
 from dicttoxml import dicttoxml
