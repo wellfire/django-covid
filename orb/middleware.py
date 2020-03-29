@@ -1,8 +1,8 @@
 
 from orb.forms import HeaderSearchForm
+from django.utils.deprecation import MiddlewareMixin
 
-
-class SearchFormMiddleware():
+class SearchFormMiddleware(MiddlewareMixin):
 
     def process_request(self, request):
 

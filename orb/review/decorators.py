@@ -18,7 +18,7 @@ def content_reviewer(user, include_staff=True):
         PermissionDenied
 
     """
-    if not user.is_authenticated():
+    if not user.is_authenticated:
         return False
 
     is_staff = user.is_staff if include_staff else False

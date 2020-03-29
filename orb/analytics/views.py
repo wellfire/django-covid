@@ -415,7 +415,7 @@ def is_tag_owner(request, id):
     """
     Permission helper for tag related analytics views
     """
-    if not request.user.is_authenticated():
+    if not request.user.is_authenticated:
         return False
 
     if request.user.is_staff:

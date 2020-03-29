@@ -154,7 +154,7 @@ def resource_view(request, resource_slug):
     resource_viewed.send(sender=resource, resource=resource, request=request)
 
     user_rating = 0
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         try:
             user_rating = ResourceRating.objects.get(
                 resource=resource, user=request.user).rating
@@ -183,7 +183,7 @@ def resource_view(request, resource_slug):
 
 
 def resource_create_step1_view(request):
-    if request.user.is_anonymous():
+    if request.user.is_anonymous:
         return render(request, 'orb/login_required.html', {
             'message': _(u'You need to be logged in to add a resource.'),
         })
@@ -202,7 +202,7 @@ def resource_create_step1_view(request):
                     "study_time_number")
                 resource.study_time_unit = form.cleaned_data.get(
                     "study_time_unit")
-            if request.FILES.has_key('image'):
+            if 'image' in request.FILES:
                 resource.image = request.FILES["image"]
             resource.attribution = form.cleaned_data.get("attribution")
             resource.save()
@@ -242,7 +242,7 @@ def resource_create_step1_view(request):
 
 
 def resource_create_step2_view(request, id):
-    if request.user.is_anonymous():
+    if request.user.is_anonymous:
         # TODO use contrib.messages
         return render(request, 'orb/login_required.html', {
             'message': _(u'You need to be logged in to add a resource.'),
@@ -557,7 +557,7 @@ def resource_edit_view(request, resource_id):
 
 
 def resource_edit_step2_view(request, resource_id):
-    if request.user.is_anonymous():
+    if request.user.is_anonymous:
         # TODO use contrib.messages
         return render(request, 'orb/login_required.html', {
             'message': _(u'You need to be logged in to add a resource.'),

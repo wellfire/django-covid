@@ -58,7 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #'orb.middleware.SearchFormMiddleware',
+    'orb.middleware.SearchFormMiddleware',
 ]
 
 
@@ -144,9 +144,12 @@ EMAIL_FILE_PATH = '/tmp/'
 # Search settings
 HAYSTACK_CONNECTIONS = {
     'default': {
-        'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
-        'URL': 'http://127.0.0.1:8983/solr'
-    },
+            'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
+            'INCLUDE_SPELLING': True,
+            # 'URL': 'http://127.0.0.1:8983/solr'
+            # ...or for multicore...
+            'URL': 'http://127.0.0.1:8983/solr/covid/',
+        }
 }
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 

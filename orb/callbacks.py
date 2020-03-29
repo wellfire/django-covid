@@ -40,7 +40,7 @@ def resource_viewed_callback(sender, **kwargs):
         type = ResourceTracker.VIEW
 
     tracker = ResourceTracker()
-    if not request.user.is_anonymous():
+    if not request.user.is_anonymous:
         tracker.user = request.user
     tracker.resource = resource
     tracker.ip = request.META.get('REMOTE_ADDR', '0.0.0.0')
@@ -114,7 +114,7 @@ def resource_url_viewed_callback(sender, **kwargs):
         return
 
     ResourceTracker.objects.create(
-        user=None if request.user.is_anonymous() else request.user,
+        user=None if request.user.is_anonymous else request.user,
         resource_url=resource_url,
         resource = resource_url.resource,
         ip=request.META.get('REMOTE_ADDR', '0.0.0.0'),
@@ -136,7 +136,7 @@ def resource_file_viewed_callback(sender, **kwargs):
         return
 
     ResourceTracker.objects.create(
-        user=None if request.user.is_anonymous() else request.user,
+        user=None if request.user.is_anonymous else request.user,
         resource_file=resource_file,
         resource = resource_file.resource,
         ip=request.META.get('REMOTE_ADDR', '0.0.0.0'),
@@ -158,7 +158,7 @@ def tag_viewed_callback(sender, **kwargs):
         return
 
     tracker = TagTracker()
-    if not request.user.is_anonymous():
+    if not request.user.is_anonymous:
         tracker.user = request.user
     tracker.tag = tag
     tracker.ip = request.META.get('REMOTE_ADDR', '0.0.0.0')
@@ -187,7 +187,7 @@ def search_callback(sender, **kwargs):
         'page': page
     }
     tracker = SearchTracker()
-    if not request.user.is_anonymous():
+    if not request.user.is_anonymous:
         tracker.user = request.user
     tracker.query = query
     tracker.no_results = no_results

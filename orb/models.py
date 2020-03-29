@@ -123,6 +123,7 @@ class Resource(TimestampBase):
     def __unicode__(self):
         return self.title
 
+    '''
     def save(self, **kwargs):
         """Cleans API submitted images"""
         if self.image and (self.image.name.startswith("http://") or self.image.name.startswith("https://")):
@@ -136,7 +137,8 @@ class Resource(TimestampBase):
             image_cleaner(self, url=remote_image_file)
 
         return self
-
+    '''
+    
     def get_absolute_url(self):
         return reverse('orb_resource', args=[self.slug])
 
@@ -349,7 +351,7 @@ class Resource(TimestampBase):
     def user_can_view(self, user):
         if self.status == Resource.APPROVED:
             return True
-        elif user.is_anonymous():
+        elif user.is_anonymous:
             return False
         elif ((user.is_staff or
                        user == self.create_user or

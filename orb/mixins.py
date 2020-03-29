@@ -20,7 +20,7 @@ if DJANGO_VERSION >= (1, 10, 0):
     _is_authenticated = lambda user: user.is_authenticated  # noqa
 else:
     # Django<1.10 compatibility
-    _is_authenticated = lambda user: user.is_authenticated()  # noqa
+    _is_authenticated = lambda user: user.is_authenticated  # noqa
 
 
 class AccessMixin(object):
