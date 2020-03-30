@@ -83,7 +83,7 @@ span.bookmark:hover, span.bookmark:focus {
     color: #000;
 }
 
-a.navbar-inverse:hover a.navbar-brand:hover {
+.navbar-inverse:hover a.navbar-brand:hover {
     color: #6F79EA;
 }
 
