@@ -74,7 +74,7 @@ span.bookmark:hover, span.bookmark:focus {
 }
 
 .navbar-inverse {
-    background-color: #6F79EA;
+    background-color: #fff;
     border-color: #ff9171;
     border-bottom: 2px solid #ff9171;
 }
@@ -88,8 +88,7 @@ span.bookmark:hover, span.bookmark:focus {
 }
 
 .navbar-inverse .navbar-nav > li > a {
-    color: #fff;
-    border: 1px solid #6F79EA;
+    color: #6F79EA;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover,

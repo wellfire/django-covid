@@ -409,7 +409,7 @@ class MoodleCourse(CourseExport):
   <hiddensections>0</hiddensections>
   <coursedisplay>0</coursedisplay>
   <category id="50">
-    <name>mPowering ORB</name>
+    <name>CHA</name>
     <description></description>
   </category>
   <tags>

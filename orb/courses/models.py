@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Models for ORB courses
+Models for COVID-19 Library courses
 """
 
 from __future__ import unicode_literals
