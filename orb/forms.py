@@ -86,7 +86,7 @@ class ResourceStep1Form(forms.Form):
     terms = forms.BooleanField(
         label=_(u"Please tick the box to confirm that you have read the <a href='/resource/guidelines/' target='_blank' class='prominent'>guidelines and criteria</a> for submitting resources to ORB"),
         required=True,
-        error_messages={'required': _(u'Please tick the box to confirm that you have read the guidelines for submitting resources to ORB')})
+        error_messages={'required': _(u'Please tick the box to confirm that you have read the guidelines for submitting resources to COVID-19 Library')})
     study_time_number = forms.IntegerField(
         required=False,
         label="",)
@@ -252,7 +252,7 @@ class ResourceStep2Form(forms.Form):
             for blacklist in settings.TASK_UPLOAD_FILE_TYPE_BLACKLIST:
                 if file.content_type.startswith(blacklist):
                     raise forms.ValidationError(
-                        _(u'Currently, ORB does not allow uploading of \'%s\' files' % file.content_type))
+                        _(u'Currently, COVID-19 Library does not allow uploading of \'%s\' files' % file.content_type))
 
             if file._size > settings.TASK_UPLOAD_FILE_MAX_SIZE:
                 raise forms.ValidationError(_(u'Please keep filesize under %(max_size)s. Current filesize %(actual_size)s') % {
