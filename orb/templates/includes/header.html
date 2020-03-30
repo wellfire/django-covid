@@ -9,8 +9,10 @@
                 <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
                 <span class="icon-bar"></span> <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{% url 'orb_home' %}" style="margin-top:-20px;">
-                {%  trans 'COVID-19' %}
+            <a class="navbar-brand" href="{% url 'orb_home' %}" style="margin-top:-20px">
+            <img
+                    src="{% static 'orb/images/c19logo-orange.png' %}" height="60px"/>
+                {%  trans 'COVID-19 Library' %}
             </a>
         </div>
         <div class="navbar-collapse collapse">

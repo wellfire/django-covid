@@ -4,8 +4,12 @@
  #2596b4 - light blue - r37 g150 b180
  #2a6083 - mid blue - r42 g96 b131
  #033f62 - dark blue - r3 g63 b98
- #ff0054 - pink/red - r255 g0 b84
- #EF485B
+ #EF485B - pink/red 
+ 
+ COVID
+ 
+ #6F79EA - CHA purple
+ #ff9171 - CHA Orange
 
  */
 
@@ -35,12 +39,12 @@ h3.homepage {
 }
 
 a, span.bookmark {
-    color: #033f62;
+    color: #6F79EA;
     text-decoration: none;
 }
 
 a:hover, a:focus, span.bookmark:hover, span.bookmark:focus {
-    color: #EF485B;
+    color: #ff9171;
     text-decoration: underline;
 }
 
@@ -70,9 +74,9 @@ span.bookmark:hover, span.bookmark:focus {
 }
 
 .navbar-inverse {
-    background-color: #033f62;
-    border-color: #EF485B;
-    border-bottom: 2px solid #EF485B;
+    background-color: #6F79EA;
+    border-color: #ff9171;
+    border-bottom: 2px solid #ff9171;
 }
 
 .navbar-inverse .navbar-brand {
@@ -85,12 +89,12 @@ span.bookmark:hover, span.bookmark:focus {
 
 .navbar-inverse .navbar-nav > li > a {
     color: #fff;
-    border: 1px solid #033f62;
+    border: 1px solid #6F79EA;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-    background-color: #033f62;
+    background-color: #6F79EA;
 }
 
 .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
@@ -110,7 +114,7 @@ span.bookmark:hover, span.bookmark:focus {
 }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
-    background-color: #033f62;
+    background-color: #6F79EA;
     border: 1px dotted #fff;
 }
 
@@ -183,7 +187,7 @@ section.resource-collection {
 }
 
 .resource-collection:not(:last-of-type) {
-    border-bottom: 1px solid #EF485B;
+    border-bottom: 1px solid #ff9171;
 }
 
 .resource-collection > h2 {
@@ -273,14 +277,14 @@ section.resource-collection {
 
 .btn-primary {
     background-color: #2a6083;
-    border-color: #033f62;
+    border-color: #6F79EA;
     color: #FFFFFF;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active,
 .btn-primary.active, .open .dropdown-toggle.btn-primary {
-    background-color: #033f62;
-    border-color: #033f62;
+    background-color: #6F79EA;
+    border-color: #6F79EA;
     color: #FFFFFF;
 }
 
@@ -301,7 +305,7 @@ section.resource-collection {
 .footer {
     position: absolute;
     bottom: 0;
-    border-top: 1px solid #EF485B;
+    border-top: 1px solid #ff9171;
     margin-top: 50px;
     padding: 20px 0;
     text-align: right;
@@ -367,7 +371,7 @@ img.resource-row-icon:hover {
 
 .resource-row-study-time {
     display: inline-block;
-    background-color: #033f62;
+    background-color: #6F79EA;
     opacity: .6;
     color: #fff;
     padding: 0 8px 0 0;
@@ -491,7 +495,7 @@ select#i18n {
 }
 
 select#i18n:hover {
-    border: 1px solid #EF485B;
+    border: 1px solid #ff9171;
 }
 
 /*target Internet Explorer 9 and Internet Explorer 10:*/
