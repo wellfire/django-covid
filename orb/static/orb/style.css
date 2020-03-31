@@ -10,6 +10,7 @@
  
  #6F79EA - CHA purple
  #ff9171 - CHA Orange
+ #033f62 - dark blue
 
  */
 
@@ -39,7 +40,7 @@ h3.homepage {
 }
 
 a, span.bookmark {
-    color: #6F79EA;
+    color: #033f62;
     text-decoration: none;
 }
 
@@ -80,11 +81,11 @@ span.bookmark:hover, span.bookmark:focus {
 }
 
 .navbar-inverse .navbar-brand {
-    color: #000;
+    color: #033f62;
 }
 
 .navbar-inverse:hover a.navbar-brand:hover {
-    color: #6F79EA;
+    color: #ff9171;
 }
 
 .navbar-header > a > img {
@@ -92,12 +93,12 @@ span.bookmark:hover, span.bookmark:focus {
 }
 
 .navbar-inverse .navbar-nav > li > a {
-    color: #6F79EA;
+    color: #033f62;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-    background-color: #6F79EA;
+    background-color: #ff9171;
 }
 
 .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
@@ -117,7 +118,7 @@ span.bookmark:hover, span.bookmark:focus {
 }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
-    background-color: #6F79EA;
+    background-color:  #ff9171 ;
     border: 1px dotted #fff;
 }
 
