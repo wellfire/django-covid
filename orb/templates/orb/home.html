@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load static %}
 {% load thumbnail %}
 
 {% block extra_head_title %}{% trans 'COVID-19 Library' %}{% endblock extra_head_title %}
@@ -14,7 +15,7 @@
 {% include 'orb/includes/search_bar.html' %}
 
 <h3 style="text-align: center">
-    {% trans 'COVID-19 Library' %}
+    <img src="{% static 'orb/images/covid-typelogo.png' %}" alt="{%  trans 'COVID-19 Library' %}"/>
 </h3>
 
 <div style="position: relative; margin: 20px auto; overflow: hidden; text-align: center;">
