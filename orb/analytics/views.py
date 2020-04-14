@@ -105,11 +105,6 @@ def home_view(request):
 
 
 @staff_required
-def map_view(request):
-    return render(request, 'orb/analytics/map.html', {})
-
-
-@staff_required
 def visitor_view(request, year=None, month=None):
 
     if year == None and month == None:
@@ -483,7 +478,6 @@ def kpi_view(request):
                     'languages': languages
     }
     
-    table_data = []
     
     start_date = timezone.now() - datetime.timedelta(days=days)
     delta = dateutil.relativedelta.relativedelta(months=+1)
@@ -504,52 +498,9 @@ def kpi_view(request):
         
         # strip bots
         for spider in search_crawler.SPIDERS:
-            monthly_trackers = monthly_trackers.exclude(user_agent__contains=spider)
-        
-        downloads = monthly_trackers.count()
-        
-        # no users
-        users_logged_in = monthly_trackers.filter(user__isnull=False).values_list('user').distinct().count()
-        users_anon = monthly_trackers.filter(user__isnull=True).values_list('ip').distinct().count()
-        users = users_logged_in + users_anon
-        
-        # no resources 
-        resources = monthly_trackers.values_list('resource').distinct().count()
-        
-        # intended uses
-        # browsing
-        browsing = monthly_trackers.filter(survey_intended_use='browsing').count()
-        
-        # own learning
-        own_learning = monthly_trackers.filter(survey_intended_use='learning').count()
-        
-        # training
-        training = monthly_trackers.filter(survey_intended_use='training').count()
-        training_data = monthly_trackers.filter(survey_intended_use='training')
-        
-        # other
-        other = monthly_trackers.filter(survey_intended_use='other').count()
-        other_data = monthly_trackers.filter(survey_intended_use='other')
-        
-        period = {
-                    'date': ('%s-%s' % (temp.strftime("%b"), year)),
-                    'downloads' : downloads,
-                    'users': users,
-                    'resources': resources,
-                    'browsing': browsing,
-                    'own_learning' : own_learning,
-                    'training': training,
-                    'training_data': training_data,
-                    'other' : other,
-                    'other_data': other_data
-                    
-                    }
-        table_data.append(period)
-                
-                
+            monthly_trackers = monthly_trackers.exclude(user_agent__contains=spider)               
     
-    return render(request, 'orb/analytics/kpi.html', {'indicators': indicators,
-                                                      'table_data': table_data})
+    return render(request, 'orb/analytics/kpi.html', {'indicators': indicators })
     
 @staff_required
 def resource_download_view(request):

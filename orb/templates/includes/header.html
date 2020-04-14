@@ -35,8 +35,6 @@
                                 ><a href="{% url 'orb_tags' t.slug %}">{{ t.name }}</a></li>
                         {% endfor %}
                     {% endfor %}
-                        <!-- li><a href="{% url 'orb_country_map' %}">{% trans 'Country Map' %}</a></li -->
-                        <!-- li><a href="{% url 'orb_toolkits' %}">{% trans 'Toolkits' %}</a></li -->
                     </ul>
                 </li>
 
@@ -62,9 +60,6 @@
                             </li>
                             <li>
                                 <a href="{% url 'orb_analytics_kpi' %}">{% trans 'KPI Report' %}</a>
-                            </li>
-                            <li>
-                                <a href="{% url 'orb_analytics_map' %}">{% trans 'Activity Map' %}</a>
                             </li>
                         {% endif %}
                         {% if user.is_staff or reviewer %}

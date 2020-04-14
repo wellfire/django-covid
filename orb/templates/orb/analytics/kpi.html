@@ -123,7 +123,7 @@
             <td><strong>{{ indicators.reg_users|intcomma }}</strong></td>
             <td>
             	<ul>
-            		<li>{% blocktrans %}Until 22nd Feb 2018, users only need to register if they wanted to upload content, after this date users have been required to register to download a resource.{% endblocktrans %}</li>
+            		<li></li>
 				</ul>
 			</td>
         </tr>
@@ -176,101 +176,6 @@
 				</ul>
             </td>
         </tr>
-	</tbody>
-</table>
-    
-    
-<h3>{% trans 'Activity Map' %}</h3>
-
-<iframe width='100%' height='520' frameborder='0'
-	src='https://mpowering.cartodb.com/viz/accaec34-03e6-11e5-a245-0e4fddd5de28/embed_map?title=false&#038;description=false&#038;search=false&#038;shareable=true&#038;cartodb_logo=true&#038;layer_selector=false&#038;legends=false&#038;scrollwheel=true&#038;fullscreen=true&#038;sublayer_options=1&#038;sql='
-	allowfullscreen webkitallowfullscreen mozallowfullscreen
-	oallowfullscreen msallowfullscreen></iframe>
-    
-    
-<h3>{% trans 'Resource Download Questionnaire Data' %}</h3>
-
-<p>{% blocktrans %}On 22nd Feb 2018 COVID-19 Library was updated to require users to register and provide information on their intended use, before being able to download resources.{% endblocktrans %}</p>
-
-
-<table class="table table-condensed">
-    <thead>
-        <tr>
-			<th rowspan="2">{% trans 'Period' %}</th>
-            <th rowspan="2">{% trans '# downloads' %}</th>
-            <th rowspan="2">{% trans '# different users' %}</th>
-            <th rowspan="2">{% trans '# different resources' %}</th>
-            <th colspan="4">{% trans 'Intended Use' %}</th>
-        </tr>
-        <tr>
-            <th>{% trans 'Browsing' %}</th>
-            <th>{% trans 'Own learning' %}</th>
-            <th>{% trans 'Training' %} <sup><a href="#training">1</a></sup></th>
-            <th>{% trans 'Other' %} <sup><a href="#other">2</a></sup></th>
-        </tr>
-    </thead>
-    <tbody>
-    {% for td in table_data %}
-    	<tr>
-    		<td>{{ td.date }}</td>
-            <td>{{ td.downloads|intcomma }}</td>
-            <td>{{ td.users|intcomma }}</td>
-            <td>{{ td.resources|intcomma }}</td>
-            <td>
-            	{% if td.browsing > 0%}{{ td.browsing }}{% else %}--{% endif %}
-            </td>
-            <td>{% if td.own_learning > 0%}{{ td.own_learning }}{% else %}--{% endif %}</td>
-            <td>{% if td.training > 0%}{{ td.training }}{% else %}--{% endif %}</td>
-            <td>{% if td.other > 0%}{{ td.other }}{% else %}--{% endif %}</td>
-    	</tr>
-    {% endfor %}
-    
-    </tbody>
-</table>
-
-<h4><a name="training" class="named-anchor"></a>{% trans '1. Training data breakdown' %}</h4>
-<table class="table table-condensed">
-    <thead>
-        <tr>
-			<th>{% trans 'Period' %}</th>
-            <th>{% trans '#' %}</th>
-            <th>{% trans 'Cadre' %}</th>
-        </tr>
-	</thead>
-	<tbody>
-		{% for td in table_data %}
-			{% if td.training > 0%}
-				{% for train in td.training_data %}
-				<tr>
-					<td>{{ td.date }}</td>
-					<td>{{ train.survey_health_worker_count}}</td>
-					<td>{{ train.survey_health_worker_cadre }}</td>
-				</tr>
-				{% endfor %}
-			{% endif %}
-		{% endfor %}
-	</tbody>
-</table>
-
-<h4><a name="other" class="named-anchor"></a>{% trans '2. Other data breakdown' %}</h4>
-<table class="table table-condensed">
-    <thead>
-        <tr>
-			<th>{% trans 'Period' %}</th>
-            <th>{% trans 'Reason' %}</th>
-        </tr>
-	</thead>
-	<tbody>
-		{% for td in table_data %}
-			{% if td.other > 0%}
-				{% for ot in td.other_data %}
-				<tr>
-					<td>{{ td.date }}</td>
-					<td>{{ ot.survey_intended_use_other}}</td>
-				</tr>
-				{% endfor %}
-			{% endif %}
-		{% endfor %}
 	</tbody>
 </table>
 
