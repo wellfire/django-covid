@@ -1,5 +1,5 @@
 ====================
-ORB Content Platform
+COVID-19 Library Content Platform
 ====================
 
 Development
@@ -71,7 +71,7 @@ To run a Django command, use the following:
 Testing
 =======
 
-The tests for the ORB platform can be run using the current Python path (or
+The tests for the COVID-19 Library platform can be run using the current Python path (or
 currently activated virtual environment) using the command::
 
     make test-django

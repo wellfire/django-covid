@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Tests for ORB resource models
+Tests for COVID-19 Library resource models
 """
 
 import pytest

@@ -124,17 +124,17 @@ MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 #####################################################################
 # Static assets & media uploads
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'orb/static')
+STATIC_ROOT = os.path.join(BASE_DIR, '..', 'static')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
 #####################################################################
 
 
 #####################################################################
 # Email
-SERVER_EMAIL = 'ORB <orb@example.com>'
-EMAIL_SUBJECT_PREFIX = '[ORB]: '
+SERVER_EMAIL = 'COVID-19 Library <orb@example.com>'
+EMAIL_SUBJECT_PREFIX = '[COVID-19 Library]: '
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_FILE_PATH = '/tmp/'
 #####################################################################
@@ -216,7 +216,7 @@ LOGGING = {
 
 
 #####################################################################
-# ORB specific settings
+# COVID-19 Library specific settings
 ORB_RESOURCE_DESCRIPTION_MAX_WORDS = 150
 ORB_GOOGLE_ANALYTICS_CODE = ''
 ORB_INFO_EMAIL = 'orb@example.com'

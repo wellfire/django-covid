@@ -1,5 +1,5 @@
 """
-Management command to query peer ORB instances for updated content and
+Management command to query peer COVID-19 Library instances for updated content and
 add those resources or update if they were sourced remotely.
 
 Usage:

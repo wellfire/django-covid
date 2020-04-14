@@ -129,14 +129,14 @@ class RegisterForm(forms.Form):
 
     terms = forms.BooleanField(
         label=_(
-            "Please tick the box to confirm that you have read the <a href='/terms/' target='_blank' class='prominent'>terms</a> about registering with ORB"),
+            "Please tick the box to confirm that you have read the <a href='/terms/' target='_blank' class='prominent'>terms</a> about registering with COVID-19 Library"),
         required=True,
         error_messages={'required': _('Please tick the box to confirm that you have read the terms')})
     mailing = forms.BooleanField(
-        label=_("Subscribe to mPowering update emails"),
+        label=_("Subscribe to Community Health Academy update emails"),
         required=False)
     survey = forms.BooleanField(
-        label=_("I allow mPowering to ask me to participate in surveys about my usage of ORB resources"),
+        label=_("I allow Community Health Academy to ask me to participate in surveys about my usage of COVID-19 Library resources"),
         required=False,
         initial=True,
     )
@@ -361,7 +361,7 @@ class ProfileForm(forms.Form):
         error_messages={'required': _('Please select a gender')},
     )
     mailing = forms.BooleanField(
-        label=_("Please tick the box to subscribe to mPowering update emails"),
+        label=_("Please tick the box to subscribe to Community Health Academy update emails"),
         required=False)
 
     website = forms.CharField(
@@ -447,7 +447,7 @@ class DeleteProfileForm(forms.Form):
                                error_messages={'required': _(u'Please enter your password.'),},
                                required=True)
     delete_resources = forms.BooleanField(
-                            label=_(u"Permanently delete the resources I have uploaded to ORB"),
+                            label=_(u"Permanently delete the resources I have uploaded to COVID-19 Library"),
                             required=False)
 
     def __init__(self, resources_count, *args, **kwargs):

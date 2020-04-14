@@ -1,5 +1,5 @@
 """
-API Resource specific tests for the ORB API
+API Resource specific tests for the COVID-19 Library API
 """
 import pytest
 import uuid

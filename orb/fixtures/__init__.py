@@ -85,7 +85,7 @@ def test_resource(testing_user):
 
 @pytest.fixture(scope="session")
 def test_peer():
-    peer = Peer.peers.create(name="Distant ORB", host="http://www.orb.org/")
+    peer = Peer.peers.create(name="Distant COVID-19 Library", host="http://www.orb.org/")
     yield peer
 
 

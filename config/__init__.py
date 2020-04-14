@@ -1,3 +1,3 @@
 """
-Configuration for running the ORB locally for testing and development
+Configuration for running the COVID-19 Library locally for testing and development
 """

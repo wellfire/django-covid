@@ -12,7 +12,7 @@ def run():
     resources = Resource.objects.filter(
         resourcetag__tag=tag, status=Resource.APPROVED).order_by('title')
 
-    headers = ('Resource Title', 'Resource Link', 'Health Domain(s)', 'Date Published on ORB',
+    headers = ('Resource Title', 'Resource Link', 'Health Domain(s)', 'Date Published on COVID-19 Library',
                'Language(s)', 'Audience', 'Length', 'Resource Type', 'Target Device(s)')
     data = []
     data = tablib.Dataset(*data, headers=headers)

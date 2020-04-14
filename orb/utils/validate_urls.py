@@ -22,7 +22,7 @@ def run():
 
         time.sleep(10)
         req = urllib2.Request(
-            u.url, headers={'User-Agent': 'ORB Link Validator', })
+            u.url, headers={'User-Agent': 'COVID-19 Library Link Validator', })
         try:
             connection = opener.open(request)
             print u.url + " : " + str(connection.code)

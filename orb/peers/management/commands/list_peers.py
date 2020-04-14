@@ -1,12 +1,12 @@
 """
-Management command to list ORB peer data
+Management command to list COVID-19 Library peer data
 
 Usage:
 
     $ django-admin.py list_peers
 
-      [1] Malawi ORB, https://www.malawi-orb.org
-      [2] ORB Pakistan, https://www.orb.pk
+      [1] Malawi COVID-19 Library, https://www.malawi-orb.org
+      [2] COVID-19 Library Pakistan, https://www.orb.pk
 
 """
 
