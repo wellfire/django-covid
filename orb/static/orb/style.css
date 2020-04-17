@@ -553,3 +553,11 @@ div.tagsinput {
 .navbar-brand-title strong {
     color: #ff9171;
 }
+
+a.navbar-brand:hover {
+    outline: #ff9171 solid 2px;
+}
+
+.navbar-inverse {
+    border-bottom: none;
+}
