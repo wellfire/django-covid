@@ -540,3 +540,16 @@ div.tagsinput {
 .navbar-inverse .navbar-nav > li > a {
     color: #fff;
 }
+
+
+.navbar-brand-title {
+    color: #fff;
+    font-size: 25px;
+    vertical-align: middle;
+    font-weight: bolder;
+}
+
+
+.navbar-brand-title strong {
+    color: #ff9171;
+}
