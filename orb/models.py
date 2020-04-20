@@ -32,6 +32,7 @@ from orb.profiles.querysets import ProfilesQueryset
 from orb.resources.managers import ResourceQueryset, ResourceURLManager, TrackerQueryset
 from orb.review.queryset import CriteriaQueryset
 from orb.tags.managers import ResourceTagManager, TagQuerySet
+from ckeditor.fields import RichTextField
 
 cal = pdt.Calendar()
 
@@ -665,7 +666,7 @@ class Tag(TimestampBase):
     order_by = models.IntegerField(default=0)
     external_url = models.URLField(
         blank=True, null=True, default=None, max_length=500)
-    description = models.TextField(blank=True, null=True, default=None)
+    description = RichTextField(blank=True, null=True, default=None)
     summary = models.CharField(blank=True, null=True, max_length=100)
     contact_email = models.CharField(blank=True, null=True, max_length=100)
     published = models.BooleanField(default=True, help_text=_(u"Used to toggle status of health domains."))
