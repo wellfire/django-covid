@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'orb.toolkits',
     'modeltranslation_exim',
     'django_extensions',
+    'ckeditor'
 ]
 
 

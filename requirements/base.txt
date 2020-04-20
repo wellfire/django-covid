@@ -42,3 +42,5 @@ enum34==1.1.6
 typing==3.6.1
 
 pathlib2==2.3.3
+
+django-ckeditor==5.9.0
