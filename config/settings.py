@@ -115,8 +115,6 @@ LOCALE_PATHS = [
 gettext = lambda s: s  # noqa
 LANGUAGES = [
     ('en', u'English'),
-    ('es', u'Español'),
-    ('pt-br', u'Português'),
 ]
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 #####################################################################
