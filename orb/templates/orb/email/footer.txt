@@ -1,10 +1,8 @@
 {% load i18n %} 
 {% blocktrans %}
 Best regards,
-
 Community Health Academy Team
-
-COVID-19 Library by Community Health Academy
-info@mpoweringhealth.org
-https://covid19library.org
+Last Mile Health | Boston
+24 School Street, 5th Floor, Boston, MA 02108
+www.lastmilehealth.org | @lastmilehealth
 {% endblocktrans %}
