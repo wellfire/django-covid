@@ -43,6 +43,5 @@ urlpatterns = [
     url(r'^resource/bookmark/', include('orb.bookmark.urls')),
     url(r'^resource/', include('orb.resources.urls')),
     url(r'^review/', include('orb.review.urls')),
-    url(r'^toolkits/', include('orb.toolkits.urls')),
     url(r'^i18n/', include('django.conf.urls.i18n')),
 ]

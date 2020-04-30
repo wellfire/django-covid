@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-30 14:32+0000\n"
-"PO-Revision-Date: 2020-04-30 17:33+0300\n"
+"POT-Creation-Date: 2020-04-30 15:15+0000\n"
+"PO-Revision-Date: 2020-04-30 18:16+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "X-Generator: Poedit 2.0.6\n"
 
 #: orb/actions.py:46
@@ -1415,47 +1415,19 @@ msgid ""
 "medical\">does not constitute medical\n"
 "\tadvice</a>.</p>\n"
 "<p>\n"
-"\tCOVID-19 Library has been developed by the <a href=\"http://"
-"mpoweringhealth.org\">mPowering\n"
-"\t\tFrontline Health Workers</a> partnership.\n"
+"\tCOVID-19 Library is based on the ORB technology platform that was "
+"originally \n"
+"\tdeveloped by the <a href=\"http://mpoweringhealth.org\">mPowering "
+"Frontline Health Workers</a> partnership.\n"
 "</p>\n"
 "\n"
 msgstr ""
 
-#: orb/templates/orb/about.html:46
-msgid "Homepage Photo Credits"
-msgstr ""
-
 #: orb/templates/orb/about.html:47
-#, python-format
-msgid ""
-"\n"
-"<ul>\n"
-"\t<li>Open University HEAT Program</li>\n"
-"\t<li>Ye Tun Oo, Courtesy of Photoshare</li>\n"
-"\t<li>UNICEF South Africa</li>\n"
-"\t<li>Lesley-Anne Long</li>\n"
-"\t<li>Grand Challenges in Global Health</li>\n"
-"\t<li><a href=\"//commons.wikimedia.org/w/index.php?title=User:Piki-"
-"photow&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Piki-"
-"photow (page does not exist)\">T.K. Naliaka</a> - <span class=\"int-own-work"
-"\" lang=\"en\">Own work</span>, <a title=\"Creative Commons Attribution-"
-"Share Alike 4.0\" href=\"http://creativecommons.org/licenses/by-sa/4.0\">CC "
-"BY-SA 4.0</a>, https://commons.wikimedia.org/w/index.php?curid=36622513</"
-"li>\n"
-"\t<li>Beth.herlin (Own work) [<a href=\"http://creativecommons.org/licenses/"
-"by-sa/4.0\">CC BY-SA 4.0</a>], <a href=\"https://commons.wikimedia.org/wiki/"
-"File%%3AZIKA.png\">via Wikimedia Commons</a></li>\n"
-"\t<li>Peter Roberts, <a href=\"https://www.photoshare.org/"
-"photo/15604-2\">Courtesy of Photoshare</a></li>\n"
-"</ul>\n"
-msgstr ""
-
-#: orb/templates/orb/about.html:60
 msgid "Other Credits"
 msgstr ""
 
-#: orb/templates/orb/about.html:61
+#: orb/templates/orb/about.html:48
 msgid ""
 "\n"
 "<ul>\n"
@@ -2018,8 +1990,8 @@ msgid ""
 "creativecommons.org/wiki/Frequently_Asked_Questions\">Creative Commons "
 "website</a>.\n"
 "\tIf your question is not addressed there or you need additional\n"
-"\tinformation, please contact <a href=\"mailto:%(email)s"
-"\">info@mpoweringhealth.org</a>.</p>\n"
+"\tinformation, please contact <a href=\"mailto:%(email)s\">%(email)s</a>.</"
+"p>\n"
 msgstr ""
 
 #: orb/templates/orb/collection/view.html:31
@@ -3626,104 +3598,6 @@ msgid ""
 "class=\"alert-link\">Return to the homepage</a>"
 msgstr ""
 
-#: orb/templates/orb/toolkits/home.html:5
-#: orb/templates/orb/toolkits/home.html:9
-#: orb/templates/orb/toolkits/toolkit_list.html:5
-#: orb/templates/orb/toolkits/toolkit_list.html:9
-msgid "Toolkits"
-msgstr ""
-
-#: orb/templates/orb/toolkits/home.html:14
-msgid ""
-"Making Content Meaningful: A Guide to Adapting Existing Global Health "
-"Content for Different Audiences"
-msgstr ""
-
-#: orb/templates/orb/toolkits/home.html:17
-msgid ""
-"The abundance of openly accessible health content—from eLearning courses and "
-"multimedia resources to guidance documents and research papers—presents a "
-"remarkable opportunity for teaching, learning, and\n"
-"sharing. Open health content, however, is not sufficient by itself. It is "
-"important to provide it in the appropriate context and the language of the "
-"people who will use it. The Knowledge for Health \n"
-"(K4Health)project developed this adaptation guide to expand the reach, "
-"usefulness, and use of evidence-based global health content,\tspecifically "
-"as it relates to family planning. The guide outlines a\n"
-"framework with key steps and questions for consideration as well as"
-"\tactivity sheets and an illustrative as well as real-life case studies that "
-"will help a user in making informed decisions in the content\n"
-"adaptation process."
-msgstr ""
-
-#: orb/templates/orb/toolkits/home.html:29
-msgid "Community Health Framework"
-msgstr ""
-
-#: orb/templates/orb/toolkits/home.html:32
-msgid ""
-"The Community Health Framework assists non-technical audiences in "
-"understanding community health and how it can be strengthened. An"
-"\tinteractive power point, published under a Creative Commons license, it\n"
-"depicts the community health ecosystem as heath-specific and health-enabling "
-"actors and structures (formal and informal) working together to ensure that "
-"each has the agency, access, and resources to\n"
-"ensure the health of community members. It also includes a Toolkit with"
-"\tmodels and case studies as examples of good practice."
-msgstr ""
-
-#: orb/templates/orb/toolkits/home.html:37
-msgid ""
-"Download the <a href=\"http://mpoweringhealth.org/wp-content/uploads/2015/11/"
-"USAID-Community-Health-Framework_Version-1-0_October-28th-2015.pdf\">PDF "
-"version</a> [4.7 Mb] or \n"
-"\t\t\t<a href=\"http://mpoweringhealth.org/wp-content/uploads/2015/11/USAID-"
-"Community-Health-Framework_Version-1-0_October-28th-2015.pptx\">PPT version</"
-"a> [7.7 Mb]"
-msgstr ""
-
-#: orb/templates/orb/toolkits/home.html:43
-msgid "Principles for Digital Development"
-msgstr ""
-
-#: orb/templates/orb/toolkits/home.html:46
-msgid ""
-"The Principles for Digital Development (in English, Español, Français, or "
-"Português) find their roots in the efforts of individuals, development "
-"organizations, and donors alike who have called for a more\n"
-"concerted effort by donors and implementing partners to\tinstitutionalize "
-"lessons learned in the use of information and communication technologies "
-"(ICTs) in development projects. They were\twritten by and \n"
-"for international development donors and their implementing partners, but "
-"are freely available for use by all. ThePrinciples are intended to serve as "
-"guidance rather than edict, and to be updated and \n"
-"refined over time."
-msgstr ""
-
-#: orb/templates/orb/toolkits/home.html:56
-msgid ""
-"Financing Framework to End Preventable Child and Maternal Deaths (EPCMD)"
-msgstr ""
-
-#: orb/templates/orb/toolkits/home.html:58
-msgid ""
-"The U.S. Government is committed to achieving the once unimaginable goal of "
-"Ending Preventable Child and Maternal Deaths (EPCMD) by 2035. Achieving this "
-"goal in a sustainable fashion implies a\n"
-"gradual move toward solutions that mobilize both domestic and international "
-"resources, with the objective of putting developing\tcountry health systems "
-"on a trajectory toward financial sustainability."
-msgstr ""
-
-#: orb/templates/orb/toolkits/home.html:62
-msgid ""
-"The Financing Framework is designed to outline ways in which\tadditional "
-"financial resources and tools can be utilized to support\tsustainability. "
-"The Framework draws on inspiration from best practices\n"
-"used throughout the U.S. Agency for International Development and with our "
-"health partners around the world."
-msgstr ""
-
 #: orb/templates/orb/viz/country_map.html:3
 #: orb/templates/orb/viz/country_map.html:103
 msgid "Country Map"
@@ -3744,14 +3618,6 @@ msgstr ""
 
 #: orb/templatetags/display_functions.py:62
 msgid "Go to "
-msgstr ""
-
-#: orb/toolkits/models.py:19
-msgid "toolkit"
-msgstr ""
-
-#: orb/toolkits/models.py:20
-msgid "toolkits"
 msgstr ""
 
 #: orb/views.py:50
