@@ -134,7 +134,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
 SERVER_EMAIL = 'COVID-19 Library <orb@example.com>'
 EMAIL_SUBJECT_PREFIX = '[COVID-19 Library]: '
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-EMAIL_FILE_PATH = '/tmp/covid-email/'
+EMAIL_FILE_PATH = '/tmp/'
 #####################################################################
 
 
