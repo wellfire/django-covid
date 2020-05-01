@@ -3,10 +3,12 @@ import os
 import textract
 
 from django.conf import settings
-from orb.models import ResourceFile
+
 
 
 def run():
+    from orb.models import ResourceFile
+    
     files = ResourceFile.objects.filter(file_full_text=None)
     for f in files:
         print os.path.join(settings.MEDIA_ROOT, f.file.name)
