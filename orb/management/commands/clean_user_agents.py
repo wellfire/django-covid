@@ -17,6 +17,6 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         for spider in search_crawler.SPIDERS:
             rts = ResourceTracker.objects.filter(user_agent__contains=spider)
-            print spider + ":" + str(rts.count())
+            print(spider + ":" + str(rts.count()))
             rts.delete()
 
