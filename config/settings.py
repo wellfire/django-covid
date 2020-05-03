@@ -220,6 +220,7 @@ ORB_RESOURCE_MIN_RATINGS = 3
 TASK_UPLOAD_FILE_TYPE_BLACKLIST = [u'application/vnd.android']
 TASK_UPLOAD_FILE_MAX_SIZE = "5242880"
 STAGING = False  # used for version context processor
+IP_STACK_API_KEY = '' # set this in your local_settings.py
 #####################################################################
 
 
