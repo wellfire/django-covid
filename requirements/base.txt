@@ -3,7 +3,7 @@
 # Isolating Django from the other requirements allows better cross-version
 # (Django) testing.
 
-MySQL-python==1.2.5
+mysqlclient==1.4.6                      # MySQL client, version 2 will drop Python 2 support
 pysolr>=3.3.0,<3.4.0
 
 pytz>=2014,<2015
