@@ -64,7 +64,7 @@ def review_resource(request, review):
     return render(request, "orb/review/review_form.html", {
         'review': review,
         'form': form,
-        'criteria': ResourceCriteria.objects.all(),
+        'criteria': ResourceCriteria.objects.all().order_by('order_by'),
     })
 
 

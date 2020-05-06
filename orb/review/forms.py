@@ -163,7 +163,7 @@ class ContentReviewForm(forms.ModelForm):
     approved = forms.BooleanField(required=False)
     criteria = forms.ModelMultipleChoiceField(
         widget=forms.CheckboxSelectMultiple,
-        queryset=ResourceCriteria.objects.all().order_by('category_order_by', 'order_by'),
+        queryset=ResourceCriteria.objects.all().order_by('order_by'),
         required=False,
         label=_(u"Approval criteria"),
     )
@@ -184,7 +184,7 @@ class ContentReviewForm(forms.ModelForm):
     def __init__(self, user=None, *args, **kwargs):
         self.user = user
         super(ContentReviewForm, self).__init__(*args, **kwargs)
-        self.fields['criteria'].queryset = self.get_criteria()
+        self.fields['criteria'].queryset = self.get_criteria().order_by('order_by')
         self.helper = self.form_helper()
 
     def clean(self):
@@ -208,7 +208,7 @@ class ContentReviewForm(forms.ModelForm):
             roles = self.user.userprofile.reviewer_roles.all()
         except AttributeError:
             logger.warning("{} has no profile, showing all resource criteria".format(self.user))
-            return ResourceCriteria.criteria.all()
+            return ResourceCriteria.criteria.all().order_by('order_by')
         return ResourceCriteria.criteria.for_roles(*roles)
 
     def form_helper(self):
