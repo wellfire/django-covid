@@ -86,6 +86,10 @@
                             {% endif %}
                             <li><a href="{% url 'my_bookmarks_view' %}">{% trans 'Bookmarks' %}</a>
                             </li>
+                            {% if user.is_superuser %}
+                            	<li><a href="{% url 'admin:index' %}">{% trans 'Django Admin' %}</a>
+                                </li>
+                            {% endif %}
                             <li>
                                 <a href="{% url 'profile_logout' %}">{% trans 'Logout' %}</a>
                             </li>
