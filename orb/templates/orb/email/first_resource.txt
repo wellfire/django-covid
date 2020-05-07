@@ -11,7 +11,7 @@ Since this is your first resource on COVID-19 Library, here’s some information
 * Our Content Review Team will review your resource to make sure it meets our inclusion guidelines.
 * We will send you an email to let you know if your resource was accepted, or, if not, why we decided not to include it on COVID-19 Library.
 
-You can find more detailed information about the process here: https://covid19library.org/about/
+You can find more detailed information about the process here: https://covid-19library.org/about/
 
 If you have any questions please contact us at {{ info_email }}
 

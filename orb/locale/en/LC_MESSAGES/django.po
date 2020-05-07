@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-30 15:15+0000\n"
-"PO-Revision-Date: 2020-04-30 18:16+0300\n"
+"POT-Creation-Date: 2020-05-07 20:16+0000\n"
+"PO-Revision-Date: 2020-05-07 23:17+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.3\n"
 
 #: orb/actions.py:46
 #, python-format
@@ -163,7 +163,7 @@ msgstr ""
 msgid " New resource submitted"
 msgstr ""
 
-#: orb/emailer.py:196
+#: orb/emailer.py:201
 msgid "Link checker results"
 msgstr ""
 
@@ -387,7 +387,7 @@ msgstr ""
 msgid "Search terms"
 msgstr ""
 
-#: orb/forms.py:349 orb/templates/includes/header.html:120
+#: orb/forms.py:349 orb/templates/includes/header.html:124
 msgid "Language"
 msgstr ""
 
@@ -732,7 +732,7 @@ msgid "Please note that your username and password are case-sensitive."
 msgstr ""
 
 #: orb/profiles/forms.py:51 orb/profiles/views.py:45
-#: orb/templates/includes/header.html:95
+#: orb/templates/includes/header.html:99
 msgid "Login"
 msgstr ""
 
@@ -846,7 +846,7 @@ msgid ""
 msgstr ""
 
 #: orb/profiles/forms.py:179 orb/profiles/views.py:68
-#: orb/templates/includes/header.html:96
+#: orb/templates/includes/header.html:100
 msgid "Register"
 msgstr ""
 
@@ -1278,21 +1278,21 @@ msgstr ""
 msgid "About COVID-19 Library"
 msgstr ""
 
-#: orb/templates/base.html:87 orb/templates/includes/header.html:105
+#: orb/templates/base.html:87 orb/templates/includes/header.html:109
 #: orb/templates/orb/how_to.html:9
 msgid "How to use COVID-19 Library"
 msgstr ""
 
-#: orb/templates/base.html:88 orb/templates/includes/header.html:108
+#: orb/templates/base.html:88 orb/templates/includes/header.html:112
 #: orb/templates/orb/cc-faq.html:2
 msgid "Creative Commons FAQs"
 msgstr ""
 
-#: orb/templates/base.html:89 orb/templates/includes/header.html:106
+#: orb/templates/base.html:89 orb/templates/includes/header.html:110
 msgid "Resource Guidelines"
 msgstr ""
 
-#: orb/templates/base.html:90 orb/templates/includes/header.html:107
+#: orb/templates/base.html:90 orb/templates/includes/header.html:111
 msgid "Content Review Process"
 msgstr ""
 
@@ -1370,10 +1370,14 @@ msgid "Bookmarks"
 msgstr ""
 
 #: orb/templates/includes/header.html:90
+msgid "Django Admin"
+msgstr ""
+
+#: orb/templates/includes/header.html:94
 msgid "Logout"
 msgstr ""
 
-#: orb/templates/includes/header.html:101
+#: orb/templates/includes/header.html:105
 msgid "Help"
 msgstr ""
 
@@ -1394,9 +1398,8 @@ msgid ""
 "<p>COVID-19 Library has three unique features:</p>\n"
 "<ol>\n"
 "\t<li>Brings into one space quality-assured, multimedia materials\n"
-"\t\tfrom multiple content developers, with a focus on maternal and child\n"
-"\t\thealth.</li>\n"
-"\t<li>Adaptation of existing content: ORB allows training\n"
+"\t\tfrom multiple content developers.</li>\n"
+"\t<li>Adaptation of existing content: COVID-19 Library allows training\n"
 "\t\timplementers to re-use and adapt quality-assured training materials,\n"
 "\t\tsaving costs and time.</li>\n"
 "\t<li>A global collaborative network of organizations to share and\n"
@@ -1421,18 +1424,6 @@ msgid ""
 "Frontline Health Workers</a> partnership.\n"
 "</p>\n"
 "\n"
-msgstr ""
-
-#: orb/templates/orb/about.html:47
-msgid "Other Credits"
-msgstr ""
-
-#: orb/templates/orb/about.html:48
-msgid ""
-"\n"
-"<ul>\n"
-"\t<li>Country flag icons provided by Wikipedia (public domain)</li>\n"
-"</ul>\n"
 msgstr ""
 
 #: orb/templates/orb/analytics/home.html:19
@@ -2076,7 +2067,7 @@ msgid ""
 "        <span class=\"bold\">Content Submission</span>: Reputable "
 "organizations submit, tag and summarize their content to\n"
 "        COVID-19 Library, confirming that it meets the COVID-19 Library "
-"criteria (https://covid19library.org/resource/guidelines/). Upon\n"
+"criteria (https://covid-19library.org/resource/guidelines/). Upon\n"
 "        submission, the Community Health Academy staff receive an alert that "
 "new content is available for review.\n"
 "      </li>\n"
@@ -2215,7 +2206,7 @@ msgid ""
 "\n"
 "<p>\n"
 "\tYou can find more detailed information about the process here: <a\n"
-"\t\thref=\"https://covid19library.org/about/\">https://covid19library.org/"
+"\t\thref=\"https://covid-19library.org/about/\">https://covid-19library.org/"
 "about/</a>.\n"
 "</p>\n"
 "\n"
@@ -2246,7 +2237,7 @@ msgid ""
 "or, if not, why we decided not to include it on COVID-19 Library.\n"
 "\n"
 "You can find more detailed information about the process here: https://"
-"covid19library.org/about/\n"
+"covid-19library.org/about/\n"
 "\n"
 "If you have any questions please contact us at %(info_email)s\n"
 "\n"
@@ -2405,6 +2396,12 @@ msgid ""
 "<p>%(firstname)s %(lastname)s has just submitted a new resource '%(title)s'."
 "</p>\n"
 "\n"
+"<p>Assign reviewers: <a href=\"%(assign_reviewers_link)s\">"
+"%(assign_reviewers_link)s</a></p>\n"
+"\n"
+"<p>Preview the resource: <a href=\"%(resource_link)s\">%(resource_link)s</"
+"a></p>\n"
+"\n"
 msgstr ""
 
 #: orb/templates/orb/email/resource_submitted.txt:2
@@ -2413,6 +2410,10 @@ msgid ""
 "\n"
 "\n"
 "%(firstname)s %(lastname)s has just submitted a new resource '%(title)s'.\n"
+"\n"
+"Assign reviewers: %(assign_reviewers_link)s\n"
+"\n"
+"Preview the resource: %(resource_link)s\n"
 "\n"
 msgstr ""
 
@@ -2427,7 +2428,7 @@ msgid ""
 "\n"
 "<p>You can view all the resources pending your review <a href="
 "\"%(reviews_link)s\">here on COVID-19 Library</a>.\n"
-"Please review this resource within the next 10 business days.</p>\n"
+"Please review this resource within the next 5 business days.</p>\n"
 "\n"
 "<p>We appreciate your time and efforts in being part of the COVID-19 Library "
 "content review team.</p>\n"
@@ -2445,7 +2446,7 @@ msgid ""
 "\n"
 "You can view all the resources pending your review here on COVID-19 Library: "
 "%(reviews_link)s.\n"
-"Please review this resource within the next 10 business days.\n"
+"Please review this resource within the next 5 business days.\n"
 "\n"
 "We appreciate your time and efforts in being part of the COVID-19 Library "
 "content review team.\n"
@@ -3626,14 +3627,14 @@ msgstr ""
 
 #: orb/views.py:129
 msgid ""
-"This resource has been archived by the ORB Content Review Team, so is not "
-"available for users to view"
+"This resource has been archived by the COVID-19 Library Content Review Team, "
+"so is not available for users to view"
 msgstr ""
 
 #: orb/views.py:133
 msgid ""
-"This resource is not yet approved by the ORB Content Review Team, so is not "
-"yet available for all users to view"
+"This resource is not yet approved by the COVID-19 Library Content Review "
+"Team, so is not yet available for all users to view"
 msgstr ""
 
 #: orb/views.py:188 orb/views.py:248 orb/views.py:563

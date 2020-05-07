@@ -171,8 +171,8 @@ def new_resource_submitted(request, resource):
     subject = settings.EMAIL_SUBJECT_PREFIX + \
         _(u" New resource submitted") + ": " + resource.title
 
-    resource_link = "https://covid19library.org" + reverse('orb_resource', args=[resource.slug])
-    assign_reviewers_link = "https://covid19library.org" + reverse('orb_assign_review', args=[resource.id])
+    resource_link = "https://covid-19library.org" + reverse('orb_resource', args=[resource.slug])
+    assign_reviewers_link = "https://covid-19library.org" + reverse('orb_assign_review', args=[resource.id])
     
     data = {"title": resource.title,
             "firstname": resource.create_user.first_name,
