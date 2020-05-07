@@ -16,3 +16,6 @@ pytest-pythonpath==0.7.2         # Fix the project path no matter where tests ar
 pytest-mock==1.10.0              # Wrapper around mock library
 
 IPython==5.1.0
+
+
+dj_database_url==0.5.0
