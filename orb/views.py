@@ -126,11 +126,11 @@ def resource_view(request, resource_slug):
 
     if resource.status == Resource.ARCHIVED:
         messages.error(request, _(
-            u"This resource has been archived by the ORB Content"
+            u"This resource has been archived by the COVID-19 Library Content"
             u" Review Team, so is not available for users to view"))
     elif resource.status != Resource.APPROVED:
         messages.error(request, _(
-            u"This resource is not yet approved by the ORB Content"
+            u"This resource is not yet approved by the COVID-19 Library Content"
             u" Review Team, so is not yet available for all users to view"))
 
     options_menu = []
