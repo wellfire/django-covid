@@ -44,7 +44,7 @@ def orb_mimetype(extension):
 
     We use this as the primary lookup because mimetypes seem to
     differ between systems and this allows consistency, especially
-    for tesiing.
+    for testing.
 
     Args:
         extension: string, just the file extension (e.g. jpg)
