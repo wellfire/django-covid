@@ -117,7 +117,7 @@ class TestResourceFile(object):
         ("pdf", "application/pdf"),
         ("mp4", "video/mp4"),
         ("mbz", "application/octet-stream"),
-        ("zip", "application/x-zip-compressed"),
+        ("zip", "application/zip"),
         ("docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"),
         ("png", "image/png"),
         ("ppt", "application/vnd.ms-powerpoint"),
