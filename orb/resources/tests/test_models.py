@@ -128,12 +128,12 @@ class TestResourceFile(object):
         ("wmv", "video/x-ms-wmv"),
         ("zzz", "application/octet-stream"),
     ])
-    def test_mimetype(self, extension, mimetype):
+    def test_mimetype(self, extension, mimetype, mocker):
         """"""
-        with mock.patch('orb.models.ResourceFile.file_extension', new_callable=mock.PropertyMock) as mocked_extension:
-            mocked_extension.return_value = extension
-            r = ResourceFile()
-            assert r.mimetype == mimetype
+        mocked_extension = mocker.patch('orb.models.ResourceFile.file_extension', new_callable=mock.PropertyMock)
+        mocked_extension.return_value = extension
+        r = ResourceFile()
+        assert r.mimetype == mimetype
 
 
 class TestResourceLocality(object):
