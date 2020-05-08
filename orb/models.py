@@ -162,7 +162,7 @@ class Resource(TimestampBase):
         updated_time, result = cal.parseDT(api_data.pop('update_date'))
         created_time, result = cal.parseDT(api_data.pop('create_date'))
 
-        if updated_time.date <= self.create_date.date:
+        if updated_time.date() <= self.create_date.date():
             return False
 
         resource_files = api_data.pop('files', [])
