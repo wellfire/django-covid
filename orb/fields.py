@@ -11,6 +11,7 @@ from django.core.files import File
 from django.core.files.temp import NamedTemporaryFile
 
 from orb.compat import HTTPError
+from orb.compat import URLError
 from orb.compat import urlopen
 
 
@@ -44,7 +45,8 @@ def image_cleaner(instance, field_name="image", url=None):
 
     try:
         img_temp.write(urlopen(url).read())
-    except HTTPError:
+    except (HTTPError, URLError):
+        # TODO(bennylope) log this
         return instance
 
     img_temp.flush()
