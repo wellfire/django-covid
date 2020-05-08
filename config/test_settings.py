@@ -17,3 +17,8 @@ HAYSTACK_SIGNAL_PROCESSOR = "haystack.signals.BaseSignalProcessor"
 
 # GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH', '/usr/local/lib/libgdal.dylib')
 # ctypes.CDLL(GDAL_LIBRARY_PATH)
+LANGUAGES = [
+    ('en', u'English'),
+    ('es', u'Español'),
+    ('pt-br', u'Português'),
+]
