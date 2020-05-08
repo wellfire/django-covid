@@ -141,16 +141,16 @@ class TestResourceLocality(object):
     def test_local_resource(self, test_resource):
         assert test_resource.is_local()
 
-    def test_downloaded_resource(self, test_resource, test_peer):
+    def test_downloaded_resource(self, test_resource, peer_instance):
         """A source peer should mark a resource as not local"""
-        test_resource.source_peer = test_peer
+        test_resource.source_peer = peer_instance
         assert not test_resource.is_local()
 
-    def test_sourced_resource(self, test_resource, test_peer):
+    def test_sourced_resource(self, test_resource, peer_instance):
         """Both a source name and host should mark a resource as not local"""
         test_resource.source_name = "Another ORB"
         test_resource.source_host = "http://www.yahoo.com"
-        test_resource.source_peer = test_peer
+        test_resource.source_peer = peer_instance
         assert not test_resource.is_local()
 
 
