@@ -82,7 +82,7 @@ def test_resource_access_form(role_tag, intended_use, use_intended_use, intended
                               worker_count, use_worker_count, use_worker_cadre):
     """Ensure conditional field validitiy"""
     survey_intended_use = intended_use if use_intended_use else ''
-    survey_intended_use_other = intended_use_other if use_intended_use_other else ''
+    survey_intended_use_other = intended_use_other.strip() if use_intended_use_other else ''
     survey_health_worker_count = worker_count if use_worker_count else ''
     survey_health_worker_cadre = role_tag.slug if use_worker_cadre else ''
 
