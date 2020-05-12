@@ -84,7 +84,7 @@ class ResourceAccessForm(forms.Form):
                 del data[field]
 
         use_other = data.get('survey_intended_use_other')
-        worker_count = data.get('survey_health_worker_count', 0)
+        worker_count = data.get('survey_health_worker_count', 0) or 0  # Enforce 0 if '' or None
         worker_cadre = data.get('survey_health_worker_cadre')
 
         if intended_use == 'training':

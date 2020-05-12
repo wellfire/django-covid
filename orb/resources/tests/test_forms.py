@@ -82,7 +82,7 @@ def test_resource_access_form(role_tag, intended_use, use_intended_use, intended
     """Ensure conditional field validitiy"""
     survey_intended_use = intended_use if use_intended_use else ''
     survey_intended_use_other = intended_use_other.strip() if use_intended_use_other else ''
-    survey_health_worker_count = worker_count if use_worker_count else ''
+    survey_health_worker_count = worker_count if use_worker_count else None
     survey_health_worker_cadre = role_tag.slug if use_worker_cadre else ''
 
     assert Tag.tags.all().count() > 0
@@ -103,7 +103,7 @@ def test_resource_access_form(role_tag, intended_use, use_intended_use, intended
         survey_intended_use == 'other' and not survey_intended_use_other,
         survey_intended_use == 'training' and not survey_health_worker_count,
         survey_intended_use == 'training' and not survey_health_worker_cadre,
-        survey_intended_use == 'training' and survey_health_worker_count < 1,
+        survey_intended_use == 'training' and (survey_health_worker_count and survey_health_worker_count < 1),
     ]):
         form_validity = False
 
