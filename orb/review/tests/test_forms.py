@@ -3,7 +3,7 @@
 """
 Tests for ORB resource forms
 """
-import unittest
+from __future__ import unicode_literals
 
 from django.contrib.auth import get_user_model
 from django.test import TestCase
@@ -116,8 +116,8 @@ class AssignmentFormTests(TestCase):
 
         cls.resource = resource_factory(
             user=cls.user_four,
-            title=u"Básica salud del recién nacido",
-            description=u"Básica salud del recién nacido",
+            title="Básica salud del recién nacido",
+            description="Básica salud del recién nacido",
         )
 
     @classmethod

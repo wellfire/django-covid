@@ -32,7 +32,7 @@ class ResourceStep2FormTests(TestCase):
 
     def test_valid_missing_url_file(self):
         """Form should be invalid when missing both file and URL"""
-        form = ResourceStep2Form(data={"title": u"¡Olé!"})
+        form = ResourceStep2Form(data={"title": "¡Olé!"})
         self.assertFalse(form.is_valid())
 
     def test_valid_url(self):
@@ -41,12 +41,12 @@ class ResourceStep2FormTests(TestCase):
         Unicode is used for good measure to test encoding validation
         """
         form = ResourceStep2Form(data={
-            "url": u"http://www.wvi.org/publication/manual-para-madres-gu%C3%ADas"})
+            "url": "http://www.wvi.org/publication/manual-para-madres-gu%C3%ADas"})
         self.assertTrue(form.is_valid())
 
     def test_invalid_url(self):
         """Form shoudl reject invalid URLs"""
-        form = ResourceStep2Form(data={"url": u"htp://example.com/olé"})
+        form = ResourceStep2Form(data={"url": "htp://example.com/olé"})
         self.assertFalse(form.is_valid())
 
     def test_valid_file(self):

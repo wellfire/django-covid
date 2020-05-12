@@ -1,3 +1,6 @@
+
+from __future__ import unicode_literals
+
 import logging
 
 from crispy_forms.bootstrap import FieldWithButtons
@@ -8,8 +11,8 @@ from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.core.urlresolvers import reverse
 from django.core.validators import URLValidator
-from django.utils.functional import cached_property
 from django.template.defaultfilters import filesizeformat
+from django.utils.functional import cached_property
 from django.utils.html import strip_tags
 from django.utils.translation import ugettext_lazy as _
 
@@ -21,73 +24,73 @@ logger = logging.getLogger('orb')
 class ResourceStep1Form(forms.Form):
 
     title = forms.CharField(
-        label=_(u'Title'),
+        label=_('Title'),
         required=True,
-        error_messages={'required': _(u'Please enter a title')},)
+        error_messages={'required': _('Please enter a title')},)
     organisations = forms.CharField(
-        label=_(u'Organisations'),
-        help_text=_(u'Comma separated if entering more than one organisation'),
+        label=_('Organisations'),
+        help_text=_('Comma separated if entering more than one organisation'),
         required=True,
-        error_messages={'required': _(u'Please enter at least one organisation')},)
+        error_messages={'required': _('Please enter at least one organisation')},)
     description = forms.CharField(
-        label=_(u'Description'),
+        label=_('Description'),
         widget=forms.Textarea,
         required=True,
-        error_messages={'required': _(u'Please enter a description')},
-        help_text=_(u'Please enter no more than %d words.' % settings.ORB_RESOURCE_DESCRIPTION_MAX_WORDS), )
+        error_messages={'required': _('Please enter a description')},
+        help_text=_('Please enter no more than %d words.' % settings.ORB_RESOURCE_DESCRIPTION_MAX_WORDS), )
     image = forms.ImageField(
-        label=_(u'Image'),
+        label=_('Image'),
         required=False,
         error_messages={},
         widget=forms.ClearableFileInput,
         help_text=_(u'Note that this is an image of your resource. You can upload your actual resource on the next step/page'))
     health_topic = forms.MultipleChoiceField(
-        label=_(u'Health domain'),
+        label=_('Health domain'),
         widget=forms.CheckboxSelectMultiple,
         required=True,
-        error_messages={'required': _(u'Please select at least one health domain')},)
+        error_messages={'required': _('Please select at least one health domain')},)
     resource_type = forms.MultipleChoiceField(
-        label=_(u'Resource type'),
+        label=_('Resource type'),
         widget=forms.CheckboxSelectMultiple,
         required=True,
-        error_messages={'required': _(u'Please select at least one resource type')},)
+        error_messages={'required': _('Please select at least one resource type')},)
     audience = forms.MultipleChoiceField(
-        label=_(u'Audience'),
+        label=_('Audience'),
         widget=forms.CheckboxSelectMultiple,
         required=True,
-        error_messages={'required': _(u'Please select at least one audience')},)
+        error_messages={'required': _('Please select at least one audience')},)
     geography = forms.CharField(
-        label=_(u'Geography'),
+        label=_('Geography'),
         required=True,
-        help_text=_(u'The geographic area the resource is designed for, may be region e.g. ("Africa", "East Africa") or country (e.g. "Ethiopia", "Mali"). Comma separated if entering more than one geography'),
-        error_messages={'required': _(u'Please enter at least one geographical area')},)
+        help_text=_('The geographic area the resource is designed for, may be region e.g. ("Africa", "East Africa") or country (e.g. "Ethiopia", "Mali"). Comma separated if entering more than one geography'),
+        error_messages={'required': _('Please enter at least one geographical area')},)
     languages = forms.CharField(
-        label=_(u'Languages'),
+        label=_('Languages'),
         required=True,
         help_text=_(
-            u'The languages the resource uses. Comma separated if entering more than one language'),
-        error_messages={'required': _(u'Please enter at least one language')},)
+           'The languages the resource uses. Comma separated if entering more than one language'),
+        error_messages={'required': _('Please enter at least one language')},)
     device = forms.MultipleChoiceField(
-        label=_(u'Device'),
+        label=_('Device'),
         widget=forms.CheckboxSelectMultiple,
         required=True,
-        error_messages={'required': _(u'Please select at least one device')},)
+        error_messages={'required': _('Please select at least one device')},)
     license = forms.ChoiceField(
-        label=_(u'License'),
+        label=_('License'),
         widget=forms.Select,
         required=True,
-        error_messages={'required': _(u'Please select a license')},
-        help_text=_(u"<a href='/cc-faq' target='_blank'>More information on Creative Commons licenses</a>"),)
+        error_messages={'required': _('Please select a license')},
+        help_text=_("<a href='/cc-faq' target='_blank'>More information on Creative Commons licenses</a>"),)
     other_tags = forms.CharField(
-        label=_(u'Other tags'),
+        label=_('Other tags'),
         help_text=_(
-            u'Please enter any other relevant tags for this resource, comma separated if entering more than one tag'),
+           'Please enter any other relevant tags for this resource, comma separated if entering more than one tag'),
         required=False,
     )
     terms = forms.BooleanField(
-        label=_(u"Please tick the box to confirm that you have read the <a href='/resource/guidelines/' target='_blank' class='prominent'>guidelines and criteria</a> for submitting resources to ORB"),
+        label=_("Please tick the box to confirm that you have read the <a href='/resource/guidelines/' target='_blank' class='prominent'>guidelines and criteria</a> for submitting resources to ORB"),
         required=True,
-        error_messages={'required': _(u'Please tick the box to confirm that you have read the guidelines for submitting resources to COVID-19 Library')})
+        error_messages={'required': _('Please tick the box to confirm that you have read the guidelines for submitting resources to COVID-19 Library')})
     study_time_number = forms.IntegerField(
         required=False,
         label="",)
@@ -100,7 +103,7 @@ class ResourceStep1Form(forms.Form):
                                      'style': 'resize:none;'}),
         required=False,
         help_text=_(
-            u'Please enter any specific text you would like to be used for the attribution for this resource'),
+           'Please enter any specific text you would like to be used for the attribution for this resource'),
     )
 
     def __init__(self, *args, **kwargs):
@@ -128,8 +131,8 @@ class ResourceStep1Form(forms.Form):
             Div(
                 Div(
                     HTML(
-                        u"<label class='control-label' style='float:right; padding-right:10px;'>{0}</label>".format(
-                            _(u"Study Time")
+                        "<label class='control-label' style='float:right; padding-right:10px;'>{0}</label>".format(
+                            _("Study Time")
                         )),
                     css_class='col-lg-2 '
                 ),
@@ -160,7 +163,7 @@ class ResourceStep1Form(forms.Form):
             'terms',
             Row(HTML('<hr>')),
             Div(
-                Submit('submit', _(u'Continue &gt;&gt;'),
+                Submit('submit', _('Continue &gt;&gt;'),
                        css_class='btn btn-default'),
                 css_class='col-lg-offset-2 col-lg-8',
             ),
@@ -172,7 +175,7 @@ class ResourceStep1Form(forms.Form):
 
         if time_number and not time_unit:
             raise forms.ValidationError(
-                _(u"You have entered a study time, but not selected a unit."))
+                _("You have entered a study time, but not selected a unit."))
 
         return self.cleaned_data
 
@@ -180,7 +183,7 @@ class ResourceStep1Form(forms.Form):
         description = self.cleaned_data['description']
         no_words = len(strip_tags(description).split(' '))
         if no_words > settings.ORB_RESOURCE_DESCRIPTION_MAX_WORDS:
-            raise forms.ValidationError(_(u"You have entered {no_words} words, please enter no more than {max_words}".format(
+            raise forms.ValidationError(_("You have entered {no_words} words, please enter no more than {max_words}".format(
                 no_words=no_words, max_words=settings.ORB_RESOURCE_DESCRIPTION_MAX_WORDS)))
         return description
 
@@ -198,7 +201,7 @@ class ResourceStep1Form(forms.Form):
 
         if exists != 0:
             raise forms.ValidationError(
-                _(u"You have entered already submitted a resource with this title."))
+                _("You have entered already submitted a resource with this title."))
 
         return title
 
@@ -227,7 +230,7 @@ class ResourceStep2Form(forms.Form):
             'file',
             'url',
             Div(
-                Submit('submit', _(u'Add'), css_class='btn btn-default'),
+                Submit('submit', _('Add'), css_class='btn btn-default'),
                 css_class='col-lg-offset-2 col-lg-8',
             ),
             Row(HTML('<div style="clear:both;"></div><hr>')),)
@@ -238,11 +241,11 @@ class ResourceStep2Form(forms.Form):
 
         if self._errors:
             raise forms.ValidationError(
-                _(u"Please correct the errors below and resubmit the form."))
+                _("Please correct the errors below and resubmit the form."))
 
         if not file and not url:
             raise forms.ValidationError(
-                _(u"Please submit a file and/or a url for this resource"))
+                _("Please submit a file and/or a url for this resource"))
 
         return self.cleaned_data
 
@@ -253,10 +256,10 @@ class ResourceStep2Form(forms.Form):
             for blacklist in settings.TASK_UPLOAD_FILE_TYPE_BLACKLIST:
                 if file.content_type.startswith(blacklist):
                     raise forms.ValidationError(
-                        _(u'Currently, COVID-19 Library does not allow uploading of \'%s\' files' % file.content_type))
+                        _('Currently, COVID-19 Library does not allow uploading of \'%s\' files' % file.content_type))
 
             if file._size > settings.TASK_UPLOAD_FILE_MAX_SIZE:
-                raise forms.ValidationError(_(u'Please keep filesize under %(max_size)s. Current filesize %(actual_size)s') % {
+                raise forms.ValidationError(_('Please keep filesize under %(max_size)s. Current filesize %(actual_size)s') % {
                                             'max_size': filesizeformat(settings.TASK_UPLOAD_FILE_MAX_SIZE), 'actual_size': filesizeformat(file._size)})
 
         return file
@@ -269,14 +272,14 @@ class ResourceStep2Form(forms.Form):
                 validate(url)
             except ValidationError:
                 raise forms.ValidationError(
-                    _(u"This does not appear to be a valid Url"))
+                    _("This does not appear to be a valid Url"))
         return url
 
 
 class SearchForm(forms.Form):
     q = forms.CharField(
         required=True,
-        error_messages={'required': _(u'Please enter something to search for')},)
+        error_messages={'required': _('Please enter something to search for')},)
 
     def __init__(self, *args, **kwargs):
         super(SearchForm, self).__init__(*args, **kwargs)
@@ -286,7 +289,7 @@ class SearchForm(forms.Form):
         self.helper.form_class = 'form-horizontal'
         self.helper.field_class = 'col-lg-8'
         self.helper.layout = Layout(
-            FieldWithButtons('q', Submit('submit', _(u'Go'),
+            FieldWithButtons('q', Submit('submit', _('Go'),
                                          css_class='btn btn-default')),
 
         )
@@ -295,7 +298,7 @@ class SearchForm(forms.Form):
 class HeaderSearchForm(forms.Form):
     q = forms.CharField(label="Search:",
                         required=False,
-                        error_messages={"required": _(u"Please enter something to search for")},)
+                        error_messages={"required": _("Please enter something to search for")},)
 
     def __init__(self, *args, **kwargs):
         super(HeaderSearchForm, self).__init__(*args, **kwargs)
@@ -307,11 +310,11 @@ class HeaderSearchForm(forms.Form):
         self.helper.label_class = 'col-lg-1'
         self.helper.field_class = 'col-lg-4 navbar-right'
         self.helper.layout = Layout(
-            FieldWithButtons('q', Submit('submit', _(u"Search"),
+            FieldWithButtons('q', Submit('submit', _("Search"),
                                          css_class='btn btn-default')),
-            Row(HTML(u"<a href='{0}'>{1}</a>".format(
+            Row(HTML("<a href='{0}'>{1}</a>".format(
                 reverse('orb_search_advanced'),
-                _(u"Advanced search"),
+                _("Advanced search"),
             )), css_class="advanced-search-link hidden-xs")
         )
 
@@ -319,47 +322,47 @@ class HeaderSearchForm(forms.Form):
 class AdvancedSearchForm(forms.Form):
     q = forms.CharField(
         required=False,
-        label=_(u'Search terms'),
-        error_messages={'required': _(u'Please enter something to search for')},)
+        label=_('Search terms'),
+        error_messages={'required': _('Please enter something to search for')},)
     health_topic = forms.ModelMultipleChoiceField(
         queryset=Tag.tags.all(),
-        label=_(u'Health domain'),
+        label=_('Health domain'),
         widget=forms.CheckboxSelectMultiple,
         required=False,
     )
     resource_type = forms.ModelMultipleChoiceField(
         queryset=Tag.tags.all(),
-        label=_(u'Resource type'),
+        label=_('Resource type'),
         widget=forms.CheckboxSelectMultiple,
         required=False,
     )
     audience = forms.ModelMultipleChoiceField(
         queryset=Tag.tags.all(),
-        label=_(u'Audience'),
+        label=_('Audience'),
         widget=forms.CheckboxSelectMultiple,
         required=False,
     )
     geography = forms.ModelMultipleChoiceField(
         queryset=Tag.tags.all(),
-        label=_(u'Geography'),
+        label=_('Geography'),
         widget=forms.CheckboxSelectMultiple,
         required=False,
     )
     language = forms.ModelMultipleChoiceField(
         queryset=Tag.tags.all(),
-        label=_(u'Language'),
+        label=_('Language'),
         widget=forms.CheckboxSelectMultiple,
         required=False,
     )
     device = forms.ModelMultipleChoiceField(
         queryset=Tag.tags.all(),
-        label=_(u'Device'),
+        label=_('Device'),
         widget=forms.CheckboxSelectMultiple,
         required=False,
     )
     license = forms.MultipleChoiceField(
-        choices=[('ND', _(u'Derivatives allowed')), ('NC', _(u'Commercial use allowed'))],
-        label=_(u'License'),
+        choices=[('ND', _('Derivatives allowed')), ('NC', _('Commercial use allowed'))],
+        label=_('License'),
         widget=forms.CheckboxSelectMultiple,
         required=False,
     )
@@ -394,7 +397,7 @@ class AdvancedSearchForm(forms.Form):
             'license',
             Row(HTML('<hr>')),
             Div(
-                Submit('submit', _(u'Search'),
+                Submit('submit', _('Search'),
                        css_class='btn btn-default'),
                 css_class='col-lg-offset-2 col-lg-8',
             ),
@@ -416,7 +419,7 @@ class AdvancedSearchForm(forms.Form):
 
         if empty_tags and query == "" and empty_license:
             raise forms.ValidationError(
-                _(u"Please select at least a search term or a tag"))
+                _("Please select at least a search term or a tag"))
 
         return self.cleaned_data
 
@@ -456,16 +459,16 @@ class AdvancedSearchForm(forms.Form):
 
 
 class ResourceRejectForm(forms.Form):
-    criteria = forms.MultipleChoiceField(label=_(u'Criteria'),
+    criteria = forms.MultipleChoiceField(label=_('Criteria'),
                                         widget=forms.CheckboxSelectMultiple,
                                         required=True,)
     notes = forms.CharField(
                         widget=forms.Textarea,
                         required=True,
                         error_messages={'required': _(
-                            u'Please enter a reason as to why the resource has been rejected')},
-                        help_text=_(u'The text you enter here will be included in the email to the submitter of the resource, so please bear this in mind when explaining your reasoning.'),
-                        label=_(u"Reason for rejection")
+                           'Please enter a reason as to why the resource has been rejected')},
+                        help_text=_('The text you enter here will be included in the email to the submitter of the resource, so please bear this in mind when explaining your reasoning.'),
+                        label=_("Reason for rejection")
     )
 
     def __init__(self, *args, **kwargs):
@@ -478,7 +481,7 @@ class ResourceRejectForm(forms.Form):
             'criteria',
             'notes',
             Div(
-                Submit('submit', _(u'Submit'),
+                Submit('submit', _('Submit'),
                        css_class='btn btn-default'),
                 css_class='col-lg-offset-2 col-lg-8',
             ),

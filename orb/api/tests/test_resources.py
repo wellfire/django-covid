@@ -76,10 +76,10 @@ class TestOrbResource(object):
         assert resource_data['languages'] == ['en', 'es']
 
     def test_language_fields(self, test_resource, mocker):
-        mocker.patch.object(test_resource, 'title_es', u'Español')
-        mocker.patch.object(test_resource, 'title_pt_br', u'português')
-        mocker.patch.object(test_resource, 'description_es', u'Español description')
-        mocker.patch.object(test_resource, 'description_pt_br', u'português description')
+        mocker.patch.object(test_resource, 'title_es','Español')
+        mocker.patch.object(test_resource, 'title_pt_br','português')
+        mocker.patch.object(test_resource, 'description_es','Español description')
+        mocker.patch.object(test_resource, 'description_pt_br','português description')
 
         resource_data = get_resource_data(test_resource, ResourceResource)
         assert sorted(resource_data['languages']) == ['en', 'es', 'pt-br']

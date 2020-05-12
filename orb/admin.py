@@ -1,3 +1,5 @@
+from __future__ import unicode_literals
+
 from django import forms
 from django.conf.urls import url
 from django.contrib import admin
@@ -147,7 +149,7 @@ class TagAdmin(admin.ModelAdmin):
             if form.is_valid():
                 winner = form.cleaned_data['tag']
                 winner.merge(tag)
-                messages.success(request, u"The tag '{}' was merged into '{}'".format(tag, winner))
+                messages.success(request, "The tag '{}' was merged into '{}'".format(tag, winner))
                 return redirect('admin:orb_tag_changelist')
 
         context = dict(

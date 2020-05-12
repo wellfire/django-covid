@@ -142,13 +142,13 @@ class Resource(TimestampBase):
     attribution = models.TextField(blank=True, null=True, default=None)
 
     # Tracking fields
-    source_url = models.URLField(null=True, blank=True, help_text=_(u"Original resource URL."))
+    source_url = models.URLField(null=True, blank=True, help_text=_("Original resource URL."))
     source_name = models.CharField(null=True, blank=True, max_length=200,
-                                   help_text=_(u"Name of the source ORB instance where resource was sourced."))
+                                   help_text=_("Name of the source ORB instance where resource was sourced."))
     source_host = models.URLField(null=True, blank=True,
-                                   help_text=_(u"Host URL of the original ORB instance where resource was sourced."))
+                                   help_text=_("Host URL of the original ORB instance where resource was sourced."))
     source_peer = models.ForeignKey('peers.Peer', null=True, blank=True, related_name="resources",
-                                    help_text=_(u"The peer ORB from which the resource was downloaded."))
+                                    help_text=_("The peer ORB from which the resource was downloaded."))
     tags = models.ManyToManyField('Tag', through='ResourceTag', blank=True)
 
     resources = ResourceQueryset.as_manager()
@@ -159,8 +159,8 @@ class Resource(TimestampBase):
     API_EXCLUDED_FIELDS = ['id', 'guid']
 
     class Meta:
-        verbose_name = _(u'Resource')
-        verbose_name_plural = _(u'Resources')
+        verbose_name = _('Resource')
+        verbose_name_plural = _('Resources')
         ordering = ('title',)
 
     def __unicode__(self):
@@ -641,8 +641,8 @@ class ResourceCriteria(models.Model):
         'orb.ReviewerRole',
         related_name="criteria",
         blank=True, null=True,
-        help_text=_(u"Used to show specific criteria to reviewers based on their role. "
-                    u"Leave blank if criterion applies generally."),
+        help_text=_("Used to show specific criteria to reviewers based on their role. "
+                    "Leave blank if criterion applies generally."),
     )
 
     criteria = CriteriaQueryset.as_manager()
@@ -704,7 +704,7 @@ class Tag(TimestampBase):
     description = RichTextField(blank=True, null=True, default=None)
     summary = models.CharField(blank=True, null=True, max_length=100)
     contact_email = models.CharField(blank=True, null=True, max_length=100)
-    published = models.BooleanField(default=True, help_text=_(u"Used to toggle status of health domains."))
+    published = models.BooleanField(default=True, help_text=_("Used to toggle status of health domains."))
 
     tags = TagQuerySet.as_manager()
     objects = TagQuerySet.as_manager()
@@ -790,8 +790,8 @@ class TagProperty(models.Model):
     value = models.TextField(blank=False, null=False)
 
     class Meta:
-        verbose_name = _(u'Tag property')
-        verbose_name_plural = _(u'Tag properties')
+        verbose_name = _('Tag property')
+        verbose_name_plural = _('Tag properties')
         ordering = ('tag', 'name', 'value')
 
     def __unicode__(self):
@@ -863,17 +863,17 @@ class ResourceTag(models.Model):
 
 class UserProfile(TimestampBase):
     AGE_RANGE = [
-        ('under_18', _(u'under 18')),
-        ('18_25', _(u'18-24')),
-        ('25_35', _(u'25-34')),
-        ('35_50', _(u'35-50')),
-        ('over_50', _(u'over 50')),
-        ('none', _(u'Prefer not to say')),
+        ('under_18', _('under 18')),
+        ('18_25', _('18-24')),
+        ('25_35', _('25-34')),
+        ('35_50', _('35-50')),
+        ('over_50', _('over 50')),
+        ('none', _('Prefer not to say')),
     ]
     GENDER = [
-        ('female', _(u'Female')),
-        ('male', _(u'Male')),
-        ('none', _(u'Prefer not to say')),
+        ('female', _('Female')),
+        ('male', _('Male')),
+        ('none', _('Prefer not to say')),
     ]
 
     user = models.OneToOneField(User)
@@ -899,8 +899,8 @@ class UserProfile(TimestampBase):
 
     class Meta:
         db_table = "orb_userprofile"
-        verbose_name = _(u"user profile")
-        verbose_name_plural = _(u"user profiles")
+        verbose_name = _("user profile")
+        verbose_name_plural = _("user profiles")
 
     def __unicode__(self):
         return self.user.get_full_name()
@@ -923,11 +923,11 @@ class ResourceTracker(models.Model):
     DOWNLOAD = 'download'
     CREATE = 'create'
     TRACKER_TYPES = (
-        (VIEW, _(u'View')),
-        (VIEW_API, _(u'View-api')),
-        (EDIT, _(u'Edit')),
-        (DOWNLOAD, _(u'Download')),
-        (CREATE, _(u'Create')),
+        (VIEW, _('View')),
+        (VIEW_API, _('View-api')),
+        (EDIT, _('Edit')),
+        (DOWNLOAD, _('Download')),
+        (CREATE, _('Create')),
     )
     user = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True, default=None, on_delete=models.SET_NULL)
     type = models.CharField(max_length=50, choices=TRACKER_TYPES, default=VIEW)
@@ -954,9 +954,9 @@ class SearchTracker(models.Model):
     SEARCH_API = 'search-api'
     SEARCH_ADV = 'search-adv'
     SEARCH_TYPES = (
-        (SEARCH, _(u'search')),
-        (SEARCH_API, _(u'search-api')),
-        (SEARCH_ADV, _(u'search-adv')),
+        (SEARCH, _('search')),
+        (SEARCH_API, _('search-api')),
+        (SEARCH_ADV, _('search-adv')),
     )
     user = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True,
                              default=None, on_delete=models.SET_NULL)
@@ -975,9 +975,9 @@ class TagTracker(models.Model):
     VIEW_API = 'view-api'
     VIEW_URL = 'view-url'
     TRACKER_TYPES = (
-        (VIEW, _(u'View')),
-        (VIEW_API, _(u'View-API')),
-        (VIEW_URL, _(u'View-URL')),
+        (VIEW, _('View')),
+        (VIEW_API, _('View-API')),
+        (VIEW_URL, _('View-URL')),
     )
     user = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True,
                              default=None, on_delete=models.SET_NULL)
@@ -1002,16 +1002,16 @@ class Collection(TimestampBase):
     PUBLIC = 'public'
     PRIVATE = 'private'
     VISIBILITY_TYPES = (
-        (PUBLIC, _(u'Public')),
-        (PRIVATE, _(u'Private')),
+        (PUBLIC, _('Public')),
+        (PRIVATE, _('Private')),
     )
     title = models.TextField(blank=False,
                             null=False,
-                            help_text=_(u"A title for the collection"))
+                            help_text=_("A title for the collection"))
     description = models.TextField(blank=True,
                                    null=True,
                                    default=None,
-                                   help_text=_(u"A description of the collection"))
+                                   help_text=_("A description of the collection"))
     visibility = models.CharField(
                             max_length=50,
                             choices=VISIBILITY_TYPES,
@@ -1021,8 +1021,8 @@ class Collection(TimestampBase):
     slug = AutoSlugField(populate_from='title', max_length=255, blank=True, null=True)
 
     class Meta:
-        verbose_name = _(u'Collection')
-        verbose_name_plural = _(u'Collections')
+        verbose_name = _('Collection')
+        verbose_name_plural = _('Collections')
         ordering = ('title',)
 
     def __unicode__(self):

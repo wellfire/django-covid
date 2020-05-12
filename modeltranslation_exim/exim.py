@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from __future__ import unicode_literals
+
 import importlib
 import sys
 from collections import defaultdict, OrderedDict
@@ -64,7 +66,7 @@ class DatabaseTranslations(object):
     translated values (msgstr) and occurrences.::
 
         {
-            u"Hello": {
+            "Hello": {
                 "msgstr": "Holá",
                 "occurrences": [
                     ("myapp.SomeModel.field_name", 12),
@@ -88,7 +90,7 @@ class DatabaseTranslations(object):
 
         """
         self.models_and_fields = model_fields
-        self.strings = defaultdict(lambda: {"msgstr": u"", "occurrences": []})
+        self.strings = defaultdict(lambda: {"msgstr": "", "occurrences": []})
         self.target_language = language
         self.po = polib.POFile()
         self.po.metadata = self._meta()

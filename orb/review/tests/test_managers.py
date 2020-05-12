@@ -3,10 +3,11 @@
 """
 Tests for orb.review managers and querysets
 """
+from __future__ import unicode_literals
 
 from datetime import date, timedelta
-from django.test import TestCase
 
+from django.test import TestCase
 from freezegun import freeze_time
 
 from orb.models import Resource, ReviewerRole, ResourceCriteria
@@ -35,13 +36,13 @@ class ReviewQuerysetTests(ReviewTestCase):
         super(ReviewQuerysetTests, cls).setUpClass()
         cls.resource_two = resource_factory(
             user=cls.nonreviewer,
-            title=u"Second review",
-            description=u"Básica salud del recién nacido",
+            title="Second review",
+            description="Básica salud del recién nacido",
         )
         cls.resource_three = resource_factory(
             user=cls.nonreviewer,
-            title=u"Third réview",
-            description=u"Básica salud del recién nacido",
+            title="Third réview",
+            description="Básica salud del recién nacido",
         )
 
         ContentReview.objects.create(

@@ -61,7 +61,7 @@ class ResourceAccessForm(forms.Form):
             'survey_health_worker_count',
             'survey_health_worker_cadre',
             Div(
-                Submit('submit', _(u'Continue &gt;&gt;'),
+                Submit('submit', _('Continue &gt;&gt;'),
                        css_class='btn btn-default'),
                 css_class='col-lg-offset-2 col-lg-8',
             ),

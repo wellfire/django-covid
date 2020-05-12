@@ -444,10 +444,10 @@ class DeleteProfileForm(forms.Form):
     username = forms.CharField(widget=forms.TextInput(attrs={'readonly': 'readonly'}),
                                required=True)
     password = forms.CharField(widget=forms.PasswordInput,
-                               error_messages={'required': _(u'Please enter your password.'),},
+                               error_messages={'required': _('Please enter your password.'),},
                                required=True)
     delete_resources = forms.BooleanField(
-                            label=_(u"Permanently delete the resources I have uploaded to COVID-19 Library"),
+                            label=_("Permanently delete the resources I have uploaded to COVID-19 Library"),
                             required=False)
 
     def __init__(self, resources_count, *args, **kwargs):
@@ -465,7 +465,7 @@ class DeleteProfileForm(forms.Form):
             self.helper.layout.append('delete_resources')
         self.helper.layout.append(
             Div(
-                Submit('submit', _(u'Delete Account'), css_class='btn btn-default'),
+                Submit('submit', _('Delete Account'), css_class='btn btn-default'),
                 HTML("""<a role="button" class="btn btn-default"
                         href="{% url "my_profile_edit" %}">Cancel</a>"""),
                 css_class='col-lg-offset-2 col-lg-4',
@@ -480,6 +480,6 @@ class DeleteProfileForm(forms.Form):
 
         user = authenticate(username=username, password=password)
         if user is None or not user.is_active:
-            raise forms.ValidationError(_(u"Invalid password. Please try again."))
+            raise forms.ValidationError(_("Invalid password. Please try again."))
         return cleaned_data
 

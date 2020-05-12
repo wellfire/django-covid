@@ -17,6 +17,8 @@ an interface for managing the state of the review as well as associated
 side effects of changing the status.
 """
 
+from __future__ import unicode_literals
+
 from datetime import date, timedelta
 
 from django.conf import settings
@@ -50,7 +52,7 @@ class ReviewLogEntry(TimestampBase):
         verbose_name_plural = _("review log entries")
 
     def __unicode__(self):
-        return u"{0}: {1}".format(self.review, self.review_status)
+        return "{0}: {1}".format(self.review, self.review_status)
 
 
 class ReviewQueryset(models.QuerySet):
@@ -114,7 +116,7 @@ class ContentReview(TimestampBase):
         )
 
     def __unicode__(self):
-        return u"{0}: {1}".format(self.reviewer, self.resource)
+        return "{0}: {1}".format(self.reviewer, self.resource)
 
     def save(self, **kwargs):
         super(ContentReview, self).save(**kwargs)

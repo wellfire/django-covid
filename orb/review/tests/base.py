@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 
 from django.contrib.auth.models import User
 from django.test import TestCase
@@ -34,8 +35,8 @@ class ReviewTestCase(TestCase):
 
         cls.resource = resource_factory(
             user=cls.nonreviewer,
-            title=u"Básica salud del recién nacido",
-            description=u"Básica salud del recién nacido",
+            title="Básica salud del recién nacido",
+            description="Básica salud del recién nacido",
         )
 
     @classmethod

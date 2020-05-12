@@ -113,7 +113,7 @@ LOCALE_PATHS = [
 ]
 gettext = lambda s: s  # noqa
 LANGUAGES = [
-    ('en', u'English'),
+    ('en','English'),
 ]
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 #####################################################################
@@ -217,7 +217,7 @@ ORB_GOOGLE_ANALYTICS_CODE = ''
 ORB_INFO_EMAIL = 'orb@example.com'
 ORB_PAGINATOR_DEFAULT = 20
 ORB_RESOURCE_MIN_RATINGS = 3
-TASK_UPLOAD_FILE_TYPE_BLACKLIST = [u'application/vnd.android']
+TASK_UPLOAD_FILE_TYPE_BLACKLIST = ['application/vnd.android']
 TASK_UPLOAD_FILE_MAX_SIZE = "5242880"
 STAGING = False  # used for version context processor
 IP_STACK_API_KEY = '' # set this in your local_settings.py

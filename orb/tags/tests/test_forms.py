@@ -11,10 +11,10 @@ from orb.tags.forms import TagPageForm
 
 
 @given(st.characters())
-@example(u'-create_date')
-@example(u'title')
-@example(u'-update_date')
-@example(u'-rating')
+@example('-create_date')
+@example('title')
+@example('-update_date')
+@example('-rating')
 def test_tag_order_validation(order_by):
     form = TagPageForm(data={'order': order_by, 'page': 1})
 

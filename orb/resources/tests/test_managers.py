@@ -3,6 +3,7 @@
 """
 Tests for ORB resource models
 """
+from __future__ import unicode_literals
 
 from django.contrib.auth.models import User, AnonymousUser
 from django.test import TestCase
@@ -32,25 +33,25 @@ class ResourceTests(TestCase):
 
         approved = resource_factory(
             user=cls.user,
-            title=u"Básica salud del recién nacido",
-            description=u"Básica salud del recién nacido",
+            title="Básica salud del recién nacido",
+            description="Básica salud del recién nacido",
             status=Resource.APPROVED,
         )
         unapproved_user = resource_factory(
             create_user=cls.user,
             update_user=cls.updater,
-            title=u"Unapproved resource",
-            description=u"Unapproved, owned by user",
+            title="Unapproved resource",
+            description="Unapproved, owned by user",
         )
         unapproved_staff = resource_factory(
             user=cls.staff,
-            title=u"Staff resource",
-            description=u"Unapproved, owned by staff user",
+            title="Staff resource",
+            description="Unapproved, owned by staff user",
         )
         archived_resource = resource_factory(
             user=cls.staff,
-            title=u"Archived",
-            description=u"Archived, owned by staff user",
+            title="Archived",
+            description="Archived, owned by staff user",
             status=Resource.ARCHIVED,
         )
 

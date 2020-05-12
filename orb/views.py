@@ -1,3 +1,5 @@
+from __future__ import unicode_literals
+
 import os
 from collections import defaultdict
 
@@ -47,7 +49,7 @@ def home_view(request):
     return render(request, 'orb/home.html', {
         'topics': topics,
         'organized_topics': home_resources(),
-        'page_title': _(u'COVID-19'),
+        'page_title': _('COVID-19'),
     })
 
 
@@ -126,28 +128,28 @@ def resource_view(request, resource_slug):
 
     if resource.status == Resource.ARCHIVED:
         messages.error(request, _(
-            u"This resource has been archived by the COVID-19 Library Content"
-            u" Review Team, so is not available for users to view"))
+            "This resource has been archived by the COVID-19 Library Content"
+            " Review Team, so is not available for users to view"))
     elif resource.status != Resource.APPROVED:
         messages.error(request, _(
-            u"This resource is not yet approved by the COVID-19 Library Content"
-            u" Review Team, so is not yet available for all users to view"))
+            "This resource is not yet approved by the COVID-19 Library Content"
+            " Review Team, so is not yet available for all users to view"))
 
     options_menu = []
     if resource_can_edit(resource, request.user):
         om = {}
-        om['title'] = _(u'Edit')
+        om['title'] = _('Edit')
         om['url'] = reverse('orb_resource_edit', args=[resource.id])
         options_menu.append(om)
 
     if request.user.is_staff and resource.status == Resource.PENDING:
         om = {}
-        om['title'] = _(u'Reject')
+        om['title'] = _('Reject')
         om['url'] = reverse('orb_resource_reject', args=[resource.id])
         options_menu.append(om)
 
         om = {}
-        om['title'] = _(u'Approve')
+        om['title'] = _('Approve')
         om['url'] = reverse('orb_resource_approve', args=[resource.id])
         options_menu.append(om)
 
@@ -185,7 +187,7 @@ def resource_view(request, resource_slug):
 def resource_create_step1_view(request):
     if request.user.is_anonymous():
         return render(request, 'orb/login_required.html', {
-            'message': _(u'You need to be logged in to add a resource.'),
+            'message': _('You need to be logged in to add a resource.'),
         })
 
     if request.method == 'POST':
@@ -245,7 +247,7 @@ def resource_create_step2_view(request, id):
     if request.user.is_anonymous():
         # TODO use contrib.messages
         return render(request, 'orb/login_required.html', {
-            'message': _(u'You need to be logged in to add a resource.'),
+            'message': _('You need to be logged in to add a resource.'),
         })
 
     resource = get_object_or_404(Resource, pk=id)
@@ -560,7 +562,7 @@ def resource_edit_step2_view(request, resource_id):
     if request.user.is_anonymous():
         # TODO use contrib.messages
         return render(request, 'orb/login_required.html', {
-            'message': _(u'You need to be logged in to add a resource.'),
+            'message': _('You need to be logged in to add a resource.'),
         })
 
     resource = get_object_or_404(Resource, pk=resource_id)
@@ -755,7 +757,7 @@ def advanced_search_form_set_choices(form):
             category__slug=slug, resourcetag__resource__status=Resource.APPROVED).distinct().order_by('order_by', 'name')]
 
     form.fields['license'].choices = [
-        ('ND', _(u'Derivatives allowed')), ('NC', _(u'Commercial use allowed'))]
+        ('ND', _('Derivatives allowed')), ('NC', _('Commercial use allowed'))]
     return form
 
 

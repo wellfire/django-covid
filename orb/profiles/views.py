@@ -1,3 +1,5 @@
+from __future__ import unicode_literals
+
 import hashlib
 import urllib
 
@@ -42,7 +44,7 @@ def login_view(request):
     else:
         form = LoginForm(initial={'next': request.GET.get('next'), })
 
-    return render(request, 'orb/form.html', {'username': username, 'form': form, 'title': _(u'Login')})
+    return render(request, 'orb/form.html', {'username': username, 'form': form, 'title': _('Login')})
 
 
 class RegistrationView(FormView):
@@ -65,7 +67,7 @@ class RegistrationView(FormView):
 
     def get_context_data(self, **kwargs):
         context = super(RegistrationView, self).get_context_data(**kwargs)
-        context['title'] = _(u'Register')
+        context['title'] = _('Register')
         return context
 
     def form_valid(self, form):
@@ -98,7 +100,7 @@ def reset(request):
     else:
         form = ResetForm()  # An unbound form
 
-    return render(request, 'orb/form.html', {'form': form, 'title': _(u'Reset password')})
+    return render(request, 'orb/form.html', {'form': form, 'title': _('Reset password')})
 
 
 @login_required
@@ -155,14 +157,14 @@ def edit(request):
             user_profile.about = form.cleaned_data.get("about")
             user_profile.save()
 
-            messages.success(request, _(u"Profile updated"))
+            messages.success(request, _("Profile updated"))
 
             # if password should be changed
             password = form.cleaned_data.get("password")
             if password:
                 request.user.set_password(password)
                 request.user.save()
-                messages.success(request, _(u"Password updated"))
+                messages.success(request, _("Password updated"))
     else:
         try:
             user_profile = UserProfile.objects.get(user=request.user)
@@ -247,7 +249,7 @@ def export_data(request):
     tag_trackers = TagTracker.objects.filter(user=request.user).order_by('-access_date')
     search_trackers = SearchTracker.objects.filter(user=request.user).order_by('-access_date')
     ratings = ResourceRating.objects.filter(user=request.user).order_by('-create_date')
-    
+
     return render(request, 'orb/profile/export.html',
                   {'userrecord': model_to_dict(request.user, fields=[field.name for field in request.user._meta.fields]),
                    'userprofile': model_to_dict(request.user.userprofile, fields=[field.name for field in request.user.userprofile._meta.fields]),
@@ -258,32 +260,32 @@ def export_data(request):
                    'tag_trackers': tag_trackers,
                    'search_trackers': search_trackers,
                    'ratings': ratings})
-    
-    
+
+
 
 @login_required
 def delete_account(request):
     resources_count = Resource.objects.filter(create_user=request.user).count()
-    
+
     if request.method == 'POST':
         form = DeleteProfileForm(resources_count, request.POST)
         if form.is_valid():
-           
+
             # ratings
             ResourceRating.objects.filter(user=request.user).delete()
-            
+
             # search trackers
             SearchTracker.objects.filter(user=request.user).delete()
-            
+
             # tag trackers
             TagTracker.objects.filter(user=request.user).delete()
-            
+
             # resource trackers
             ResourceTracker.objects.filter(user=request.user).delete()
-            
+
             # collections
             CollectionUser.objects.filter(user=request.user).delete()
-            
+
             if form.cleaned_data.get("delete_resources"):
                 # resources
                 Resource.objects.filter(create_user=request.user).delete()
@@ -291,15 +293,15 @@ def delete_account(request):
                 ResourceURL.objects.filter(create_user=request.user).delete()
                 # resource_files
                 ResourceFile.objects.filter(create_user=request.user).delete()
-            
+
             # user
             u = User.objects.get(pk=request.user.id)
             u.delete()
-            
-            return HttpResponseRedirect(reverse('profile_delete_account_complete')) 
+
+            return HttpResponseRedirect(reverse('profile_delete_account_complete'))
     else:
         form = DeleteProfileForm(resources_count, initial={'username':request.user.username},)
-         
+
     return render(request, 'orb/profile/delete.html',
                   {'form': form })
 

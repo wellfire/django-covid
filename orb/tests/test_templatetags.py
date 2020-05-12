@@ -8,9 +8,9 @@ from orb.templatetags.translation_tags import translated_fields
 @pytest.mark.django_db
 def test_translated_fields_tag(test_resource, settings):
     settings.LANGUAGES = [
-        ('en', u'English'),
-        ('es', u'Español'),
-        ('pt-br', u'Português'),
+        ('en','English'),
+        ('es','Español'),
+        ('pt-br','Português'),
     ]
     test_resource.title_en = "Hey"
     test_resource.title_pt_br = "Ei"
