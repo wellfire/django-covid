@@ -8,15 +8,6 @@ import polib
 from django.apps import apps
 
 
-class OrderedDefaultDict(OrderedDict, defaultdict):
-    """
-    A default dict that maintains the order of insertions
-    """
-    def __init__(self, default_factory=None, *args, **kwargs):
-        super(OrderedDefaultDict, self).__init__(*args, **kwargs)
-        self.default_factory = default_factory
-
-
 def translated_field_list(*args):
     """
     Generates a dictionary of translatable model fields associated with the model.
@@ -97,7 +88,7 @@ class DatabaseTranslations(object):
 
         """
         self.models_and_fields = model_fields
-        self.strings = OrderedDefaultDict(lambda: {"msgstr": u"", "occurrences": []})
+        self.strings = defaultdict(lambda: {"msgstr": u"", "occurrences": []})
         self.target_language = language
         self.po = polib.POFile()
         self.po.metadata = self._meta()
