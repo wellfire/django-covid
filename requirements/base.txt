@@ -31,7 +31,6 @@ django-fsm==2.4.0
 
 django-extensions==1.7.5
 defusedxml==0.5.0
-dj_database_url==0.4.2
 
 dicttoxml==1.7.4
 
