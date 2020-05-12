@@ -373,10 +373,10 @@ class Resource(TimestampBase):
 
         This is based on having both title and description for these fields.
         """
-        field_names = {
-            language[0]: [build_localized_fieldname(field, language[0]) for field in ["title", "description"]]
+        field_names = OrderedDict([
+            (language[0], [build_localized_fieldname(field, language[0]) for field in ["title", "description"]])
             for language in settings.LANGUAGES
-        }
+        ])
 
         return [
             language for language, fields in field_names.items() if all([getattr(self, field) for field in fields])
