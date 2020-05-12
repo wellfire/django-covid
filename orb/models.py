@@ -62,13 +62,11 @@ def orb_mimetype(extension):
         ("wmv", "video/x-ms-wmv"),
     ])
 
-    lookup = "." + extension
-
     try:
-        return types_map[lookup]
+        return types_map[extension]
     except KeyError:
         try:
-            return mimetypes.types_map[lookup]
+            return mimetypes.types_map["." + extension]
         except KeyError:
             return "application/octet-stream"
 
