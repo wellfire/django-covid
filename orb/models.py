@@ -13,7 +13,6 @@ import parsedatetime as pdt
 from ckeditor.fields import RichTextField
 from django.conf import settings
 from django.contrib.auth.models import User
-from django.core import urlresolvers
 from django.urls import reverse
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
@@ -175,7 +174,7 @@ class Resource(TimestampBase):
         return self
 
     def get_absolute_url(self):
-        return urlresolvers.reverse('orb_resource', args=[self.slug])
+        return reverse('orb_resource', args=[self.slug])
 
     def update_from_api(self, api_data):
         """
@@ -719,7 +718,7 @@ class Tag(TimestampBase):
         return self.name
 
     def get_absolute_url(self):
-        return urlresolvers.reverse('orb_tags', args=[self.slug])
+        return reverse('orb_tags', args=[self.slug])
 
     def save(self, *args, **kwargs):
 
@@ -1031,7 +1030,7 @@ class Collection(TimestampBase):
         return self.title
 
     def get_absolute_url(self):
-        return urlresolvers.reverse('orb_collection', args=[self.slug])
+        return reverse('orb_collection', args=[self.slug])
 
     def image_filename(self):
         return os.path.basename(self.image.name)
