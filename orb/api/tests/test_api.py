@@ -8,9 +8,9 @@ import uuid
 import pytest
 from django.contrib.auth.models import User
 from tastypie.models import ApiKey
-from tastypie.test import ResourceTestCase
 
 from orb.models import SearchTracker
+from orb.tests import ResourceTestCase
 from orb.tests.utils import login_client
 
 
