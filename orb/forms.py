@@ -9,7 +9,7 @@ from crispy_forms.layout import HTML, Div, Field, Layout, Row, Submit
 from django import forms
 from django.conf import settings
 from django.core.exceptions import ValidationError
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.core.validators import URLValidator
 from django.template.defaultfilters import filesizeformat
 from django.utils.functional import cached_property

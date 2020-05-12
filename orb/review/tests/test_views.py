@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 import mock
 from django.core.exceptions import PermissionDenied
-from django.core.urlresolvers import resolve, reverse
+from django.urls import resolve, reverse
 from django.http import Http404
 from django.test import TestCase
 

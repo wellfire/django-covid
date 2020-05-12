@@ -4,7 +4,7 @@ import re
 
 from django.conf.urls import url
 from django.core.paginator import InvalidPage, Paginator
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.http.response import Http404
 from django.utils.html import strip_tags
 from haystack.query import SearchQuerySet

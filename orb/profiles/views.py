@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db.models import Q
 from django.forms.models import model_to_dict
 from django.http import Http404, HttpResponseRedirect

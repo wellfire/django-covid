@@ -6,7 +6,7 @@ from collections import defaultdict
 from django.conf import settings
 from django.contrib import messages
 from django.core.paginator import EmptyPage, InvalidPage, Paginator
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db.models import Count, Q
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
