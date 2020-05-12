@@ -220,7 +220,7 @@ class Resource(TimestampBase):
 
         cleaned_api_data = clean_api_data(api_data, 'attribution', 'description', 'title')
 
-        for attr, value in cleaned_api_data.iteritems():
+        for attr, value in cleaned_api_data.items():
             setattr(self, attr, value)
 
         self.update_user = import_user

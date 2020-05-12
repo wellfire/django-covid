@@ -135,7 +135,7 @@ class AssignmentFormTests(TestCase):
     def test_initial_values(self):
         """If no assignments, should have no initial values"""
         form = AssignmentForm(resource=self.resource)
-        for value in form.initial.itervalues():
+        for value in form.initial.values():
             self.assertEqual(value, None)
 
     def test_has_assignments(self):
