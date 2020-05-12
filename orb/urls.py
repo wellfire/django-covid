@@ -15,7 +15,7 @@ urlpatterns = [
     url(r'^how-to/$', TemplateView.as_view(template_name="orb/how_to.html"), name="orb_how_to"),
     url(r'^cc-faq/$', TemplateView.as_view(template_name="orb/cc-faq.html"), name="orb_cc_faq"),
     url(r'^partners/$', views.partner_view, name="orb_partners"),
-    url(r'^taxonomy/$', views.taxonomy_view, name="orb_taxonomy"),
+    url(r'^upload-instructions/$', views.upload_instructions_view, name="orb_upload_instructions"),
     url(r'^terms/$', TemplateView.as_view(template_name="orb/terms.html"), name="orb_terms"),
 
     url(r'^profile/', include('orb.profiles.urls')),

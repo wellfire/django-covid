@@ -111,8 +111,8 @@ def tag_view(request, tag_slug):
     })
 
 
-def taxonomy_view(request):
-    return render(request, 'orb/taxonomy.html')
+def upload_instructions_view(request):
+    return render(request, 'orb/upload_instructions.html')
 
 
 def resource_permalink_view(request, id):

@@ -12,6 +12,9 @@
 
 <h2>{% trans 'Add Resource - Step 1' %}</h2>
 
+<p>For more information and guidance about uploading resources, see the 
+<a href="{% url 'orb_upload_instructions' %}" target="_blank">Uploading Instructions</a>.</p>
+
 {% crispy form %}
 {% wysiwyg_editor "id_description" %}
 <div id='form-errors'>{{ form_errors }}</div>
