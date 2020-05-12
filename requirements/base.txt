@@ -25,7 +25,7 @@ django-tinymce>=2.6.0,<2.7.0
 django-wysiwyg>=0.7.0,<1.0
 django-haystack==2.7.0
 django-autoslugged==2.0.0.dev0
-django-modeltranslation>=0.12,<0.13
+django-modeltranslation==0.14.3
 django-fsm==2.7.0
 
 
