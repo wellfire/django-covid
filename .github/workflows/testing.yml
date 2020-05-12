@@ -11,7 +11,7 @@ jobs:
       fail-fast: false
       matrix:
         python: [2.7, 3.6]
-        django: [1.11, 2.0]
+        django: [1.11.29, 2.0.13]
         exclude:
           - python: 2.7
             django: 2.0
@@ -30,7 +30,7 @@ jobs:
         id: pip-cache
         with:
           path: ~/.cache/pip
-          key: pip-${{ hashFiles('requirements/*.txt') }}-${{ matrix.python }}
+          key: pip-${{ hashFiles('requirements/*.txt') }}-${{ matrix.python }}-${{ matrix.django }}
 
       - name: Install dependencies
         run: |
