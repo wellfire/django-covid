@@ -18,7 +18,7 @@ textract==1.6.3
 Unidecode==1.0.22
 parsedatetime==2.2
 
-django-tastypie==0.13.3
+django-tastypie==0.14.3
 django-tablib>=0.9.11,<4.0
 django-crispy-forms==1.7.2
 django-tinymce>=2.6.0,<2.7.0
