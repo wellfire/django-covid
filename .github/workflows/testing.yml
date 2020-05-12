@@ -34,7 +34,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install Django==${{ matrix.djagno }}
+          python -m pip install Django==${{ matrix.django }}
           python -m pip install -r requirements/base.txt
           python -m pip install -r requirements/test.txt
 
