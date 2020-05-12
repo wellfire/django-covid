@@ -73,7 +73,6 @@ def role_tag(role_category, testing_user):
     yield tag
 
 
-
 @pytest.fixture
 def test_resource(testing_user):
     yield resource_factory(
@@ -83,19 +82,18 @@ def test_resource(testing_user):
     )
 
 
-@pytest.fixture(scope="session")
-def test_peer():
-    peer = Peer.peers.create(name="Distant COVID-19 Library", host="http://www.orb.org/")
-    yield peer
+@pytest.fixture
+def peer_instance():
+    yield Peer.peers.create(name="Distant COVID-19 Library", host="http://www.orb.org/")
 
 
-@pytest.fixture(scope="session")
-def remote_resource(import_user, test_peer):
+@pytest.fixture
+def remote_resource(import_user, peer_instance):
     """Fixture for a remotely created resource"""
     yield resource_factory(
         user=import_user,
         title=u"A remote resource",
         description=u"<p>A remote resource</p>",
-        source_peer=test_peer,
+        source_peer=peer_instance,
     )
 

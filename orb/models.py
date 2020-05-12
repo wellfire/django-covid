@@ -38,6 +38,47 @@ from ckeditor.fields import RichTextField
 cal = pdt.Calendar()
 
 
+def orb_mimetype(extension):
+    """
+    Returns the mimetype for a file extension
+
+    We use this as the primary lookup because mimetypes seem to
+    differ between systems and this allows consistency, especially
+    for testing.
+
+    Args:
+        extension: string, just the file extension (e.g. jpg)
+
+    Returns:
+        the string mimetype
+
+    """
+    types_map = dict([
+        ("pdf", "application/pdf"),
+        ("mp4", "video/mp4"),
+        ("mbz", "application/octet-stream"),
+        ("zip", "application/zip"),
+        ("docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"),
+        ("png", "image/png"),
+        ("ppt", "application/vnd.ms-powerpoint"),
+        ("jpg", "image/jpeg"),
+        ("pptx", "application/vnd.openxmlformats-officedocument.presentationml.presentation"),
+        ("m4v", "video/x-m4v"),
+        ("mov", "video/quicktime"),
+        ("wmv", "video/x-ms-wmv"),
+    ])
+
+    lookup = "." + extension
+
+    try:
+        return types_map[lookup]
+    except KeyError:
+        try:
+            return mimetypes.types_map[lookup]
+        except KeyError:
+            return "application/octet-stream"
+
+
 class WorkflowQueryset(models.QuerySet):
 
     def rejected(self):
@@ -162,7 +203,7 @@ class Resource(TimestampBase):
         updated_time, result = cal.parseDT(api_data.pop('update_date'))
         created_time, result = cal.parseDT(api_data.pop('create_date'))
 
-        if updated_time.date <= self.create_date.date:
+        if updated_time.date() <= self.create_date.date():
             return False
 
         resource_files = api_data.pop('files', [])
@@ -552,11 +593,7 @@ class ResourceFile(TimestampBase):
         relies on the file extension. As a result it may not be 100%
         accurate.
         """
-        print(self.file_extension, "." + self.file_extension)
-        try:
-            return mimetypes.types_map["." + self.file_extension]
-        except KeyError:
-            return "application/octet-stream"
+        return orb_mimetype(self.file_extension)
 
     @property
     def is_embeddable(self):
