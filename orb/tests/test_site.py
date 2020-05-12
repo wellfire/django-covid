@@ -413,6 +413,7 @@ class AnalyticsPageTest(TestCase):
         response = self.client.get(reverse('orb_analytics_home'))
         self.assertEqual(response.status_code, 302)
 
+    @unittest.skip("deprecated")
     def test_anon_analytics_map(self):
         response = self.client.get(reverse('orb_analytics_map'))
         self.assertEqual(response.status_code, 302)
@@ -422,6 +423,7 @@ class AnalyticsPageTest(TestCase):
         response = self.client.get(reverse('orb_analytics_home'))
         self.assertEqual(response.status_code, 403)
 
+    @unittest.skip("deprecated")
     @login_client(username='standarduser', password='password')
     def test_standard_user_analytics_map(self):
         response = self.client.get(reverse('orb_analytics_map'))
@@ -432,6 +434,7 @@ class AnalyticsPageTest(TestCase):
         response = self.client.get(reverse('orb_analytics_home'))
         self.assertEqual(response.status_code, 403)
 
+    @unittest.skip("deprecated")
     @login_client(username='apiuser', password='password')
     def test_api_user_analytics_map(self):
         response = self.client.get(reverse('orb_analytics_map'))
@@ -442,6 +445,7 @@ class AnalyticsPageTest(TestCase):
         response = self.client.get(reverse('orb_analytics_home'))
         self.assertEqual(response.status_code, 200)
 
+    @unittest.skip("deprecated")
     @login_client(username='superuser', password='password')
     def test_superuser_analytics_map(self):
         response = self.client.get(reverse('orb_analytics_map'))
@@ -452,6 +456,7 @@ class AnalyticsPageTest(TestCase):
         response = self.client.get(reverse('orb_analytics_home'))
         self.assertEqual(response.status_code, 200)
 
+    @unittest.skip("deprecated")
     @login_client(username='staffuser', password='password')
     def test_staff_user_analytics_map(self):
         response = self.client.get(reverse('orb_analytics_map'))
@@ -463,6 +468,7 @@ class AnalyticsPageTest(TestCase):
         self.assertEqual(response.status_code, 403)
         self.client.logout()
 
+    @unittest.skip("deprecated")
     @login_client(username='orgowner', password='password')
     def test_org_owner_analytics_map(self):
         response = self.client.get(reverse('orb_analytics_map'))

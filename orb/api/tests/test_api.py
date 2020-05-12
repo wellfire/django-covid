@@ -13,6 +13,7 @@ from orb.tests.utils import login_client
 
 
 class ApiTestFixture(object):
+
     @classmethod
     def setUpClass(cls):
 
@@ -100,6 +101,7 @@ class SearchResourceTest(ApiTestFixture, ResourceTestCase):
             tracker_count_end = SearchTracker.objects.all().count()
             self.assertEqual(tracker_count_start + 1, tracker_count_end)
 
+    @pytest.mark.skip(reason="Requires Solr setup which is highly desirable but an unnecessary blocker")
     @pytest.mark.solr
     def test_search_results(self):
         for u in self.user_set:

@@ -1,6 +1,6 @@
-====================
+==================================
 COVID-19 Library Content Platform
-====================
+==================================
 
 Development
 ===========
@@ -89,19 +89,10 @@ And then run the command::
 
     tox
 
-This will run all specified tests against all specified environments in
-sequence. Alternatively, you can specify one or more environments using the
-`-e` argument::
-
-    tox -e deployed
-
-This particular environment will run tests using the frozen requirements for
-the deployed environment.
-
 Using the `-r` flag will recreate the test environment from scratch.::
 
     tox -r
-    tox -e deployed -r
+    tox -e py36-django2.2 -r
 
 For running a large matrix of tests, consider using the `detox
 <https://pypi.python.org/pypi/detox>`_ tool which parallelizes tests based on
