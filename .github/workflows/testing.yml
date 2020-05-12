@@ -11,6 +11,10 @@ jobs:
       fail-fast: false
       matrix:
         python: [2.7, 3.6]
+        django: [1.11, 2.0]
+        exclude:
+          - python: 2.7
+            django: 2.0
 
     steps:
 
@@ -26,11 +30,12 @@ jobs:
         id: pip-cache
         with:
           path: ~/.cache/pip
-          key: pip-${{ hashFiles('requirements.txt') }}-${{ hashFiles('requirements/*') }}-${{ matrix.python }}
+          key: pip-${{ hashFiles('requirements/*.txt') }}-${{ matrix.python }}
 
       - name: Install dependencies
         run: |
-          python -m pip install -r requirements.txt
+          python -m pip install Django==${{ matrix.djagno }}
+          python -m pip install -r requirements/base.txt
           python -m pip install -r requirements/test.txt
 
       - name: Collect static files
