@@ -39,7 +39,8 @@ class ResourceStep1Form(forms.Form):
         label=_(u'Image'),
         required=False,
         error_messages={},
-        widget=forms.ClearableFileInput)
+        widget=forms.ClearableFileInput,
+        help_text=_(u'Note that this is an image of your resource. You can upload your actual resource on the next step/page'))
     health_topic = forms.MultipleChoiceField(
         label=_(u'Health domain'),
         widget=forms.CheckboxSelectMultiple,
