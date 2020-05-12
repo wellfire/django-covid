@@ -7,6 +7,7 @@ import logging
 
 from django.db import models
 from django.db.models import Q
+from django.utils.encoding import python_2_unicode_compatible
 from django.utils.functional import cached_property
 from django.utils.timezone import now
 from orb_api.api import OrbClient
@@ -32,6 +33,7 @@ class PeersQuerySet(models.QuerySet):
         return self.filter(Q(active=False) | Q(api_user__isnull=True) | Q(api_key__isnull=True))
 
 
+@python_2_unicode_compatible
 class Peer(models.Model):
     """
     A peer ORB node
@@ -45,7 +47,7 @@ class Peer(models.Model):
     peers = PeersQuerySet.as_manager()
     objects = peers
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     @cached_property
@@ -127,6 +129,7 @@ class Peer(models.Model):
         return resource_counts
 
 
+@python_2_unicode_compatible
 class PeerQueryLog(models.Model):
     """
     Model to log when a peer is queried for update and when the update finishes
@@ -147,7 +150,7 @@ class PeerQueryLog(models.Model):
     class Meta:
         get_latest_by = 'finished'
 
-    def __unicode__(self):
+    def __str__(self):
         return "{} - {}".format(self.peer, self.created)
 
     def finish(self, filtered_date=None, new_resources=0, skipped_local_resources=0,

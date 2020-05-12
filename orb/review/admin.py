@@ -12,4 +12,4 @@ class ContentReviewAdmin(admin.ModelAdmin):
 
 @admin.register(ReviewLogEntry)
 class ReviewLogAdmin(admin.ModelAdmin):
-    list_display = ('__unicode__', 'create_date')
+    list_display = ('__str__', 'create_date')

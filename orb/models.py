@@ -20,6 +20,7 @@ from django.db import models
 from django.db.models import Avg, Count
 from django.utils.translation import ugettext_lazy as _
 from modeltranslation.utils import build_localized_fieldname
+from django.utils.encoding import python_2_unicode_compatible
 
 from orb import conf, signals
 from orb.analytics.models import UserLocationVisualization
@@ -96,6 +97,7 @@ def pop_fields(input, *fieldnames):
     return input
 
 
+@python_2_unicode_compatible
 class Resource(TimestampBase):
     REJECTED = 'rejected'
     APPROVED = 'approved'
@@ -155,7 +157,7 @@ class Resource(TimestampBase):
         verbose_name_plural = _('Resources')
         ordering = ('title',)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     def save(self, **kwargs):
@@ -410,6 +412,7 @@ class ResourceWorkflowTracker(models.Model):
     # objects = workflows  # Backwards compatible alias
 
 
+@python_2_unicode_compatible
 class ResourceURL(TimestampBase):
     guid = models.UUIDField(null=True, default=uuid.uuid4, unique=True, editable=False)
     url = models.URLField(blank=False, null=False, max_length=500)
@@ -425,7 +428,7 @@ class ResourceURL(TimestampBase):
 
     objects = ResourceURLManager.as_manager()
 
-    def __unicode__(self):
+    def __str__(self):
         return self.url
 
     def get_absolute_url(self):
@@ -480,6 +483,7 @@ class ResourceURL(TimestampBase):
         return cls(resource=resource, create_user=user, update_user=user, **api_data)
 
 
+@python_2_unicode_compatible
 class ResourceFile(TimestampBase):
     guid = models.UUIDField(null=True, default=uuid.uuid4, unique=True, editable=False)
     file = models.FileField(upload_to='resource/%Y/%m/%d', max_length=200)
@@ -495,7 +499,7 @@ class ResourceFile(TimestampBase):
     sha1 = models.CharField(max_length=40, blank=True, null=True, editable=False)
     objects = ResourceURLManager.as_manager()
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title or self.file.name
 
     def get_absolute_url(self):
@@ -611,6 +615,7 @@ class ResourceRelationship(TimestampBase):
     update_user = models.ForeignKey(User, related_name='resource_relationship_update_user', blank=True, null=True, default=None, on_delete=models.SET_NULL)
 
 
+@python_2_unicode_compatible
 class ResourceCriteria(models.Model):
     CATEGORIES = (
         ('qa', _('Quality Assurance')),
@@ -646,7 +651,7 @@ class ResourceCriteria(models.Model):
         return _("General") if not self.role else self.role.name
     get_role_display.short_description = "Role"
 
-    def __unicode__(self):
+    def __str__(self):
         return self.description
 
     class Meta:
@@ -659,6 +664,7 @@ class CategoryQuerySet(models.QuerySet):
         return self.filter(top_level=True).order_by('order_by')
 
 
+@python_2_unicode_compatible
 class Category(models.Model):
     name = models.CharField(max_length=100)
     top_level = models.BooleanField(default=False)
@@ -673,7 +679,7 @@ class Category(models.Model):
         verbose_name_plural = _('Categories')
         ordering = ('name',)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     @classmethod
@@ -682,6 +688,7 @@ class Category(models.Model):
         return [f.name for f in cls._meta.get_fields() if f.name.startswith('name') and f.name != 'name']
 
 
+@python_2_unicode_compatible
 class Tag(TimestampBase):
     category = models.ForeignKey(Category)
     parent_tag = models.ForeignKey('self', blank=True, null=True, default=None, related_name="children")
@@ -708,7 +715,7 @@ class Tag(TimestampBase):
         ordering = ('name',)
         unique_together = ('name', 'category')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     def get_absolute_url(self):
@@ -776,6 +783,7 @@ class Tag(TimestampBase):
         other.delete()
 
 
+@python_2_unicode_compatible
 class TagProperty(models.Model):
     tag = models.ForeignKey(Tag, related_name="properties")
     name = models.TextField(blank=False, null=False)
@@ -786,7 +794,7 @@ class TagProperty(models.Model):
         verbose_name_plural = _('Tag properties')
         ordering = ('tag', 'name', 'value')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
@@ -853,6 +861,7 @@ class ResourceTag(models.Model):
         return cls.objects.create(resource=resource, tag=tag, create_user=user)
 
 
+@python_2_unicode_compatible
 class UserProfile(TimestampBase):
     AGE_RANGE = [
         ('under_18', _('under 18')),
@@ -894,7 +903,7 @@ class UserProfile(TimestampBase):
         verbose_name = _("user profile")
         verbose_name_plural = _("user profiles")
 
-    def __unicode__(self):
+    def __str__(self):
         return self.user.get_full_name()
 
     def get_twitter_url(self):
@@ -990,6 +999,7 @@ class ResourceRating(TimestampBase):
     comments = models.TextField(blank=True, null=True, default=None)
 
 
+@python_2_unicode_compatible
 class Collection(TimestampBase):
     PUBLIC = 'public'
     PRIVATE = 'private'
@@ -1017,7 +1027,7 @@ class Collection(TimestampBase):
         verbose_name_plural = _('Collections')
         ordering = ('title',)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     def get_absolute_url(self):
@@ -1048,6 +1058,7 @@ class CollectionResource(models.Model):
         ordering = ('collection', 'order_by', 'resource')
 
 
+@python_2_unicode_compatible
 class ReviewerRole(models.Model):
     """
     Models the different roles a content review might fulfill
@@ -1066,7 +1077,7 @@ class ReviewerRole(models.Model):
     objects = models.Manager()
     # objects = roles
 
-    def __unicode__(self):
+    def __str__(self):
         return self.get_name_display()
 
 

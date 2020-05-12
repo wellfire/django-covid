@@ -7,6 +7,7 @@ import sys
 from collections import OrderedDict, defaultdict
 
 import polib
+import six
 from django.apps import apps
 
 
@@ -182,7 +183,7 @@ class DatabaseTranslations(object):
         """
         Writes the po file contents to sys.stdout or file stream
         """
-        out.write(self.po.__unicode__().encode('utf-8'))
+        out.write(six.text_type(self.po).encode('utf-8'))
 
     def get_entries(self):
         for msgid, data in self.strings.items():

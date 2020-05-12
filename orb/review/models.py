@@ -25,6 +25,7 @@ from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.dispatch import receiver
+from django.utils.encoding import python_2_unicode_compatible
 from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
 from django_fsm import FSMField, TransitionNotAllowed, transition
@@ -36,6 +37,7 @@ from orb.review import signals, tasks
 REVIEW_OVERDUE = 10
 
 
+@python_2_unicode_compatible
 class ReviewLogEntry(TimestampBase):
     """
     Model class used to track individual actions made with regard
@@ -50,7 +52,7 @@ class ReviewLogEntry(TimestampBase):
         verbose_name = _("review log entry")
         verbose_name_plural = _("review log entries")
 
-    def __unicode__(self):
+    def __str__(self):
         return "{0}: {1}".format(self.review, self.review_status)
 
 
@@ -90,6 +92,7 @@ class ReviewQueryset(models.QuerySet):
         return review
 
 
+@python_2_unicode_compatible
 class ContentReview(TimestampBase):
     """
     Model class used to assign a content review for a resource to
@@ -114,7 +117,7 @@ class ContentReview(TimestampBase):
             ('resource', 'role'),
         )
 
-    def __unicode__(self):
+    def __str__(self):
         return "{0}: {1}".format(self.reviewer, self.resource)
 
     def save(self, **kwargs):

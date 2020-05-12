@@ -16,6 +16,7 @@ from datetime import datetime
 
 import mock
 import pytest
+import six
 from dateutil.relativedelta import relativedelta
 
 from orb.models import Resource, ResourceFile, ResourceURL, get_import_user
@@ -51,7 +52,7 @@ class TestResource(object):
 
     def test_unicode_display(self, test_resource):
         """Unicode value of title is returned"""
-        assert test_resource.__unicode__() == "Básica salud del recién nacido"
+        assert six.text_type(test_resource) == "Básica salud del recién nacido"
 
     def test_non_latin_slugification(self, admin_user):
         """Non-latin characters should be transliterated"""
@@ -106,7 +107,7 @@ class TestResourceURL(object):
 
     def test_unicode_display(self):
         """Unicode value of URL is returned"""
-        assert ResourceURL(url="http://www.example.com/niños").__unicode__() == "http://www.example.com/niños"
+        assert six.text_type(ResourceURL(url="http://www.example.com/niños")) == "http://www.example.com/niños"
 
 
 class TestResourceFile(object):
