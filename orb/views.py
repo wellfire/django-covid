@@ -5,25 +5,20 @@ from collections import defaultdict
 
 from django.conf import settings
 from django.contrib import messages
-from django.core.paginator import Paginator, InvalidPage, EmptyPage
+from django.core.paginator import EmptyPage, InvalidPage, Paginator
 from django.core.urlresolvers import reverse
 from django.db.models import Count, Q
-from django.http import HttpResponseRedirect, Http404, HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.http import Http404, HttpResponse, HttpResponseRedirect
+from django.shortcuts import get_object_or_404, render
 from django.utils.translation import ugettext_lazy as _
 from haystack.query import SearchQuerySet
 
-from orb.forms import (ResourceStep1Form, ResourceStep2Form, SearchForm,
-                       ResourceRejectForm, AdvancedSearchForm)
-from orb.models import Collection
-from orb.models import home_resources
-from orb.models import ResourceFile, ResourceTag, ResourceCriteria, ResourceRating
-from orb.models import ReviewerRole
-from orb.models import Tag, Resource, ResourceURL, Category, TagOwner, SearchTracker
-from orb.signals import (resource_viewed, resource_url_viewed, resource_file_viewed,
-                         search, resource_workflow, resource_submitted, tag_viewed)
+from orb.forms import AdvancedSearchForm, ResourceRejectForm, ResourceStep1Form, ResourceStep2Form, SearchForm
+from orb.models import (Category, Collection, Resource, ResourceCriteria, ResourceFile, ResourceRating, ResourceTag,
+                        ResourceURL, ReviewerRole, SearchTracker, Tag, TagOwner, home_resources)
+from orb.signals import (resource_file_viewed, resource_submitted, resource_url_viewed, resource_viewed,
+                         resource_workflow, search, tag_viewed)
 from orb.tags.forms import TagPageForm
-
 
 
 def home_view(request):

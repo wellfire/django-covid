@@ -3,13 +3,14 @@ Forms specific to working directly with resources
 """
 from __future__ import unicode_literals
 
+from collections import OrderedDict
+
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Div, Layout, Submit
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 
 from orb.models import Tag
-from collections import OrderedDict
 
 
 class ResourceAccessForm(forms.Form):

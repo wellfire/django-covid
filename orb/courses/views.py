@@ -23,8 +23,7 @@ from django.views.decorators.csrf import csrf_exempt
 from six import text_type
 
 from orb import mixins
-from orb.courses import forms
-from orb.courses import models
+from orb.courses import forms, models
 
 logger = logging.getLogger(__name__)
 

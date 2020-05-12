@@ -5,7 +5,7 @@ import logging
 
 from crispy_forms.bootstrap import FieldWithButtons
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Div, Field, HTML, Layout, Row, Submit
+from crispy_forms.layout import HTML, Div, Field, Layout, Row, Submit
 from django import forms
 from django.conf import settings
 from django.core.exceptions import ValidationError

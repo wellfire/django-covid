@@ -27,12 +27,11 @@ from django.db import models
 from django.dispatch import receiver
 from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
-from django_fsm import FSMField, transition, TransitionNotAllowed
+from django_fsm import FSMField, TransitionNotAllowed, transition
 
 import orb.signals
-from orb.models import TimestampBase, Resource, ReviewerRole, ResourceCriteria
+from orb.models import Resource, ResourceCriteria, ReviewerRole, TimestampBase
 from orb.review import signals, tasks
-
 
 REVIEW_OVERDUE = 10
 

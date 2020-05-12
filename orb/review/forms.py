@@ -8,7 +8,7 @@ import logging
 
 from crispy_forms.bootstrap import StrictButton
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Div, Layout, Submit, HTML, Row
+from crispy_forms.layout import HTML, Div, Layout, Row, Submit
 from django import forms
 from django.contrib import messages
 from django.core.urlresolvers import reverse
@@ -16,10 +16,9 @@ from django.forms import inlineformset_factory
 from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
 
-from orb.models import (Resource, ResourceCriteria, ReviewerRole,
-                        ResourceWorkflowTracker, UserProfile)
-from .models import ContentReview
+from orb.models import Resource, ResourceCriteria, ResourceWorkflowTracker, ReviewerRole, UserProfile
 
+from .models import ContentReview
 
 logger = logging.getLogger(__name__)
 

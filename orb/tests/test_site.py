@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import os
 import unittest
 
 import pytest
@@ -9,7 +8,7 @@ from django.core.urlresolvers import reverse
 from django.test import TestCase
 from django.test.client import Client
 
-from orb.models import Tag, Resource, TagOwner, TagTracker, ResourceTracker
+from orb.models import Resource, ResourceTracker, Tag, TagOwner, TagTracker
 from orb.tests.utils import login_client
 
 FAST_TESTS = True

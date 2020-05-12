@@ -5,13 +5,14 @@
  https://oppiamobile.readthedocs.org/en/latest/
 """
 
+from __future__ import unicode_literals
+
+import argparse
+import json
 import time
 import urllib
-import json
-import argparse
 
-
-from orb.models import Tag, Category, Resource
+from orb.models import Category, Resource, Tag
 
 
 def run(cartodb_account, cartodb_key):

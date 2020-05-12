@@ -1,9 +1,11 @@
 """
 API Resource specific tests for the COVID-19 Library API
 """
-import pytest
+from __future__ import unicode_literals
+
 import uuid
 
+import pytest
 from django.contrib.auth.models import User
 from tastypie.models import ApiKey
 from tastypie.test import ResourceTestCase

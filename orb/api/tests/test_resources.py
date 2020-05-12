@@ -12,12 +12,14 @@ Fixtures are loaded by pytest using root level conftest.py from fixtures module
 
 """
 
+from __future__ import unicode_literals
+
 import pytest
 from django.contrib.auth.models import User
 from django.test.client import RequestFactory
 
-from orb.models import Tag, Category, Resource
-from orb.api.resources import TagResource, ResourceResource
+from orb.api.resources import ResourceResource, TagResource
+from orb.models import Category, Resource, Tag
 from orb.resources.tests.factory import resource_factory
 
 pytestmark = pytest.mark.django_db

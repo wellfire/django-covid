@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 import mock
 from django.core.exceptions import PermissionDenied
-from django.core.urlresolvers import reverse, resolve
+from django.core.urlresolvers import resolve, reverse
 from django.http import Http404
 from django.test import TestCase
 
@@ -11,7 +11,7 @@ from orb.models import UserProfile
 from orb.review import views
 from orb.review.models import ContentReview
 from orb.review.tests.base import ReviewTestCase
-from orb.tests.utils import request_factory, mocked_model
+from orb.tests.utils import mocked_model, request_factory
 
 
 class ReviewListTests(ReviewTestCase):
@@ -233,4 +233,3 @@ class UpdateAssignmentTests(TestCase):
 
     def test_existing_assignment(self):
         """Assignment should fail if existing assignment for same role"""
-

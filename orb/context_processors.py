@@ -4,8 +4,7 @@ from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 
 import orb
-from orb.models import TagOwner
-from orb.models import home_resources
+from orb.models import TagOwner, home_resources
 
 
 def get_menu(request):

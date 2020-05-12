@@ -2,15 +2,13 @@ from __future__ import unicode_literals
 
 from django import forms
 from django.conf.urls import url
-from django.contrib import admin
-from django.contrib import messages
+from django.contrib import admin, messages
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
-from django.db.models import F, Value as V
+from django.db.models import F
+from django.db.models import Value as V
 from django.db.models.functions import Concat
-from django.shortcuts import get_object_or_404
-from django.shortcuts import redirect
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.translation import ugettext_lazy as _
 
 from orb import models

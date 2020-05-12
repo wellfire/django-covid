@@ -8,11 +8,11 @@ from __future__ import unicode_literals
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 
-from orb.models import Resource, ResourceCriteria
-from orb.models import UserProfile, ReviewerRole
+from orb.models import Resource, ResourceCriteria, ReviewerRole, UserProfile
 from orb.resources.tests.factory import resource_factory
 from orb.review.forms import AssignmentForm, ContentReviewForm, ReviewStartForm, StaffReviewForm
 from orb.review.models import ContentReview
+
 from .base import ReviewTestCase
 
 

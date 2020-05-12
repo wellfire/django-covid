@@ -7,8 +7,10 @@ import os
 import time
 import uuid
 from collections import OrderedDict
+from typing import Any, Dict, Iterable, Optional, Text
 
 import parsedatetime as pdt
+from ckeditor.fields import RichTextField
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.core import urlresolvers
@@ -18,22 +20,14 @@ from django.db import models
 from django.db.models import Avg, Count
 from django.utils.translation import ugettext_lazy as _
 from modeltranslation.utils import build_localized_fieldname
-from typing import Any
-from typing import Dict
-from typing import Optional
-from typing import Iterable
-from typing import Text
 
-from orb import conf
-from orb import signals
+from orb import conf, signals
 from orb.analytics.models import UserLocationVisualization
-from orb.fields import AutoSlugField
-from orb.fields import image_cleaner
+from orb.fields import AutoSlugField, image_cleaner
 from orb.profiles.querysets import ProfilesQueryset
 from orb.resources.managers import ResourceQueryset, ResourceURLManager, TrackerQueryset
 from orb.review.queryset import CriteriaQueryset
 from orb.tags.managers import ResourceTagManager, TagQuerySet
-from ckeditor.fields import RichTextField
 
 cal = pdt.Calendar()
 

@@ -2,9 +2,11 @@
 Template labels for content review
 """
 
+from __future__ import unicode_literals
+
 from django import template
 
-from orb.models import ReviewerRole, ResourceCriteria
+from orb.models import ResourceCriteria, ReviewerRole
 
 register = template.Library()
 

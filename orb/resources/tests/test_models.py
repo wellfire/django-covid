@@ -18,10 +18,7 @@ import mock
 import pytest
 from dateutil.relativedelta import relativedelta
 
-from orb.models import Resource
-from orb.models import ResourceFile
-from orb.models import ResourceURL
-from orb.models import get_import_user
+from orb.models import Resource, ResourceFile, ResourceURL, get_import_user
 from orb.resources.tests.factory import resource_factory
 
 pytestmark = pytest.mark.django_db
@@ -115,7 +112,6 @@ class TestResourceURL(object):
 class TestResourceFile(object):
 
     @pytest.mark.parametrize("extension,mimetype", [
-
         ("pdf", "application/pdf"),
         ("mp4", "video/mp4"),
         ("mbz", "application/octet-stream"),

@@ -1,10 +1,7 @@
 from __future__ import unicode_literals
 
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Div
-from crispy_forms.layout import HTML
-from crispy_forms.layout import Layout
-from crispy_forms.layout import Submit
+from crispy_forms.layout import HTML, Div, Layout, Submit
 from django import forms
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import UserCreationForm as BaseUserCreationForm
@@ -14,9 +11,7 @@ from django.core.validators import validate_email
 from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _
 
-from orb.models import Category
-from orb.models import Tag
-from orb.models import UserProfile
+from orb.models import Category, Tag, UserProfile
 
 
 class LoginForm(forms.Form):
@@ -482,4 +477,3 @@ class DeleteProfileForm(forms.Form):
         if user is None or not user.is_active:
             raise forms.ValidationError(_("Invalid password. Please try again."))
         return cleaned_data
-

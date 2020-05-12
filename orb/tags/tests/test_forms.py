@@ -4,8 +4,11 @@
 Tests for ORB tag forms
 """
 
-from hypothesis import strategies as st, given, example, settings
-import  pytest
+from __future__ import unicode_literals
+
+import pytest
+from hypothesis import example, given, settings
+from hypothesis import strategies as st
 
 from orb.tags.forms import TagPageForm
 

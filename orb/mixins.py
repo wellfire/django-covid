@@ -6,6 +6,8 @@ Includes vendored mixins from django-braces
 django-braces is Copyright (c) Brack3t and individual contributors and released under BSD license
 """
 
+from __future__ import unicode_literals
+
 import inspect
 
 from django import VERSION as DJANGO_VERSION
@@ -13,7 +15,7 @@ from django.conf import settings
 from django.contrib.auth import REDIRECT_FIELD_NAME
 from django.contrib.auth.views import redirect_to_login
 from django.core.exceptions import ImproperlyConfigured, PermissionDenied
-from django.http import (HttpResponse, StreamingHttpResponse)
+from django.http import HttpResponse, StreamingHttpResponse
 from django.utils.encoding import force_text
 
 if DJANGO_VERSION >= (1, 10, 0):

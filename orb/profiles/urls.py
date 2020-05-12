@@ -1,9 +1,11 @@
+from __future__ import unicode_literals
+
 from django.conf.urls import url
+from django.contrib.auth.views import logout
 from django.views.generic import TemplateView
+from django.views.i18n import set_language
 
 from orb.profiles import views
-from django.contrib.auth.views import logout
-from django.views.i18n import set_language
 
 urlpatterns = [
     url(r'^register/$', view=views.RegistrationView.as_view(), name="profile_register"),

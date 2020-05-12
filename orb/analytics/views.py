@@ -2,10 +2,12 @@
 Views for rendering site usage analytics
 """
 
-import datetime
-import tablib
-import dateutil.relativedelta
+from __future__ import unicode_literals
 
+import datetime
+
+import dateutil.relativedelta
+import tablib
 from django.contrib.auth.models import User
 from django.core.paginator import EmptyPage, InvalidPage, Paginator
 from django.db.models import Count, Q
@@ -15,10 +17,10 @@ from django.utils import timezone
 
 from orb.analytics.models import UserLocationVisualization
 from orb.decorators import staff_required
+from orb.lib import search_crawler
 from orb.models import Resource, ResourceTracker, SearchTracker, Tag, TagOwner, TagTracker
 from orb.views import resource_can_edit
 
-from orb.lib import search_crawler
 
 @staff_required
 def home_view(request):

@@ -8,8 +8,7 @@ from __future__ import unicode_literals
 
 import pytest
 from django.conf import settings
-from django.test import TestCase
-from django.test import override_settings
+from django.test import TestCase, override_settings
 from hypothesis import given
 from hypothesis import strategies as st
 from mock import MagicMock

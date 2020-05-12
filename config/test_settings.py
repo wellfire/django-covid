@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
 import os
 
 import dj_database_url  # NOTE: This is not in the project requirements!
 
 from .settings import *
-
 
 #DATABASES = {
 #    "default": dj_database_url.config(default="mysql://root:root@127.0.0.1:3306/orb")

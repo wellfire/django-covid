@@ -97,4 +97,3 @@ def remote_resource(import_user, peer_instance):
         description="<p>A remote resource</p>",
         source_peer=peer_instance,
     )
-

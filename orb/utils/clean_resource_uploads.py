@@ -1,11 +1,14 @@
 """
 Script to validate urls
 """
-import django
+from __future__ import unicode_literals
+
 import os
 
+import django
 from django.conf import settings
-from orb.models import ResourceFile, Tag, Resource
+
+from orb.models import Resource, ResourceFile, Tag
 
 
 def run():

@@ -2,6 +2,8 @@
 Custom access decorators
 """
 
+from __future__ import unicode_literals
+
 from django.contrib.auth import REDIRECT_FIELD_NAME
 from django.contrib.auth.decorators import user_passes_test
 from django.core.exceptions import PermissionDenied

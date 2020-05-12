@@ -4,25 +4,23 @@ import hashlib
 import urllib
 
 from django.contrib import messages
-from django.contrib.auth import authenticate
-from django.contrib.auth import login
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.core.urlresolvers import reverse
 from django.db.models import Q
 from django.forms.models import model_to_dict
-from django.views.generic import FormView
-
-from django.core.urlresolvers import reverse
-from django.http import HttpResponseRedirect, Http404
-from django.shortcuts import render
-from django.shortcuts import redirect
+from django.http import Http404, HttpResponseRedirect
+from django.shortcuts import redirect, render
 from django.utils.translation import ugettext_lazy as _
-
-from orb.models import UserProfile, Tag, Category, Resource, ResourceRating, Collection, ResourceTracker, TagTracker, SearchTracker, CollectionUser, Resource, ResourceURL, ResourceFile
-from orb.profiles.forms import LoginForm, RegisterForm, ResetForm, ProfileForm, DeleteProfileForm
-from orb.emailer import password_reset
-from orb.signals import user_registered
+from django.views.generic import FormView
 from tastypie.models import ApiKey
+
+from orb.emailer import password_reset
+from orb.models import (Category, Collection, CollectionUser, Resource, ResourceFile, ResourceRating, ResourceTracker,
+                        ResourceURL, SearchTracker, Tag, TagTracker, UserProfile)
+from orb.profiles.forms import DeleteProfileForm, LoginForm, ProfileForm, RegisterForm, ResetForm
+from orb.signals import user_registered
 
 
 def login_view(request):

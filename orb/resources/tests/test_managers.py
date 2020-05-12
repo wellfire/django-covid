@@ -5,10 +5,10 @@ Tests for ORB resource models
 """
 from __future__ import unicode_literals
 
-from django.contrib.auth.models import User, AnonymousUser
+from django.contrib.auth.models import AnonymousUser, User
 from django.test import TestCase
 
-from orb.models import Resource, ResourceURL, UserProfile, ReviewerRole
+from orb.models import Resource, ResourceURL, ReviewerRole, UserProfile
 from orb.resources.tests.factory import resource_factory, resource_url_factory
 
 

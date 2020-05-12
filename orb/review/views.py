@@ -1,3 +1,5 @@
+from __future__ import unicode_literals
+
 from datetime import date, timedelta
 from functools import wraps
 
@@ -6,12 +8,13 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.core.exceptions import PermissionDenied
 from django.db import IntegrityError
 from django.db.models import Q
-from django.shortcuts import redirect, render, get_object_or_404
+from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.translation import ugettext_lazy as _
 
-from orb.review.decorators import reviewer_required
 from orb.models import Resource, ResourceCriteria, ReviewerRole
-from .forms import ReviewForm, ContentReviewForm, AssignmentForm, StaffReviewForm, ReviewStartForm
+from orb.review.decorators import reviewer_required
+
+from .forms import AssignmentForm, ContentReviewForm, ReviewForm, ReviewStartForm, StaffReviewForm
 from .models import ContentReview
 
 

@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 import importlib
 import sys
-from collections import defaultdict, OrderedDict
+from collections import OrderedDict, defaultdict
 
 import polib
 from django.apps import apps
@@ -285,4 +285,3 @@ class POTranslations(object):
 
         if self.output:
             self.output.write("Finished! {0} rows updated".format(counter))
-

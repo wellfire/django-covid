@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.contrib.auth.models import User
 from django.test import TestCase
 
-from orb.models import ReviewerRole, UserProfile, ResourceCriteria
+from orb.models import ResourceCriteria, ReviewerRole, UserProfile
 from orb.resources.tests.factory import resource_factory
 from orb.review.models import ContentReview
 

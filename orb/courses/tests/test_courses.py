@@ -12,8 +12,7 @@ import pytest
 from django.contrib.auth.models import AnonymousUser
 from django.core.urlresolvers import reverse
 
-from orb.courses import forms
-from orb.courses import models
+from orb.courses import forms, models
 from orb.tests.utils import login_client
 
 

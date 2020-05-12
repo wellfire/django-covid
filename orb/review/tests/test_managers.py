@@ -10,7 +10,7 @@ from datetime import date, timedelta
 from django.test import TestCase
 from freezegun import freeze_time
 
-from orb.models import Resource, ReviewerRole, ResourceCriteria
+from orb.models import Resource, ResourceCriteria, ReviewerRole
 from orb.resources.tests.factory import resource_factory
 from orb.review.models import ContentReview
 from orb.review.tests.base import ReviewTestCase
