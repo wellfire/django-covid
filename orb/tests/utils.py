@@ -2,10 +2,12 @@
 Utility functions for enhancing the reusability and readability of test code
 """
 
+from __future__ import unicode_literals
+
 from functools import wraps
+from importlib import import_module
 
 import mock
-from importlib import import_module
 from django.conf import settings
 from django.contrib.auth import SESSION_KEY
 from django.contrib.auth.models import AnonymousUser

@@ -1,4 +1,6 @@
 
+from __future__ import unicode_literals
+
 from orb.forms import HeaderSearchForm
 
 

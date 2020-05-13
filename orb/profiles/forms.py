@@ -1,22 +1,17 @@
 from __future__ import unicode_literals
 
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Div
-from crispy_forms.layout import HTML
-from crispy_forms.layout import Layout
-from crispy_forms.layout import Submit
+from crispy_forms.layout import HTML, Div, Layout, Submit
 from django import forms
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import UserCreationForm as BaseUserCreationForm
 from django.contrib.auth.models import User
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.core.validators import validate_email
 from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _
 
-from orb.models import Category
-from orb.models import Tag
-from orb.models import UserProfile
+from orb.models import Category, Tag, UserProfile
 
 
 class LoginForm(forms.Form):
@@ -444,10 +439,10 @@ class DeleteProfileForm(forms.Form):
     username = forms.CharField(widget=forms.TextInput(attrs={'readonly': 'readonly'}),
                                required=True)
     password = forms.CharField(widget=forms.PasswordInput,
-                               error_messages={'required': _(u'Please enter your password.'),},
+                               error_messages={'required': _('Please enter your password.'),},
                                required=True)
     delete_resources = forms.BooleanField(
-                            label=_(u"Permanently delete the resources I have uploaded to COVID-19 Library"),
+                            label=_("Permanently delete the resources I have uploaded to COVID-19 Library"),
                             required=False)
 
     def __init__(self, resources_count, *args, **kwargs):
@@ -465,7 +460,7 @@ class DeleteProfileForm(forms.Form):
             self.helper.layout.append('delete_resources')
         self.helper.layout.append(
             Div(
-                Submit('submit', _(u'Delete Account'), css_class='btn btn-default'),
+                Submit('submit', _('Delete Account'), css_class='btn btn-default'),
                 HTML("""<a role="button" class="btn btn-default"
                         href="{% url "my_profile_edit" %}">Cancel</a>"""),
                 css_class='col-lg-offset-2 col-lg-4',
@@ -480,6 +475,5 @@ class DeleteProfileForm(forms.Form):
 
         user = authenticate(username=username, password=password)
         if user is None or not user.is_active:
-            raise forms.ValidationError(_(u"Invalid password. Please try again."))
+            raise forms.ValidationError(_("Invalid password. Please try again."))
         return cleaned_data
-

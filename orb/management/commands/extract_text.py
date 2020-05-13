@@ -1,9 +1,14 @@
 
+from __future__ import unicode_literals
+
 import os
+
 import textract
 from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
+
 from orb.models import ResourceFile
+
 
 class Command(BaseCommand):
 
@@ -22,4 +27,3 @@ class Command(BaseCommand):
             except textract.exceptions.ExtensionNotSupported:
                 # do nothing
                 print("File type not supported... yet!")
-

@@ -8,8 +8,7 @@ from __future__ import unicode_literals
 
 import pytest
 from django.conf import settings
-from django.test import TestCase
-from django.test import override_settings
+from django.test import TestCase, override_settings
 from hypothesis import given
 from hypothesis import strategies as st
 from mock import MagicMock
@@ -32,7 +31,7 @@ class ResourceStep2FormTests(TestCase):
 
     def test_valid_missing_url_file(self):
         """Form should be invalid when missing both file and URL"""
-        form = ResourceStep2Form(data={"title": u"¡Olé!"})
+        form = ResourceStep2Form(data={"title": "¡Olé!"})
         self.assertFalse(form.is_valid())
 
     def test_valid_url(self):
@@ -41,12 +40,12 @@ class ResourceStep2FormTests(TestCase):
         Unicode is used for good measure to test encoding validation
         """
         form = ResourceStep2Form(data={
-            "url": u"http://www.wvi.org/publication/manual-para-madres-gu%C3%ADas"})
+            "url": "http://www.wvi.org/publication/manual-para-madres-gu%C3%ADas"})
         self.assertTrue(form.is_valid())
 
     def test_invalid_url(self):
         """Form shoudl reject invalid URLs"""
-        form = ResourceStep2Form(data={"url": u"htp://example.com/olé"})
+        form = ResourceStep2Form(data={"url": "htp://example.com/olé"})
         self.assertFalse(form.is_valid())
 
     def test_valid_file(self):
@@ -83,7 +82,7 @@ def test_resource_access_form(role_tag, intended_use, use_intended_use, intended
     """Ensure conditional field validitiy"""
     survey_intended_use = intended_use if use_intended_use else ''
     survey_intended_use_other = intended_use_other.strip() if use_intended_use_other else ''
-    survey_health_worker_count = worker_count if use_worker_count else ''
+    survey_health_worker_count = worker_count if use_worker_count else None
     survey_health_worker_cadre = role_tag.slug if use_worker_cadre else ''
 
     assert Tag.tags.all().count() > 0
@@ -104,7 +103,7 @@ def test_resource_access_form(role_tag, intended_use, use_intended_use, intended
         survey_intended_use == 'other' and not survey_intended_use_other,
         survey_intended_use == 'training' and not survey_health_worker_count,
         survey_intended_use == 'training' and not survey_health_worker_cadre,
-        survey_intended_use == 'training' and survey_health_worker_count < 1,
+        survey_intended_use == 'training' and (survey_health_worker_count and survey_health_worker_count < 1),
     ]):
         form_validity = False
 

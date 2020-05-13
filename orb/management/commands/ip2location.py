@@ -5,14 +5,18 @@
  https://oppiamobile.readthedocs.org/en/latest/
 """
 
+from __future__ import unicode_literals
+
+import json
 import time
 import urllib2
-import json
+
 from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
 from django.db.models import Count
-from orb.models import ResourceTracker, SearchTracker, TagTracker
+
 from orb.analytics.models import UserLocationVisualization
+from orb.models import ResourceTracker, SearchTracker, TagTracker
 
 
 class Command(BaseCommand):
@@ -86,4 +90,3 @@ class Command(BaseCommand):
         except:
             pass
         time.sleep(1)
-

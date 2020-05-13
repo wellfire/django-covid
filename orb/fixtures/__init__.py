@@ -3,6 +3,7 @@
 """
 pytest fixtures
 """
+from __future__ import unicode_literals
 
 import pytest
 from django.contrib.auth.models import User
@@ -77,8 +78,8 @@ def role_tag(role_category, testing_user):
 def test_resource(testing_user):
     yield resource_factory(
         user=testing_user,
-        title=u"Básica salud del recién nacido",
-        description=u"Básica salud del recién nacido",
+        title="Básica salud del recién nacido",
+        description="Básica salud del recién nacido",
     )
 
 
@@ -92,8 +93,7 @@ def remote_resource(import_user, peer_instance):
     """Fixture for a remotely created resource"""
     yield resource_factory(
         user=import_user,
-        title=u"A remote resource",
-        description=u"<p>A remote resource</p>",
+        title="A remote resource",
+        description="<p>A remote resource</p>",
         source_peer=peer_instance,
     )
-

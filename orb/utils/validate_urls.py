@@ -1,12 +1,16 @@
 """
 Script to validate urls
 """
+from __future__ import unicode_literals
+
 import datetime
-import django
 import time
 import urllib2
-from orb.models import ResourceURL, Tag
+
+import django
+
 from orb.emailer import link_checker_results
+from orb.models import ResourceURL, Tag
 
 
 def run():

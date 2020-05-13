@@ -10,9 +10,7 @@ from autoslugged import AutoSlugField as BaseSlugField
 from django.core.files import File
 from django.core.files.temp import NamedTemporaryFile
 
-from orb.compat import HTTPError
-from orb.compat import URLError
-from orb.compat import urlopen
+from orb.compat import HTTPError, URLError, urlopen
 
 
 class AutoSlugField(BaseSlugField):

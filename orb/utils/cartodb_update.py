@@ -5,10 +5,12 @@
  https://oppiamobile.readthedocs.org/en/latest/
 """
 
+from __future__ import unicode_literals
+
+import argparse
+import json
 import time
 import urllib
-import json
-import argparse
 
 from django.db.models import Sum
 

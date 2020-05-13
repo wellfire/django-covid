@@ -2,22 +2,23 @@
 Forms for resources - primarily for content review
 """
 
+from __future__ import unicode_literals
+
 import logging
 
 from crispy_forms.bootstrap import StrictButton
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Div, Layout, Submit, HTML, Row
+from crispy_forms.layout import HTML, Div, Layout, Row, Submit
 from django import forms
 from django.contrib import messages
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.forms import inlineformset_factory
 from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
 
-from orb.models import (Resource, ResourceCriteria, ReviewerRole,
-                        ResourceWorkflowTracker, UserProfile)
-from .models import ContentReview
+from orb.models import Resource, ResourceCriteria, ResourceWorkflowTracker, ReviewerRole, UserProfile
 
+from .models import ContentReview
 
 logger = logging.getLogger(__name__)
 
@@ -110,9 +111,9 @@ class StaffReviewForm(forms.ModelForm):
             'notes',
             Row(HTML('<hr>')),
             Div(
-                StrictButton(_(u'Approve'), name='approved', value=1, type="submit",
+                StrictButton(_('Approve'), name='approved', value=1, type="submit",
                        css_class='btn btn-success'),
-                StrictButton(_(u'Reject'), name='approved', type="submit",
+                StrictButton(_('Reject'), name='approved', type="submit",
                        css_class='btn btn-warning'),
 
                 HTML(
@@ -165,7 +166,7 @@ class ContentReviewForm(forms.ModelForm):
         widget=forms.CheckboxSelectMultiple,
         queryset=ResourceCriteria.objects.all().order_by('order_by'),
         required=False,
-        label=_(u"Approval criteria"),
+        label=_("Approval criteria"),
     )
     notes = forms.CharField(
         widget=forms.Textarea,
@@ -174,7 +175,7 @@ class ContentReviewForm(forms.ModelForm):
         help_text=_(
             'The text you enter here will be used for providing feedback to the submitter of the '
             'resource, so please bear this in mind when explaining your reasoning.'),
-        label=_(u"Rejection reason or other notes")
+        label=_("Rejection reason or other notes")
     )
 
     class Meta:
@@ -221,9 +222,9 @@ class ContentReviewForm(forms.ModelForm):
             Row(HTML('<hr>')),
             'notes',
             Div(
-                StrictButton(_(u'Approve'), name='approved', value=1, type="submit",
+                StrictButton(_('Approve'), name='approved', value=1, type="submit",
                        css_class='btn btn-success'),
-                StrictButton(_(u'Reject'), name='approved', type="submit",
+                StrictButton(_('Reject'), name='approved', type="submit",
                        css_class='btn btn-danger'),
                 css_class='col-lg-offset-2 col-lg-8',
             ),
@@ -301,7 +302,7 @@ class AssignmentForm(forms.Form):
         for role in self.roles:
             yield role.name
         yield Div(
-            Submit('submit', _(u'Assign'),
+            Submit('submit', _('Assign'),
                    css_class='btn btn-default'),
             HTML("<a href='{0}'>{1}</a>".format(
                 reverse("orb_pending_resources"),

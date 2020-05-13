@@ -2,17 +2,18 @@
 Signal receiver function definitions
 """
 
+from __future__ import unicode_literals
+
 import json
 
 from django.dispatch import receiver
 
-from orb.emailer import (first_resource, resource_approved, resource_rejected,
-                         user_welcome, new_resource_submitted)
+from orb.emailer import first_resource, new_resource_submitted, resource_approved, resource_rejected, user_welcome
 from orb.lib.search_crawler import is_search_crawler
-from orb.models import (UserProfile, Resource, ResourceTracker, SearchTracker,
-                        ResourceWorkflowTracker, ResourceCriteria, TagTracker)
-from orb.signals import resource_viewed, resource_workflow, resource_url_viewed, \
-    resource_file_viewed, search, tag_viewed, user_registered, resource_submitted
+from orb.models import (Resource, ResourceCriteria, ResourceTracker, ResourceWorkflowTracker, SearchTracker,
+                        TagTracker, UserProfile)
+from orb.signals import (resource_file_viewed, resource_submitted, resource_url_viewed, resource_viewed,
+                         resource_workflow, search, tag_viewed, user_registered)
 
 
 # TODO add signal silencer option

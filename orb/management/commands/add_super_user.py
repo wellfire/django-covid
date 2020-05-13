@@ -10,6 +10,8 @@ Usage:
 
 """
 
+from __future__ import unicode_literals
+
 from django.contrib.auth import get_user_model
 from django.core.management.base import BaseCommand
 
@@ -48,4 +50,3 @@ class Command(BaseCommand):
             self.stdout.write("Create new user '{}'".format(username))
         else:
             self.stdout.write("Found existing user '{}'".format(username))
-
