@@ -1,0 +1,56 @@
+@require "fonts"
+
+:root
+    --color-bright: colors.bright
+    --color-dark: colors.dark
+    --color-tint: colors.tint
+    --color-neutral: colors.neutral
+    --color-neutral-alt: colors.neutralAlt
+    --color-shade: colors.shade
+
+    --color-primary: colors.primary
+    --color-primary-shade: colors.primaryShade
+    --color-secondary: colors.secondary
+    --color-secondary-shade: colors.secondaryShade
+    --color-tertiary: colors.tertiary
+
+    --color-affirm: colors.affirm
+    --color-warn: colors.warn
+    --color-dissent: colors.dissent
+
+    --current-bg: transparent
+    --current-fg: var(--color-dark)
+    --current-edge: currentColor
+
+    --edge-width: 1px
+    --edge-style: solid
+    --edge-primary: currentColor
+    --edge-tint: var(--color-tint)
+    --edge-neutral: var(--color-neutral)
+    --edge-shade: var(--color-shade)
+    --edge-warn: var(--color-warn)
+
+    --fx-delay: 0s
+    --fx-time: fx.quick.time
+    --fx-func: fx.quick.func
+    // --fx-bright: 0
+
+html
+    font-display: block
+    scroll-behavior: smooth
+
+body
+    min-height: 100%    // used to ensure 100% vertical coverage on mobile, as 100vh doesn't work correctly
+    display: flex
+    font-family: defaultTypeStack unless typeStacks is defined
+    stack: copy if typeStacks
+    caret-color: var(--color-primary)
+    color: var(--active-fg)
+
+
+@require "typography"
+@require "colors"
+@require "motifs"
+@require "controls"
+@require "icons"
+@require "fx"

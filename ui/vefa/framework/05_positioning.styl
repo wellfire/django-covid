@@ -1,0 +1,107 @@
+// @domain      ELEMENT POSITIONING
+// @namespace   put:
+// ++++++++++++++++++++++++++++++++++++++
+
+put{":"}
+    +at-breaks()
+        left: auto
+        right: auto
+        top: auto
+        bottom: auto
+
+//  should we be using width and height here? can they be overriden enough?
+put
+    &:xyEq
+        +at-breaks()
+            left: 0
+            right: 0
+            top: 0
+            bottom: 0
+            height: 100%
+            width: 100%
+
+    &:xEq
+        +at-breaks()
+            left: 0
+            right: 0
+            width: 100%
+
+        &-yStart
+            +at-breaks()
+                top: 0
+
+        &-yEnd
+            +at-breaks()
+                bottom: 0
+
+    &:xStart
+        +at-breaks()
+            left: 0
+
+        &-yStart
+            +at-breaks()
+                top: 0
+
+        &-yEnd
+            +at-breaks()
+                bottom: 0
+
+        &-yEq
+            +at-breaks()
+                top: 0
+                bottom: 0
+                height: 100%
+
+    &:xEnd
+        +at-breaks()
+            right: 0
+
+        &-yStart
+            +at-breaks()
+                top: 0
+
+        &-yEnd
+            +at-breaks()
+                bottom: 0
+
+        &-yEq
+            +at-breaks()
+                top: 0
+                bottom: 0
+                height: 100%
+
+    &:yEq
+        +at-breaks()
+            top: 0
+            bottom: 0
+            height: 100%
+
+    &:yStart
+        +at-breaks()
+            top: 0
+
+    &:yEnd
+        +at-breaks()
+            bottom: 0
+
+
+--set
+    &:abs
+        +at-breaks()
+            position: absolute
+
+    &:sticky
+        +at-breaks()
+            position: sticky
+
+    &:fix
+        +at-breaks()
+            position: fixed
+
+
+--set
+    if limits.zIndex
+        for item in limits.zIndex
+            &:z{item[0]}
+                +at-breaks()
+                    z-index: item[1]

@@ -1,0 +1,46 @@
+primary public:
+    routes:
+    -   label: Add a Resource
+        route: "#"
+    -   label: Login
+        route: "#"
+    -   label: Register
+        route: "#"
+    -   label: Help
+        route: "#"
+        subnav: help
+
+help:
+    routes:
+    -   label: How to use COVID-19 Library
+        route: "#"
+    -   label: Rsource Guidelines
+        route: "#"
+    -   label: Content Review Process
+        route: "#"
+    -   label: Creative Commons FAQs
+        route: "#"
+
+
+colophon:
+    routes:
+    -   label: About
+        subnav:
+        -   label: About COVID-19 Library
+            route: "#"
+        -   label: How to use COVID-19 Library
+            route: "#"
+        -   label: Creative Commons FAQs
+            route: "#"
+        -   label: Resource Guidelines
+            route: "#"
+        -   label: Content Review Process
+            route: "#"
+    -   label: Contact
+        subnav:
+        -   label: Twitter
+            route: https://twitter.com/lastmilehealth
+        -   label: Website
+            route: https://lastmilehealth.org/chacademy/
+        -   label: covid-19library@lastmilehealth.org
+            route: mailto:covid-19library@lastmilehealth.org

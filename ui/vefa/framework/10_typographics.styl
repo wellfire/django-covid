@@ -1,0 +1,170 @@
+// @domain      ELEMENT TYPOGRAPHICS
+// @namespace   type:
+// +++++++++++++++++++++++++++++++++
+
+type
+    if typeSets is defined
+        for typeKey in typeSets
+            &:{typeKey}
+                +at-all-breaks()
+                    typeSet: typeKey
+
+
+--face
+    if typeStacks is defined
+        for typeStack in typeStacks
+            &:{typeStack}
+                +at-all-breaks()
+                    stack: typeStack
+
+
+
+//  --weight: TEXT WEIGHT
+// +++++++++++++++++++++++++++++++++
+if (typeDecs.weights == true)
+    typeDecs.weights = 100 200 300 400 500 600 700 800 900
+
+--weight
+    if typeDecs.weights
+        for num in typeDecs.weights
+            &:{num}
+                +at-all-breaks()
+                    font-weight: num
+
+
+//  --case: TEXT TRANSFORM
+// +++++++++++++++++++++++++++++++++
+if (typeDecs.case == true)
+    typeDecs.case = (init unset) (cap capitalize) (upper uppercase) (lower lowercase)
+
+--case
+    if typeDecs.case
+        for item in typeDecs.case
+            &:{item[0]}
+                +at-all-breaks()
+                    text-transform: item[1]
+
+
+//  --lead: LINE HEIGHT
+// +++++++++++++++++++++++++++++++++
+if (typeDecs.leading == true)
+    typeDecs.leading = (flush 0) (half .5) (matched 1) (base 1.2) (expand 1.5) (loose 1.7) (double 2)
+
+--lead
+    if typeDecs.leading
+        for item in typeDecs.leading
+            &:{item[0]}
+                +at-all-breaks()
+                    line-height: item[1]
+
+
+//  --space: LETTER SPACING
+// +++++++++++++++++++++++++++++++++
+if (typeDecs.letterSpace == true)
+    typeDecs.letterSpace = (flush -.08em) (tight -.04em) (init 0) (loose .04em) (zoned .08em)
+
+--space
+    if typeDecs.letterSpace
+        for item in typeDecs.letterSpace
+            &:{item[0]}
+                +at-all-breaks()
+                    letter-spacing: item[1]
+
+
+//  --words: WORD SPACING
+// +++++++++++++++++++++++++++++++++
+if (typeDecs.wordSpace == true)
+    typeDecs.wordSpace = (flush -.1em) (tight -.05em) (init 0) (loose .05em) (zoned .1em)
+
+--words
+    if typeDecs.wordSpace
+        for item in typeDecs.wordSpace
+            &:{item[0]}
+                +at-all-breaks()
+                    word-spacing: item[1]
+
+
+//  --align: TEXT ALIGNMENT
+// +++++++++++++++++++++++++++++++++
+--align
+    if typeDecs.alignment
+        &:xEq
+            +at-all-breaks()
+                text-align: center
+
+        &:xStart
+            +at-all-breaks()
+                text-align: left
+
+        &:xEnd
+            +at-all-breaks()
+                text-align: right
+
+        &:xJust
+            +at-all-breaks()
+                text-align: justify
+
+            // &:xEq
+            //     +at-all-breaks()
+            //         text-align-last: center
+
+            // &:xStart
+            //     +at-all-breaks()
+            //         text-align-last: start
+
+            // &:xEnd
+            //     +at-all-breaks()
+            //         text-align-last: end
+
+
+type
+    //  --aa: TEXT ANTI-ALIASING
+    // +++++++++++++++++++++++++++++++++
+    if typeDecs.aliased
+        &:setAliased
+            +at-all-breaks()
+                -webkit-font-smoothing: antialiased
+
+    //  --truncate: TEXT TRUNCATE
+    // +++++++++++++++++++++++++++++++++
+    if typeDecs.truncate
+        &:setTruncate
+            +at-all-breaks()
+                display: block
+                white-space: nowrap
+                width: 100%
+                overflow: hidden
+                text-overflow: ellipsis
+                // display: table
+                // table-layout: fixed
+                // width: 100%
+                // white-space: nowrap
+
+                // > *
+                //     display: table-cell
+                //     max-width: 100%
+                //     overflow: hidden
+                //     text-overflow: ellipsis
+                //     white-space: nowrap
+                //     word-wrap: normal
+
+    //  --preWrap: TEXT PREWRAP
+    // +++++++++++++++++++++++++++++++++
+    if typeDecs.preWrap
+        &:setPreWrap
+            +at-all-breaks()
+                white-space: pre-line
+
+    //  --noWrap: TEXT NO WRAP
+    // +++++++++++++++++++++++++++++++++
+    if typeDecs.noWrap
+        &:setNoWrap
+            +at-all-breaks()
+                white-space: nowrap
+
+    //  --initWrap: TEXT REGULAR BREAKS
+    // +++++++++++++++++++++++++++++++++
+    if typeDecs.initWrap
+        &:setInitWrap
+            +at-all-breaks()
+                white-space: normal

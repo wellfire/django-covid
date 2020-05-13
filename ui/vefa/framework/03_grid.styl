@@ -1,0 +1,267 @@
+// @domain      GRID CONTAINERS
+// @namespace   grid
+// +++++++++++++++++++++++++++++++++
+
+.grid{":"}
+    +at-breaks()
+        --columns: 1fr
+        --rows: auto
+        --gap-xyEq: 0px
+        --gap-xEq: var(--gap-xyEq)
+        --gap-yEq: var(--gap-xyEq)
+        // --rhy-yStart: 0
+
+        display: grid
+        gap: var(--gap-yEq) var(--gap-xEq)
+        grid-template-columns: var(--columns)
+        grid-template-rows: var(--rows)
+
+grid
+    &:auto
+        +at-breaks()
+            --column-fillStyle: auto-fit
+            --column-min: 0
+            --column-max: 1fr
+            --columns: repeat(var(--column-fillStyle), minmax(var(--column-min), var(--column-max)))
+            grid-auto-flow: column
+
+    &:autoFit
+        +at-breaks()
+            --column-fillStyle: auto-fit
+
+    &:autoFill
+        +at-breaks()
+            --column-fillStyle: auto-fill
+
+    &:content
+        +at-breaks()
+            --offset-xyEq: 0
+            --offset-xEq: var(--offset-xyEq)
+            --offset-yEq: var(--offset-xyEq)
+            --offset-xStart: var(--offset-xEq)
+            --offset-xEnd: var(--offset-xEq)
+            --offset-yStart: var(--offset-yEq)
+            --offset-yEnd: var(--offset-yEq)
+
+            grid-template-columns: var(--offset-xStart) var(--columns) var(--offset-xEnd)
+            grid-template-rows: var(--offset-yStart) var(--rows) var(--offset-yEnd)
+
+    &:h
+        +at-breaks()
+            --column-min: auto
+            --column-max: max-content
+            --columns: minmax(var(--column-min), var(--column-max))
+            grid-auto-flow: column
+
+    &:hAuto
+        +at-breaks()
+            grid-auto-columns: var(--columns)
+
+    &:hDense
+        +at-breaks()
+            grid-auto-columns: var(--columns)
+            grid-auto-flow: column dense
+
+    &:v
+        +at-breaks()
+            grid-auto-flow: row
+
+    &:vAuto
+        +at-breaks()
+            grid-auto-rows: var(--rows)
+
+    &:vDense
+        +at-breaks()
+            grid-auto-flow: row dense
+            grid-auto-rows: var(--rows)
+
+// &:fit
+//     +at-breaks()
+//         > *
+//             min-width: 0
+
+//         img
+//         video
+//         audio
+//         canvas
+//         input
+//         select
+//         button
+//         progress
+//             max-width: 100%
+
+//         [type="file"]
+//         [type="submit"]
+//             white-space: pre-wrap
+
+//         [type="number"]
+//             @supports (--moz-appearance: none)
+//                 width: 100%
+
+//         [type="range"]
+//         progress
+//             width: 100%
+
+// ++++++++++++++++++++++++++++++++++
+//  GAPS
+xyGap = limits.xyGap
+xGap = limits.xGap
+yGap = limits.yGap
+
+--gap
+    if !!((xyGap)px)
+        &:xyEq
+            +at-breaks()
+                --gap-xyGap: 1px
+
+            for i in xyGap
+                num = i/100
+                num = (i is 0) ? 0 : num
+                num = (i is 10) ? .125 : num
+                num = flow(num)
+
+                &{i}
+                    +at-breaks()
+                        --gap-xyEq: num
+
+    if !!((xGap)px)
+        &:xEq
+            +at-breaks()
+                --gap-xEq: 1px
+
+            for i in xGap
+                num = i/100
+                num = (i is 0) ? 0 : num
+                num = (i is 10) ? .125 : num
+                num = flow(num)
+
+                &{i}
+                    +at-breaks()
+                        --gap-xEq: num
+
+    if !!((yGap)px)
+        &:yEq
+            +at-breaks()
+                --gap-yEq: 1px
+
+            for i in yGap
+                num = i/100
+                num = (i is 0) ? 0 : num
+                num = (i is 10) ? .125 : num
+                num = flow(num)
+
+                &{i}
+                    +at-breaks()
+                        --gap-yEq: num
+
+// ++++++++++++++++++++++++++++++++++
+//  GRID OFFSETS
+xyOffset = limits.xyOffsets
+xOffset = limits.xOffsets
+yOffset = limits.yOffsets
+
+--offset
+    if !!((xyOffset)px)
+        &:xyEq
+            +at-breaks()
+                --offset-xyEq: 1px
+
+            &Auto
+                +at-breaks()
+                    --offset-xyEq: auto
+
+            for i in xyOffset
+                num = i/100
+                num = (i is 0) ? 0 : num
+                num = (i is 10) ? .125 : num
+                num = flow(num)
+
+                &{i}
+                    +at-breaks()
+                        --offset-xyEq: num
+
+    if !!((xOffset)px)
+        &:xEq
+            +at-breaks()
+                --offset-xEq: var(--offset-xyEq, 1px)
+
+            &Auto
+                +at-breaks()
+                    --offset-xEq: auto
+
+        &:xStart
+            +at-breaks()
+                --offset-xStart: var(--offset-xEq, 1px)
+
+            &Auto
+                +at-breaks()
+                    --offset-xStart: auto
+
+        &:xEnd
+            +at-breaks()
+                --offset-xEnd: var(--offset-xEq, 1px)
+
+            &Auto
+                +at-breaks()
+                    --offset-xEnd: auto
+
+        for i in xOffset
+            num = i/100
+            num = (i is 0) ? 0 : num
+            num = (i is 10) ? .125 : num
+            num = flow(num)
+
+            &:xEq{i}
+                +at-breaks()
+                    --offset-xEq: num
+
+            &:xStart{i}
+                +at-breaks()
+                    --offset-xStart: num
+
+            &:xEnd{i}
+                +at-breaks()
+                    --offset-xEnd: num
+
+    if !!((yOffset)px)
+        &:yEq
+            +at-breaks()
+                --offset-yEq: var(--offset-xyEq, 1px)
+
+            &Auto
+                +at-breaks()
+                    --offset-yEq: auto
+
+        &:yStart
+            +at-breaks()
+                --offset-yStart: var(--offset-yEq, 1px)
+
+            &Auto
+                +at-breaks()
+                    --offset-yStart: auto
+
+        &:yEnd
+            +at-breaks()
+                --offset-yEnd: var(--offset-yEq, 1px)
+
+            &Auto
+                +at-breaks()
+                    --offset-yEnd: auto
+
+        for i in yOffset
+            num = i/100
+            num = (i is 0) ? 0 : num
+            num = (i is 10) ? .125 : num
+            num = flow(num)
+
+            &:yEq{i}
+                +at-breaks()
+                    --offset-yEq: num
+
+            &:yStart{i}
+                +at-breaks()
+                    --offset-yStart: num
+
+            &:yEnd{i}
+                +at-breaks()
+                    --offset-yEnd: num

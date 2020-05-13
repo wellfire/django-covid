@@ -1,0 +1,26 @@
+.motif{":"}
+    +at-class()
+        // --hue-bg: initial
+        // --sat-bg: initial
+        // --lux-bg: initial
+        // --alpha-bg: initial
+        // --hue-fg: initial
+        // --sat-fg: initial
+        // --lux-fg: initial
+        // --alpha-fg: initial
+
+        background-color: var(--current-bg)
+        color: var(--current-fg)
+        border-color: var(--current-edge)
+
+    &bright
+        +at-class()
+            --current-bg: var(--color-bright)
+            --current-fg: var(--color-dark)
+            // --edge-tint: hsla(colors.tint, .25)
+
+    &primary
+        +at-class()
+            --current-bg: var(--color-primary)
+            --current-fg: var(--color-bright)
+            --edge-tint: hsla(colors.tint, .25)

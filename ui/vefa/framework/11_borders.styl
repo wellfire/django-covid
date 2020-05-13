@@ -1,0 +1,190 @@
+// @domain      VISUAL BORDERS
+// @namespsace  edge:
+// +++++++++++++++++++++++++++++++++
+
+edge{":"}
+    +at-all-breaks()
+        --edge-xyEq: 0
+        --edge-xEq: var(--edge-xyEq)
+        --edge-yEq: var(--edge-xyEq)
+        --edge-xStart: var(--edge-xEq)
+        --edge-xEnd: var(--edge-xEq)
+        --edge-yStart: var(--edge-yEq)
+        --edge-yEnd: var(--edge-yEq)
+
+        border-color: var(--active-edge, currentColor)
+        border-style: solid
+        border-width: var(--edge-yStart) var(--edge-xEnd) var(--edge-yEnd) var(--edge-xStart)
+
+
+//  VERTICAL/HORIZONTAL BREAKS (HAIRLINES)
+//  <HR> can be useful delineators, so lets make them "hairline borders"
+//  and now we can assign a motif/background to them
+// +++++++++++++++++++++++++++++++++
+edge
+    &:hr
+        +at-all-breaks()
+            height: var(--edge-width, 1px)
+            background-clip: content-box
+            background-color: var(--active-bg, currentColor)
+
+    &:vr
+        +at-all-breaks()
+            width: var(--edge-width, 1px)
+            background-clip: content-box
+            background-color: var(--active-bg, currentColor)
+
+
+//  BORDER XY AXIS
+// +++++++++++++++++++++++++++++++++
+edge
+    &:xyEq
+        +at-all-breaks()
+            --edge-xyEq: var(--edge-width, 1px)
+
+    &:xyEq0
+        +at-all-breaks()
+            --edge-xyEq: 0
+
+
+//  BORDER X AXIS
+// +++++++++++++++++++++++++++++++++
+edge
+    &:xEq
+        +at-all-breaks()
+            --edge-xEq: var(--edge-width, 1px)
+
+    &:xEq0
+        +at-all-breaks()
+            --edge-xEq: 0
+
+    &:xStart
+        +at-all-breaks()
+            --edge-xStart: var(--edge-width, 1px)
+
+        &--lead{":"}no
+            +at-all-breaks()
+                &:first-child
+                    --edge-xStart: 0
+
+    &:xStart0
+        +at-all-breaks()
+            --edge-xStart: 0
+
+    &:xEnd
+        +at-all-breaks()
+            --edge-xEnd: var(--edge-width, 1px)
+
+    &:xEnd0
+        +at-all-breaks()
+            --edge-xEnd: 0
+
+
+//  BORDER Y AXIS
+// +++++++++++++++++++++++++++++++++
+edge
+    &:yEq
+        +at-all-breaks()
+            --edge-yEq: var(--edge-width, 1px)
+
+    &:yEq0
+        +at-all-breaks()
+            --edge-yEq: 0
+
+    &:yStart
+        +at-all-breaks()
+            --edge-yStart: var(--edge-width, 1px)
+
+        &--lead{":"}no
+            +at-all-breaks()
+                &:first-child
+                    --edge-yStart: 0
+
+    &:yStart0
+        +at-all-breaks()
+            --edge-yStart: 0
+
+    &:yEnd
+        +at-all-breaks()
+            --edge-yEnd: var(--edge-width, 1px)
+
+    &:yEnd0
+        +at-all-breaks()
+            --edge-yEnd: 0
+
+
+
+//  BORDER COLORS
+//  will take the color from motif's set variables
+// +++++++++++++++++++++++++++++++++
+:root
+    --edge-tint: red
+
+set
+    &:edgeHidden
+        +at-all-breaks()
+            --active-edge: transparent
+
+    &:edgePrimary
+        +at-all-breaks()
+            --active-edge: var(--edge-primary, currentColor)
+
+    &:edgeSecondary
+        +at-all-breaks()
+            --active-edge: var(--edge-secondary, currentColor)
+
+    &:edgeTint
+        +at-all-breaks()
+            --active-edge: var(--edge-tint, currentColor)
+
+    &:edgeNeutral
+        +at-all-breaks()
+            --active-edge: var(--edge-neutral, currentColor)
+
+    &:edgeShade
+        +at-all-breaks()
+            --active-edge: var(--edge-shade, currentColor)
+
+    &:edgeAccent
+        +at-all-breaks()
+            --active-edge: var(--edge-accent, currentColor)
+
+    &:edgeWarn
+        +at-all-breaks()
+            --active-edge: var(--edge-warn, currentColor)
+
+
+
+//  Set background color for Breaks
+// ++++++++++++++++++++++++++++++++
+hr--set{":"}edge
+    +at-all-breaks()
+        --active-bg: var(--active-edge, currentColor)
+
+
+vr--set{":"}edge
+    +at-all-breaks()
+        --active-bg: var(--active-edge, currentColor)
+
+
+
+//  BORDER RADIUS
+// ++++++++++++++++++++
+radiiLimit = limits.radii
+
+
+if radiiLimit
+    radii
+        +at-class()
+            --radii: 0
+
+            &,
+            &::before
+            &::after
+                border-radius: var(--radii)
+
+    radii
+        for item in radiiLimit
+            &:set{item[0]}
+                +at-class()
+                    --radii: item[1]

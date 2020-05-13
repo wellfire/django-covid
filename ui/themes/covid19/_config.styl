@@ -1,0 +1,302 @@
+// ++++++++++++++++++++++++++++++++
+// ++ BREAKPOINTS
+// ++++++++++++++++++++++++++++++++
+maxSiteWidth = 1480px // this might change to 1600?
+
+breakpoints = {
+    base: 0px,              //  older iphones (320px),
+                            //  smaller mobile devices and iPhone X and iPhone 11
+
+    compressed: 375px,      //  iphone 6, 7, 8, iphone X and iphone 11
+
+    condensed: 414px,       //  iphone 6+, 7+, 8+, 11 Pro, 11 Pro Max;
+                            //  originally: 660px (should possibly stay the same)
+                            //  attemptins to fix notch issues
+
+    economy: 736px,         //  iphone 8 plus landscape (736px), ipad;
+                            //  orginally: 768px (for ipad)
+
+    enhanced: 896px,        //  iphone pro/pro max landscape;
+                            //  originally: 960px
+
+    extended: 1024px,       //  ipad landscape;
+                            //  previously: [standard]
+
+    standard: 1280px,       //  lower end of laptops; 720p -> 1280px x 720px [16:9]
+                            //  previously: [extended]
+                            //  covers 1280 x 720px (720p) [16:9]
+                            //  1366 x 768 (VGA HD) mid/cheap laptop size [16:9]
+                            //  1440 x 900 (Wide SXGA)  [16:10]
+
+    wide: 1600px            //  1600 x 1200 (Ultra XGA) -> lenova thinkpad
+                            //  previously: [full]
+
+    ultra: 1920px           //  1080p -> 1920 x 1080 [16:9]
+                            //  2160p [4k] -> 3840 x 2160 [16:9]
+                            //  2880p [5k] -> 5120 x 2880
+                            //  4320p [8k] -> 7680 x 4320 [16:9]
+    //  2880(?)
+}
+
+
+// ++++++++++++++++++++++++++++++++
+// ++ COLORS
+// ++++++++++++++++++++++++++++++++
+colors = {
+    primary: #6F79EA, // Academy Purple (Listed)
+    primaryTint: #C5C9F7, // Academy Light Purple (Listed)
+    primaryHilite: #BBBCF7, // Academy Light Purple (Screen)
+    primaryShade: #6262E8, // Academy Purple (Screen)
+
+    secondary: #FF9171, // Academy Peach (Listed)
+    secondaryShade: #F27A5B, // Academy Peach (Screen)
+
+    tertiary: #00AB9F, // Academy Emerald (Listed)
+    tertiaryShade: #309D8E, // Academy Emerald (Screen)
+
+    //  tones
+    bright: #FFF, // Academy White
+    dark: #000000, // Academy Black
+    neutral: #A3A3A3, //Academy Alt Dark Grey (Screen)
+    tint: #DFDFDF, // Academy Light Grey (Screen)
+    shade: #343334, // Academy Dark Grey (Screen)
+    tintAlt: #E5E5E5, // Academy Light Grey (Listed)
+    neutralAlt: #B2B2B2, // Academy Dark Grey (Listed)
+
+    //  named
+    affirm: #84CCA8, // monte carlo (green)
+    // affirmTint: #BBE2CF,
+    // affirmShade: #36815C,
+    dissent: #BF7373 // contessa (red)
+    // dissentTint: #CF9696,
+    // dissentShade: #8C4040,
+    warn: #E6BB50, // ronchi (yellow)
+    // warnTint: #FFE06B,
+    // warnShade: #D1A600
+}
+
+
+// ++++++++++++++++++++++++++++++++
+// ++ TRANSITIONS
+// ++++++++++++++++++++++++++++++++
+fx = {
+    quick: {
+        time: .25s
+        func: ease-in
+    },
+    medium: {
+        time: .4s
+        func: ease-in
+    }
+}
+
+
+// ++++++++++++++++++++++++++++++++
+// ++ TYPOGRAPHY
+// ++++++++++++++++++++++++++++++++
+// defaultTypeStack = []
+// defaultTypeStack = Montserrat, arial
+typeStacks = {
+    hed: Gilroy tahoma,
+    copy: Arial
+}
+
+typeSets = {
+    xbroadside: {
+        font-size: 64px,
+        line-height: 64px
+    },
+
+    broadside: {
+        font-size: 40px,
+        line-height: 40px
+    },
+
+    display: {
+        font-size: 35px,
+        line-height: 40px
+    },
+
+    xhed: {
+        font-size: 29px,
+        line-height: 32px
+    },
+
+    hed: {
+        font-size: 24px,
+        line-height: 32px
+    },
+
+    subhed: {
+        font-size: 21px,
+        line-height: 32px
+    },
+
+    major: {
+        font-size: 19px,
+        line-height: 24px
+    }
+
+    base: {
+        font-size: 15px,
+        line-height: 24px
+    },
+
+    minor: {
+        font-size: 13px,
+        line-height: 16px
+    },
+
+    chrome: {
+        font-size: 11px,
+        line-height: 16px
+    },
+
+    // caption
+    // subcaption
+}
+
+typeDecs = {
+    alignment: false,
+    weights: 100 400 900,
+
+    //  case examples: (init unset) (cap capitalize) (upper uppercase) (lower lowercase),
+    case: false,
+
+    //  leading examples: (flush 0) (half .5) (matched 1) (base 1.2) (expand 1.5) (loose 1.7) (double 2)
+    leading: false,
+
+    //  letter-spacing examples: true || (flush -.08em) (tight -.04em) (init 0) (loose .04em) (zoned .08em)
+    letterSpace:false,
+
+    //  word-spacing examples: true || (flush -.1em) (tight -.05em) (init 0) (loose .05em) (zoned .1em)
+    wordSpace: false,
+
+    aliased: false,
+    truncate: false,
+    preWrap: false,
+    noWrap: false,
+    initWrap: false
+}
+
+
+// ++++++++++++++++++++++++++++++++
+// ++ MEASUREMENT LIMITS
+// ++++++++++++++++++++++++++++++++
+
+limits = {
+    //  start end[default=100] step[default=5]
+    // dxPct: 80 100 10,
+
+    //  ex: 10 25 50 100 150 200
+    // dxRhy: 25 200,
+
+    //  ex: 10 25 50 100 150 200
+    // dxText: 10 25 100,
+
+    //  start end[default=100] step[default=5]
+    // dxView: 40 60 10,
+
+    //  start end[default=100] step[default=5]
+    // dyPct: 100,
+
+    //  ex: 10 25 50 100 150 200
+    // dyRhy: 200,
+
+    //  ex: 10 25 50 100 150 200
+    // dyText: 200,
+
+    //  start end[default=100] step[default=5]
+    // dyView: false,
+
+    //  start end[default=100] step[default=5]
+    // dxyPct: false,
+
+    //  ex: 10 25 50 100 150 200
+    dxyRhy: 100 150 200 300,
+
+    //  ex: 10 25 50 100 150 200
+    // dxyText: 100 150,
+
+    //  start end[default=100] step[default=5]
+    // dxyView: false,
+
+    //  ex: (16 9) (9 16) Silver Golden (1 2) (1 3) (3 4) (5 8)
+    // aspectRatios: (16 9) Golden,
+
+
+    //  ex: (Behind -1) (Base 0) (Above 100) (Overlay 200) (Nav 300) (Runners 400) (Cover 500) (Modal 600)
+    zIndex: (Behind -1) (Base 0) (Above 100) (Nav 300) (Runners 400) (Modal 600),
+
+    //  ex: 0 10 25 50 75 100 125 150 200 250 300 350
+    paddings: 0 50 100 150 250,
+    // 10 25 50 100 200,
+
+    //  true or false, removes padding from first and last elements in a row-bound list
+    // padxFlush: false,
+
+    //  true or false, removes padding from first and last elements in a column-bound list
+    // padyFlush: false,
+
+    //  ex: 0 10 25 50 75 100 150 200 250 300
+    rhythms: 0 25 50 100 150 200 400,
+
+    //  ex: 0 10 25 50 75 100 125 150 200 250 300
+    // isolations: 0 25 200,
+
+    //  ex: 0 1 10
+    // xAdjust: false,
+    // maybe 10
+
+    //  ex: 0 1 10 25 50
+    // yAdjust: 10 25,
+    // maybe 10
+
+    //  ex: 0 45 90 180 270
+    // spinAdjust: 180,
+    // maybe 45, 90, 180, 270
+
+    //  ex: 0 10 25 50 75 100 150 200 250 300
+    // xyOffsets: false,
+
+    //  ex: 0 10 25 50 75 100 150 200 250 300
+    // xOffsets: false,
+
+    //  ex: 0 10 25 50 75 100 150 200 250 300
+    // yOffsets: false,
+
+    //  ex: 0 10 25 50 100 150 200
+    xyGap: 50 100 150,
+
+    //  ex: 0 10 25 50 100 150 200,   //  columns?
+    xGap: 100,
+
+    //  ex: 0 10 25 50 100 150 200,   //  rows?
+    yGap: 50,
+
+    //  start end[default=100] step[default=5]
+    // setAlpha: false,
+
+    //  start end[default=100] step[default=5]
+    // shiftAlpha: false,
+
+    //  ex:  (150 ratio(1.5)) (Rounded 3px) (Circle 50%)
+    // radii: (150 ratio(1.5)) (Rounded 4px),
+    // maybe 150?
+
+
+    // {
+    //     "50": (0 1px 2px hsla(#000, 10%)) (0 1px 1px hsla(#000, 20%)),
+    //     "100": (0 1px 3px hsla(#000, 12%)) (0 1px 2px hsla(#000, 24%)),
+    //     "200": (0 3px 6px hsla(#000, 16%)) (0 3px 6px hsla(#000, 23%)),
+    //     "300": (0 10px 20px hsla(#000, 19%)) (0 6px 6px hsla(#000, 23%)),
+    //     "400": (0 14px 28px hsla(#000, 25%)) (0 10px 10px hsla(#000, 22%)),
+    //     "500": (0 19px 38px hsla(#000, 30%)) (0 15px 12px hsla(#000, 22%))
+    // },
+    // setDropShadows: {
+    //     "100": (0 1px 3px hsla(#000, 12%)) (0 1px 2px hsla(#000, 24%)),
+    //     "200": (0 3px 6px hsla(#000, 16%)) (0 3px 6px hsla(#000, 23%)),
+    // },
+
+    // shiftDropShadows: false,
+}

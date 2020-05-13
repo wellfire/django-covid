@@ -1,0 +1,30 @@
+.control{":"}
+    +at-class()
+        // --hue-bg: initial
+        // --sat-bg: initial
+        // --lux-bg: initial
+        // --alpha-bg: initial
+        // --hue-fg: initial
+        // --sat-fg: initial
+        // --lux-fg: initial
+        // --alpha-fg: initial
+
+        background-color: var(--active-bg)
+        color: var(--active-fg)
+        border-color: var(--active-edge)
+
+    &link
+        +at-class()
+            --active-bg: convert-bg(colors.primary)
+            --active-fg: convert-fg(colors.bright)
+
+            +on-all-states()
+                --sat-bg: 30%
+
+        &--ghost
+            +at-class()
+                background-color: var(--active-fg)
+                color: var(--active-bg)
+
+                +on-all-states()
+                    --lux-fg: 95%
