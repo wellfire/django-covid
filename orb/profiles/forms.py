@@ -128,10 +128,10 @@ class RegisterForm(forms.Form):
         required=True,
         error_messages={'required': _('Please tick the box to confirm that you have read the terms')})
     mailing = forms.BooleanField(
-        label=_("Subscribe to Community Health Academy update emails"),
+        label=_("Subscribe to COVID-19 Digital Classroom update emails"),
         required=False)
     survey = forms.BooleanField(
-        label=_("I allow Community Health Academy to ask me to participate in surveys about my usage of COVID-19 Library resources"),
+        label=_("I allow COVID-19 Digital Classroom to ask me to participate in surveys about my usage of COVID-19 Library resources"),
         required=False,
         initial=True,
     )
@@ -356,7 +356,7 @@ class ProfileForm(forms.Form):
         error_messages={'required': _('Please select a gender')},
     )
     mailing = forms.BooleanField(
-        label=_("Please tick the box to subscribe to Community Health Academy update emails"),
+        label=_("Please tick the box to subscribe to COVID-19 Digital Classroom update emails"),
         required=False)
 
     website = forms.CharField(
