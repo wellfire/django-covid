@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-14 10:22+0000\n"
-"PO-Revision-Date: 2020-05-14 13:22+0300\n"
+"POT-Creation-Date: 2020-05-15 13:23+0000\n"
+"PO-Revision-Date: 2020-05-15 16:23+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -913,17 +913,17 @@ msgid ""
 "Please tick the box to subscribe to COVID-19 Digital Classroom update emails"
 msgstr ""
 
-#: orb/profiles/forms.py:363 orb/templates/base.html:82
+#: orb/profiles/forms.py:363 orb/templates/base.html:81
 #: orb/templates/orb/profile/view.html:62
 msgid "Website"
 msgstr ""
 
-#: orb/profiles/forms.py:367 orb/templates/base.html:81
+#: orb/profiles/forms.py:367 orb/templates/base.html:80
 #: orb/templates/orb/profile/view.html:73
 msgid "Twitter"
 msgstr ""
 
-#: orb/profiles/forms.py:371 orb/templates/base.html:85
+#: orb/profiles/forms.py:371 orb/templates/base.html:84
 #: orb/templates/orb/about.html:4 orb/templates/orb/profile/view.html:51
 msgid "About"
 msgstr ""
@@ -1266,43 +1266,43 @@ msgstr ""
 msgid "COVID"
 msgstr ""
 
-#: orb/templates/base.html:57
+#: orb/templates/base.html:56
 msgid ""
 "This is the development server, anything added here will not be shared on "
 "the live site"
 msgstr ""
 
-#: orb/templates/base.html:76
+#: orb/templates/base.html:75
 msgid "Contact Us"
 msgstr ""
 
-#: orb/templates/base.html:80
+#: orb/templates/base.html:79
 msgid "Follow Us"
 msgstr ""
 
-#: orb/templates/base.html:86 orb/templates/orb/about.html:9
+#: orb/templates/base.html:85 orb/templates/orb/about.html:9
 msgid "About COVID-19 Library"
 msgstr ""
 
-#: orb/templates/base.html:87 orb/templates/includes/header.html:109
+#: orb/templates/base.html:86 orb/templates/includes/header.html:109
 #: orb/templates/orb/how_to.html:9
 msgid "How to use COVID-19 Library"
 msgstr ""
 
-#: orb/templates/base.html:88 orb/templates/includes/header.html:112
+#: orb/templates/base.html:87 orb/templates/includes/header.html:112
 #: orb/templates/orb/cc-faq.html:2
 msgid "Creative Commons FAQs"
 msgstr ""
 
-#: orb/templates/base.html:89 orb/templates/includes/header.html:110
+#: orb/templates/base.html:88 orb/templates/includes/header.html:110
 msgid "Resource Guidelines"
 msgstr ""
 
-#: orb/templates/base.html:90 orb/templates/includes/header.html:111
+#: orb/templates/base.html:89 orb/templates/includes/header.html:111
 msgid "Content Review Process"
 msgstr ""
 
-#: orb/templates/base.html:95 orb/templates/orb/terms.html:4
+#: orb/templates/base.html:94 orb/templates/orb/terms.html:4
 msgid "Terms and Privacy Policy"
 msgstr ""
 
@@ -2034,8 +2034,8 @@ msgid ""
 "    <p>\n"
 "      <span class=\"bold\">Organizations</span>: COVID-19 Digital Classroom "
 "welcomes interest from organizations with a track record for\n"
-"      creating high quality reproductive, maternal, newborn and child health "
-"content appropriate for training frontline\n"
+"      creating high quality health content appropriate for training "
+"frontline\n"
 "      health workers based in low-resource settings. We invite those "
 "organizations to upload content to the platform.\n"
 "    </p>\n"
@@ -2047,10 +2047,10 @@ msgid ""
 "      which has been approved.\n"
 "    </p>\n"
 "    <p>\n"
-"      <span class=\"bold\">Content Review Team (CRT)</span>: The CRT is made "
-"up of highly qualified professionals in the\n"
-"      maternal and child health sector as well as experts in e-learning, "
-"instructional design and mHealth. The team\n"
+"      <span class=\"bold\">Content Review Team</span>: The Content Review "
+"Team is made up of highly qualified professionals in the\n"
+"      health sector as well as experts in e-learning, instructional design "
+"and mHealth. The team\n"
 "      members and their respective organizations contribute their time and "
 "effort to the content review process to\n"
 "      ensure that this platform is the ‘go-to’ source for quality training "
@@ -2083,11 +2083,11 @@ msgid ""
 "        content is appropriate for frontline health workers and appears to "
 "meet the COVID-19 Library criteria. If it is, then\n"
 "        COVID-19 Digital Classroom assigns the content to the appropriate "
-"CRT members for review.\n"
+"Content Review Team members for review.\n"
 "      </li>\n"
 "      <li>\n"
 "        <span class=\"bold\">External review</span>: The assigned medical, "
-"technology and training experts from the CRT\n"
+"technology and training experts from the Content Review Team\n"
 "        reviews the content to ensure the materials meet the standards for "
 "their area of expertise as well as the COVID-19 Library\n"
 "        quality standards. If the resource does not meet one of the "
@@ -2194,7 +2194,7 @@ msgid ""
 "\n"
 "<p>Dear %(firstname)s %(lastname)s,</p>\n"
 "\n"
-"<p>Welcome to the CHA community!</p>\n"
+"<p>Welcome to the COVID-19 Digital Classroom and Library community!</p>\n"
 "\n"
 "<p>Thank you for submitting your first resource ('%(title)s').</p>\n"
 "\n"
@@ -2255,10 +2255,6 @@ msgid ""
 "\n"
 "<p>Best regards,</p>\n"
 "<p>COVID-19 Digital Classroom Team<br/>\n"
-"Last Mile Health | Boston<br/>\n"
-"24 School Street, 5th Floor, Boston, MA 02108<br/>\n"
-"<a href=\"https://www.lastmilehealth.org\">www.lastmilehealth.org</a> | "
-"@lastmilehealth\n"
 msgstr ""
 
 #: orb/templates/orb/email/footer.txt:2
@@ -2266,9 +2262,6 @@ msgid ""
 "\n"
 "Best regards,\n"
 "COVID-19 Digital Classroom Team\n"
-"Last Mile Health | Boston\n"
-"24 School Street, 5th Floor, Boston, MA 02108\n"
-"www.lastmilehealth.org | @lastmilehealth\n"
 msgstr ""
 
 #: orb/templates/orb/email/link_checker_results.html:3
@@ -3062,8 +3055,8 @@ msgstr ""
 
 #: orb/templates/orb/resource/create_thanks.html:11
 msgid ""
-"Your submission with be reviewed by the Content Review Team and our Medical "
-"Expert Panel before it will be made available publicly on this site."
+"Your submission with be reviewed by the Content Review Team before it will "
+"be made available publicly on this site."
 msgstr ""
 
 #: orb/templates/orb/resource/edit.html:10
