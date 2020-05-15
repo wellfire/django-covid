@@ -2,7 +2,4 @@
 {% blocktrans %}
 Best regards,
 COVID-19 Digital Classroom Team
-Last Mile Health | Boston
-24 School Street, 5th Floor, Boston, MA 02108
-www.lastmilehealth.org | @lastmilehealth
 {% endblocktrans %}
