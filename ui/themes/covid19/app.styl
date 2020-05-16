@@ -4,6 +4,7 @@
     --color-bright: colors.bright
     --color-dark: colors.dark
     --color-tint: colors.tint
+    --color-tint-alt: colors.tintAlt
     --color-neutral: colors.neutral
     --color-neutral-alt: colors.neutralAlt
     --color-shade: colors.shade
@@ -47,6 +48,9 @@ body
     caret-color: var(--color-primary)
     color: var(--active-fg)
 
+input::placeholder
+    color: currentColor
+    opacity: .75
 
 @require "typography"
 @require "colors"

@@ -1,5 +1,5 @@
 main:
-    at-base: module:balance--index:next flex:v--p:start pad:xEq50 pad:yEq100 rhy:yStart100
+    at-base: module:balance--index:next flex:v--p:start
     # at-economy: pad:xEq100 pad:yEq200 rhy:yStart200
     # at-wide: aspect:xFull
 

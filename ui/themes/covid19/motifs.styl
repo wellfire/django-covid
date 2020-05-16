@@ -1,5 +1,5 @@
 .motif{":"}
-    +at-class()
+    +at-all-breaks()
         // --hue-bg: initial
         // --sat-bg: initial
         // --lux-bg: initial
@@ -14,7 +14,7 @@
         border-color: var(--current-edge)
 
     &bright
-        +at-class()
+        +at-all-breaks()
             --current-bg: var(--color-bright)
             --current-fg: var(--color-dark)
             // --edge-tint: hsla(colors.tint, .25)
@@ -24,3 +24,8 @@
             --current-bg: var(--color-primary)
             --current-fg: var(--color-bright)
             --edge-tint: hsla(colors.tint, .25)
+
+    &tintAlt
+        +at-all-breaks()
+            --current-bg: var(--color-tint-alt)
+            --current-fg: var(--color-dark)

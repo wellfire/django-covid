@@ -12,7 +12,7 @@ edge{":"}
         --edge-yStart: var(--edge-yEq)
         --edge-yEnd: var(--edge-yEq)
 
-        border-color: var(--active-edge, currentColor)
+        border-color: var(--current-edge, currentColor)
         border-style: solid
         border-width: var(--edge-yStart) var(--edge-xEnd) var(--edge-yEnd) var(--edge-xStart)
 
@@ -26,13 +26,13 @@ edge
         +at-all-breaks()
             height: var(--edge-width, 1px)
             background-clip: content-box
-            background-color: var(--active-bg, currentColor)
+            background-color: var(--current-bg, currentColor)
 
     &:vr
         +at-all-breaks()
             width: var(--edge-width, 1px)
             background-clip: content-box
-            background-color: var(--active-bg, currentColor)
+            background-color: var(--current-bg, currentColor)
 
 
 //  BORDER XY AXIS
@@ -117,41 +117,41 @@ edge
 //  BORDER COLORS
 //  will take the color from motif's set variables
 // +++++++++++++++++++++++++++++++++
-:root
-    --edge-tint: red
+// :root
+//     --current-tint: red
 
 set
     &:edgeHidden
         +at-all-breaks()
-            --active-edge: transparent
+            --current-edge: transparent
 
     &:edgePrimary
         +at-all-breaks()
-            --active-edge: var(--edge-primary, currentColor)
+            --current-edge: var(--edge-primary, currentColor)
 
     &:edgeSecondary
         +at-all-breaks()
-            --active-edge: var(--edge-secondary, currentColor)
+            --current-edge: var(--edge-secondary, currentColor)
 
     &:edgeTint
         +at-all-breaks()
-            --active-edge: var(--edge-tint, currentColor)
+            --current-edge: var(--edge-tint, currentColor)
 
     &:edgeNeutral
         +at-all-breaks()
-            --active-edge: var(--edge-neutral, currentColor)
+            --current-edge: var(--edge-neutral, currentColor)
 
     &:edgeShade
         +at-all-breaks()
-            --active-edge: var(--edge-shade, currentColor)
+            --current-edge: var(--edge-shade, currentColor)
 
     &:edgeAccent
         +at-all-breaks()
-            --active-edge: var(--edge-accent, currentColor)
+            --current-edge: var(--edge-accent, currentColor)
 
     &:edgeWarn
         +at-all-breaks()
-            --active-edge: var(--edge-warn, currentColor)
+            --current-edge: var(--edge-warn, currentColor)
 
 
 
@@ -159,12 +159,12 @@ set
 // ++++++++++++++++++++++++++++++++
 hr--set{":"}edge
     +at-all-breaks()
-        --active-bg: var(--active-edge, currentColor)
+        --current-bg: var(--current-edge, currentColor)
 
 
 vr--set{":"}edge
     +at-all-breaks()
-        --active-bg: var(--active-edge, currentColor)
+        --current-bg: var(--current-edge, currentColor)
 
 
 
@@ -174,7 +174,7 @@ radiiLimit = limits.radii
 
 
 if radiiLimit
-    radii
+    set{":"}radii
         +at-class()
             --radii: 0
 
@@ -183,8 +183,16 @@ if radiiLimit
             &::after
                 border-radius: var(--radii)
 
-    radii
+    set{":"}radii
         for item in radiiLimit
-            &:set{item[0]}
+            &{item[0]}
                 +at-class()
                     --radii: item[1]
+
+    set{":"}xRadiiEnd0
+        +at-class()
+            border-radius: 0 var(--radii) var(--radii) 0
+
+    set{":"}xRadiiStart0
+        +at-class()
+            border-radius: var(--radii) 0 0 var(--radii)

@@ -15,16 +15,30 @@ pad
                 --pad-xEq: 1px
                 padding-left: var(--pad-xEq)
                 padding-right: var(--pad-xEq)
+        &:xEqFull
+            if (maxSiteWidth)
+                +at-breaks()
+                    --pad-xEq: var(--site-content-area)
 
         &:xStart
             +at-breaks()
                 --pad-xStart: 1px
                 padding-left: var(--pad-xStart)
 
+        &:xStartFull
+            if (maxSiteWidth)
+                +at-breaks()
+                    --pad-xStart: var(--site-content-area)
+
         &:xEnd
             +at-breaks()
                 --pad-xEnd: 1px
                 padding-right: var(--pad-xEnd, 1px)
+
+        &:xEndFull
+            if (maxSiteWidth)
+                +at-breaks()
+                    --pad-xEnd: var(--site-content-area)
 
         &:yEq
             +at-breaks()
@@ -41,6 +55,7 @@ pad
             +at-breaks()
                 --pad-yEnd: 1px
                 padding-bottom: var(--pad-yEnd)
+
 
 
         for i in (padLimit)

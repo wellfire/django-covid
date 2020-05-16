@@ -1,5 +1,7 @@
 ---
+id: homepage
 hed: Covid-19 Library
+homepage: true
 lede: |
     COVID-19 Library offers frontline health workers and
     trainers access to quality assured openly licensed

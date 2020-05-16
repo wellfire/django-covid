@@ -22,7 +22,7 @@ const gridsomePlugins = [
         options: robotsData
     },
     ...batchFileSystemSource([
-        // ["pages", "SitePages"],
+        ["pages", "SitePages"],
         // ["snippets", "Snippets"],
         // ["careers", "Careers"],
         // ["events", "Events"],
