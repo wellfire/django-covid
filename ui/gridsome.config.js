@@ -13,15 +13,14 @@ const {
 
 const sources = [
     ["SitePages", "pages"],
-    ["Categories", "categories", "/tag/view/:slug", "./src/apps/Categories/CategoryView.vue"]
+    ["Categories", "categories", "/tag/view/:slug", "./src/apps/Categories/CategoryView.vue"],
+    ["Resources", "resources", "/resource/view/:title", "./src/apps/Resources/ResourceView.vue"]
 ]
 
 const {
     contentSources,
     templates
 } = batchConfig(sources)
-
-console.log(templates)
 
 const gridsomePlugins = [
     {

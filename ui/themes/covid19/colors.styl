@@ -24,30 +24,34 @@
     &tint
         +at-class()
             --current-fg: var(--color-tint)
-            --rxn-fg: var(--color-secondary)
+            --rxn-fg: var(--color-secondary-shade)
 
     &neutral
         +at-class()
             --current-fg: var(--color-neutral)
-            --rxn-fg: var(--color-secondary)
+            --rxn-fg: var(--color-secondary-shade)
 
     &shade
         +at-class()
             --current-fg: var(--color-shade)
-            --rxn-fg: var(--color-secondary)
+            --rxn-fg: var(--color-secondary-shade)
 
 
     // ++++++++++++++++++++++++++
     &primary
+        +at-class()
+            --current-fg: var(--color-primary)
+            --rxn-fg: var(--color-secondary-shade)
+
         &--shade
             +at-class()
                 --current-fg: var(--color-primary-shade)
-                --rxn-fg: var(--color-secondary)
+                --rxn-fg: var(--color-dark)
 
 
-    // &secondary
-    //     +at-class()
-    //             --current-fg: var(--color-secondary)
+    &secondary
+        +at-class()
+                --current-fg: var(--color-secondary)
     //             --rxn-fg: var(--color-secondary-shade)
     //     &--shade
     //         +at-class()

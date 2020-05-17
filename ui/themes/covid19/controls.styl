@@ -31,6 +31,13 @@
                     color: var(--active-fg)
                     border-color: var(--active-edge)
 
+    &primary--link
+        +at-class()
+            --current-bg: var(--color-primary-shade)
+            --current-fg: var(--color-bright)
+            --rxn-bg: var(--color-primary-tint)
+            --rxn-fg: var(--color-primary-shade)
+
     &accent--link
         +at-class()
             --current-bg: var(--color-accent-shade)
