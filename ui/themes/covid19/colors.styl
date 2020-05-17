@@ -21,6 +21,11 @@
             --current-fg: var(--color-dark)
 
     // ++++++++++++++++++++++++++
+    &tint
+        +at-class()
+            --current-fg: var(--color-tint)
+            --rxn-fg: var(--color-secondary)
+
     &neutral
         +at-class()
             --current-fg: var(--color-neutral)
@@ -46,7 +51,7 @@
     //             --rxn-fg: var(--color-secondary-shade)
     //     &--shade
     //         +at-class()
-    //             --current-fg: var(--color-secondary-shade)
+    //             --current-fg: var(--color-primary-hilite)
     //             --rxn-fg: var(--color-secondary)
 
     &accent--shade

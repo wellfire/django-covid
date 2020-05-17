@@ -10,6 +10,8 @@ pseudo-self()
     filter: grayscale(1) opacity(.5)
     pointer-events: none
 
+:root
+    --fx-shift: all var(--fx-time) var(--fx-delay, 0) var(--fx-func)
 
 fx{":"}
     +at-class()
