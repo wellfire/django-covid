@@ -117,18 +117,18 @@ if (typeDecs.wordSpace == true)
             //         text-align-last: end
 
 
-type
+set{":"}type
     //  --aa: TEXT ANTI-ALIASING
     // +++++++++++++++++++++++++++++++++
     if typeDecs.aliased
-        &:setAliased
+        &Aliased
             +at-all-breaks()
                 -webkit-font-smoothing: antialiased
 
     //  --truncate: TEXT TRUNCATE
     // +++++++++++++++++++++++++++++++++
     if typeDecs.truncate
-        &:setTruncate
+        &Truncate
             +at-all-breaks()
                 display: block
                 white-space: nowrap
@@ -151,20 +151,20 @@ type
     //  --preWrap: TEXT PREWRAP
     // +++++++++++++++++++++++++++++++++
     if typeDecs.preWrap
-        &:setPreWrap
+        &PreWrap
             +at-all-breaks()
                 white-space: pre-line
 
     //  --noWrap: TEXT NO WRAP
     // +++++++++++++++++++++++++++++++++
     if typeDecs.noWrap
-        &:setNoWrap
+        &NoWrap
             +at-all-breaks()
                 white-space: nowrap
 
     //  --initWrap: TEXT REGULAR BREAKS
     // +++++++++++++++++++++++++++++++++
     if typeDecs.initWrap
-        &:setInitWrap
+        &InitWrap
             +at-all-breaks()
                 white-space: normal

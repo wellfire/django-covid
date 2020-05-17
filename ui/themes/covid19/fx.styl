@@ -29,3 +29,17 @@ fx{":"}
         +at-class()
             +on-hover()
                 text-decoration: underline
+
+
+    //  increase the hit area for links and such
+    &bounds
+        +at-all-breaks()
+            &::before
+                content: ""
+                display: block
+                background: transparent
+                position: absolute
+                top: 0
+                left: 0
+                right: 0
+                bottom: 0

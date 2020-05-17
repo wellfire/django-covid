@@ -34,5 +34,8 @@
             --current-bg: var(--color-secondary)
             --current-fg: var(--color-bright)
 
-            +on-all-states()
-                filter: saturate(1.85)
+            fx{":"}shift
+                +at-class()
+                    +on-all-states()
+                        --current-bg: var(--color-secondary-shade)
+                        // filter: saturate(1.85)

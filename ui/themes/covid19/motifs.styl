@@ -25,6 +25,12 @@
             --current-fg: var(--color-bright)
             --edge-tint: hsla(colors.tint, .25)
 
+    &secondary--tint
+        +at-class()
+            --current-bg: var(--color-secondary-tint)
+            --current-fg: var(--color-shade)
+            // --edge-tint: hsla(colors.tint, .25)
+
     &tintAlt
         +at-all-breaks()
             --current-bg: var(--color-tint-alt)
