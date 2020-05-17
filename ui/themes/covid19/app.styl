@@ -1,24 +1,11 @@
 @require "fonts"
 
 :root
-    --color-bright: colors.bright
-    --color-dark: colors.dark
-    --color-tint: colors.tint
-    --color-tint-alt: colors.tintAlt
-    --color-neutral: colors.neutral
-    --color-neutral-alt: colors.neutralAlt
-    --color-shade: colors.shade
+    for key, value in colors
+        --color-{key}: value
 
-    --color-primary: colors.primary
-    --color-primary-shade: colors.primaryShade
-    --color-secondary: colors.secondary
-    --color-secondary-tint: lighten(colors.secondary, 20%)
-    --color-secondary-shade: colors.secondaryShade
-    --color-tertiary: colors.tertiary
-
-    --color-affirm: colors.affirm
-    --color-warn: colors.warn
-    --color-dissent: colors.dissent
+    for key, value in colors
+        --edge-{key}: s("var(--color-%s)", unquote(key))
 
     --current-bg: transparent
     --current-fg: var(--color-dark)
@@ -26,11 +13,6 @@
 
     --edge-width: 1px
     --edge-style: solid
-    --edge-primary: currentColor
-    --edge-tint: var(--color-tint)
-    --edge-neutral: var(--color-neutral)
-    --edge-shade: var(--color-shade)
-    --edge-warn: var(--color-warn)
 
     --fx-delay: 0s
     --fx-time: fx.quick.time

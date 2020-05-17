@@ -1,8 +1,8 @@
 .color{":"}
     +at-class()
+        --rxn-fg: var(--current-fg)
+
         color: var(--current-fg)
-        --rxn-fg: var(--current-fg)
-        --rxn-fg: var(--current-fg)
 
         .fx:shift
             +at-class()
@@ -11,46 +11,48 @@
 
 
     // ++++++++++++++++++++++++++
+    &bright
+        +at-class()
+            --current-fg: var(--color-bright)
+            --rxn-fg: var(--color-primary-shade)
 
+    &dark
+        +at-class()
+            --current-fg: var(--color-dark)
+
+    // ++++++++++++++++++++++++++
     &neutral
         +at-class()
             --current-fg: var(--color-neutral)
-            --rxn-fg: var(--color-primary)
-
-        &--alt
-            +at-class()
-                --current-fg: var(--color-neutral-alt)
+            --rxn-fg: var(--color-secondary)
 
     &shade
         +at-class()
             --current-fg: var(--color-shade)
+            --rxn-fg: var(--color-secondary)
 
-    // ++++++++++++++++++++++++++
-    // &bright
-    //     +at-class()
-    //         --active-fg: var(--color-bright)
-
-    // &dark
-    //     +at-class()
-    //         --active-fg: var(--color-dark)
 
     // ++++++++++++++++++++++++++
     &primary
         &--shade
             +at-class()
                 --current-fg: var(--color-primary-shade)
-                --rxn-fg: var(--color-primary)
-
-
-    &secondary
-        +at-class()
-                --current-fg: var(--color-secondary)
-                --rxn-fg: var(--color-secondary-shade)
-        &--shade
-            +at-class()
-                --current-fg: var(--color-secondary-shade)
                 --rxn-fg: var(--color-secondary)
-    //         --active-fg: var(--color-secondary)
+
+
+    // &secondary
+    //     +at-class()
+    //             --current-fg: var(--color-secondary)
+    //             --rxn-fg: var(--color-secondary-shade)
+    //     &--shade
+    //         +at-class()
+    //             --current-fg: var(--color-secondary-shade)
+    //             --rxn-fg: var(--color-secondary)
+
+    &accent--shade
+        +at-class()
+            // --current-fg: var(--color-tertiary-tint)
+            --current-fg: var(--color-accent-shade)
 
 
     // ++++++++++++++++++++++++++
@@ -58,7 +60,7 @@
         +at-class()
             --current-fg: var(--color-affirm)
 
-    &notice
+    &warn
         +at-class()
             --current-fg: var(--color-warn)
 

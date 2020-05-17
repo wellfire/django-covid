@@ -17,21 +17,30 @@
         +at-all-breaks()
             --current-bg: var(--color-bright)
             --current-fg: var(--color-dark)
-            // --edge-tint: hsla(colors.tint, .25)
 
     &primary
         +at-class()
             --current-bg: var(--color-primary)
             --current-fg: var(--color-bright)
-            --edge-tint: hsla(colors.tint, .25)
-
-    &secondary--tint
-        +at-class()
-            --current-bg: var(--color-secondary-tint)
-            --current-fg: var(--color-shade)
             // --edge-tint: hsla(colors.tint, .25)
 
-    &tintAlt
+            .color:bright
+                +at-class()
+                    --rxn-fg: var(--color-dark)
+
+        &--tint
+            +at-class()
+                --current-bg: var(--color-primary-tint)
+                --current-fg: var(--color-bright)
+
+    &accent--tint
+        +at-class()
+            --current-bg: var(--color-accent-tint)
+            // --current-bg: var(--color-secondary-tint)
+            --current-fg: var(--color-dark)
+            // --edge-tint: hsla(colors.tint, .25)
+
+    &tint
         +at-all-breaks()
-            --current-bg: var(--color-tint-alt)
+            --current-bg: var(--color-tint)
             --current-fg: var(--color-dark)
