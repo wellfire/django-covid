@@ -1,0 +1,101 @@
+// @domain      FLEX CONTAINERS
+// @namespace   flex
+// +++++++++++++++++++++++++++++++++
+
+flex{":"}
+    +at-breaks()
+        display: flex
+        flex-wrap: nowrap
+        visibility: visible
+        width: 100%
+
+flex
+    &:v
+        +at-breaks()
+            flex-direction: column
+
+    &:vRev
+        +at-breaks()
+            flex-direction: column-reverse
+
+    &:vRevAuto
+        +at-breaks()
+            width: auto
+
+    &:vAuto
+        +at-breaks()
+            width: auto
+
+    &:h
+        +at-breaks()
+            flex-direction: row
+
+    &:hRev
+        +at-breaks()
+            flex-direction: row-reverse
+
+    &:hAuto
+        +at-breaks()
+            width: auto
+
+iflex{":"}
+    +at-breaks()
+        display: inline-flex
+        width: auto
+
+--set
+    &:xyWrap
+        +at-breaks()
+            flex-wrap: wrap
+// +++++++++++++++++++++++++++++++++
+//  PRIMARY FLEX AXIS
+
+--p
+    &:grid
+        +at-breaks()
+            justify-content: space-between
+
+    &:space
+        +at-breaks()
+            justify-content: space-around
+
+    &:start
+        +at-breaks()
+            justify-content: flex-start
+
+    &:end
+        +at-breaks()
+            justify-content: flex-end
+
+    &:middle
+        +at-breaks()
+            justify-content: center
+
+    &:full
+        +at-breaks()
+            justify-content: stretch
+
+
+// +++++++++++++++++++++++++++++++++
+//  SECONDARY FLEX AXIS
+
+--s
+    &:base
+        +at-breaks()
+            align-items: baseline
+
+    &:start
+        +at-breaks()
+            align-items: flex-start
+
+    &:end
+        +at-breaks()
+            align-items: flex-end
+
+    &:middle
+        +at-breaks()
+            align-items: center
+
+    &:full
+        +at-breaks()
+            align-items: stretch

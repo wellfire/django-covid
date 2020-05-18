@@ -1,0 +1,47 @@
+pseudo-self()
+    &,
+    &::after,
+    &::before
+        { block }
+
+
+.is-disabled
+[disabled]
+    filter: grayscale(1) opacity(.5)
+    pointer-events: none
+
+:root
+    --fx-shift: all var(--fx-time) var(--fx-delay, 0) var(--fx-func)
+
+fx{":"}
+    +at-class()
+        +pseudo-self()
+            --fx-delay: 0s
+            transition-delay: var(--fx-delay)
+            transition-property: all
+            transition-duration: var(--fx-time)
+            transition-timing-function: var(--fx-func)
+
+    &shift
+        +at-class()
+            +pseudo-self()
+                transition-property: all
+
+    &underline
+        +at-class()
+            +on-hover()
+                text-decoration: underline
+
+
+    //  increase the hit area for links and such
+    &bounds
+        +at-all-breaks()
+            &::before
+                content: ""
+                display: block
+                background: transparent
+                position: absolute
+                top: 0
+                left: 0
+                right: 0
+                bottom: 0

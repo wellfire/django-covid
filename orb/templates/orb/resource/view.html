@@ -293,6 +293,7 @@
         {% if resource.get_display_categories %}
             {% for c in resource.get_display_categories %}
                 <hr/>
+                {% comment %} {{ c.slug }} {% endcomment %}
 
                 <h4>{{ c.name }}</h4>
                 <div class="category">

@@ -1,0 +1,104 @@
+// @domain      ELEMENT VERTICAL RHYTHM FLOW
+// @namespace   rhy:
+// +++++++++++++++++++++++++++++++++++++++++
+rhyLimit = limits.rhythms
+
+//  do we need this reset?
+// rhy:
+//     // +at-breaks()
+//     //     --rhy-xEq: 0
+//     //     --rhy-xStart: 0
+//     //     --rhy-xEnd: 0
+//     //     --rhy-yEq: 0
+//     //     --rhy-yStart: 0
+//     //     --rhy-yEnd: 0
+//     //     --rhy-xyEq: 0
+
+rhy
+    if !!((rhyLimit)px)
+        // these might be out of order? xy may need to go at end since its a var
+        &:xyEq
+            +at-breaks()
+                > * + *
+                    --rhy-xyEq: 1px
+                    margin: var(--rhy-xyEq)
+
+        &:xEq
+            +at-breaks()
+                > * + *
+                    --rhy-xEq: 1px
+                    margin-left: var(--rhy-xEq)
+                    margin-right: var(--rhy-xEq)
+
+        &:xStart
+            +at-breaks()
+                > * + *
+                    --rhy-xStart: 1px
+                    margin-left: var(--rhy-xStart)
+
+        &:xEnd
+            +at-breaks()
+                > * + *
+                    --rhy-xEnd: 1px
+                    margin-right: var(--rhy-xEnd)
+
+        &:yEq
+            +at-breaks()
+                > * + *
+                    --rhy-yEq: 1px
+                    margin-top: var(--rhy-yEq)
+                    margin-bottom: var(--rhy-yEq)
+
+        &:yStart
+            +at-breaks()
+                > * + *
+                    --rhy-yStart: 1px
+                    margin-top: var(--rhy-yStart)
+
+        &:yEnd
+            +at-breaks()
+                > * + *
+                    --rhy-yEnd: 1px
+                    margin-bottom: var(--rhy-yEnd)
+
+        for i in (rhyLimit)
+            num = i/100
+            num = (i is 0) ? 0 : num
+            num = (i is 10) ? .125 : num
+            setMargin = flow(num)
+
+            // these might be out of order? xy may need to go at end since its a var
+            &:xyEq{i}
+                +at-breaks()
+                    > * + *
+                        --rhy-xyEq: setMargin
+
+            &:xEq{i}
+                +at-breaks()
+                    > * + *
+                        --rhy-xEq: setMargin
+
+            &:xStart{i}
+                +at-breaks()
+                    > * + *
+                        --rhy-xStart: setMargin
+
+            &:xEnd{i}
+                +at-breaks()
+                    > * + *
+                        --rhy-xEnd: setMargin
+
+            &:yEq{i}
+                +at-breaks()
+                    > * + *
+                        --rhy-yEq: setMargin
+
+            &:yStart{i}
+                +at-breaks()
+                    > * + *
+                        --rhy-yStart: setMargin
+
+            &:yEnd{i}
+                +at-breaks()
+                    > * + *
+                        --rhy-yEnd: setMargin

@@ -44,3 +44,5 @@ typing==3.6.1
 pathlib2==2.3.3
 
 django-ckeditor==5.9.0
+
+django-webpack-loader==0.6.0                    # webpack loader for webpack-driven application front-end

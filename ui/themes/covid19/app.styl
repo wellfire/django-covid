@@ -1,0 +1,46 @@
+@require "fonts"
+
+:root
+    for key, value in colors
+        --color-{key}: value
+
+    for key, value in colors
+        --edge-{key}: s("var(--color-%s)", unquote(key))
+
+    --current-bg: transparent
+    --current-fg: var(--color-dark)
+    --current-edge: currentColor
+
+    --edge-width: 1px
+    --edge-style: solid
+
+    --fx-delay: 0s
+    --fx-time: fx.quick.time
+    --fx-func: fx.quick.func
+    // --fx-bright: 0
+
+html
+    font-display: block
+    scroll-behavior: smooth
+
+body
+    min-height: 100%    // used to ensure 100% vertical coverage on mobile, as 100vh doesn't work correctly
+    display: flex
+    font-family: defaultTypeStack unless typeStacks is defined
+    stack: copy if typeStacks
+    caret-color: var(--color-primary)
+    color: var(--active-fg)
+
+input::placeholder
+    color: currentColor
+    opacity: .75
+
+.ContentViewLayout
+    --template-columns: 1fr 3fr
+
+@require "typography"
+@require "colors"
+@require "motifs"
+@require "controls"
+@require "icons"
+@require "fx"

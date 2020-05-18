@@ -1,0 +1,68 @@
+// @domain      ELEMENT TRANSFOMRS
+// @namespace   adj
+// +++++++++++++++++++++++++++++++++++++++++
+adjXLimit = limits.xAdjust
+adjYLimit = limits.yAdjust
+adjSpinLimit = limits.spinAdjust
+
+adj{":"}
+    +at-breaks()
+        --adjust-x: 0
+        --adjust-y: 0
+        --adjust-spin: 0
+        transform: translate(var(--adjust-x), var(--adjust-y)) rotate(var(--adjust-spin))
+        // should we add scale?
+
+adj
+    //  use px to test for 0
+    if !!((adjXLimit)px)
+        for i in (adjXLimit)
+            num = i/100
+            num = (i is 0) ? 0 : num
+            num = (i is 1) ? .0625 : num
+            num = (i is 10) ? .125 : num
+            setAdjustment = flow(num)
+            setAdjustmentAlt = flow(num*-1)
+
+            // i = (i is 0) ? "Init" : i
+            // i = (i is 1) ? "Nudge" : i
+
+            &:xStart{i}
+                +at-breaks()
+                    --adjust-x: setAdjustment
+
+            &:xEnd{i}
+                +at-breaks()
+                    --adjust-x: setAdjustmentAlt
+
+
+    //  use px to test for 0
+    if !!((adjYLimit)px)
+        for i in (adjYLimit)
+            num = i/100
+            num = (i is 0) ? 0 : num
+            num = (i is 1) ? .0625 : num
+            num = (i is 10) ? .125 : num
+            setAdjustment = flow(num)
+            setAdjustmentAlt = flow(num*-1)
+
+            // i = (i is 0) ? "Init" : i
+            // i = (i is 1) ? "Nudge" : i
+
+            &:yStart{i}
+                +at-breaks()
+                    --adjust-y: setAdjustment
+
+            &:yEnd{i}
+                +at-breaks()
+                    --adjust-y: setAdjustmentAlt
+
+    if !!((adjSpinLimit)px)
+        for i in (adjSpinLimit)
+            num = unit(i, "deg")
+
+            // i = (i is 0) ? "Init" : i
+
+            &:spin{i}
+                +at-breaks()
+                    --adjust-spin: num

@@ -1,0 +1,17 @@
+//  ==========================================================================
+//  Resets and Dev helpers
+//
+//
+reset()
+
+
+//  ==========================================================================
+//  Base VEFA F(CSS)
+//
+//
+if (maxSiteWidth)
+    :root
+        --site-content-area: "calc( (100vw - %s) / 2)" % maxSiteWidth
+
+
+@require "framework/*"

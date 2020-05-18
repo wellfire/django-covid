@@ -1,0 +1,75 @@
+// @domain          ELEMENT OPTICS
+// @namespace:      optics
+// +++++++++++++++++++++++++++++++++
+
+[v-cloak]
+    // special for VueJS
+    display: none !important
+
+
+optics
+    &:a11y
+        +at-all-breaks()
+            clip-path: rect(0,0,0,0)
+            clip-path: inset(0 0 0 0)
+            left: -100vw
+            overflow: hidden
+            position: absolute //  !important
+            width: 0
+
+    &:no
+        +at-all-breaks()
+            display: none
+            visibility: hidden
+
+    &:yes
+        +at-all-breaks()
+            clip-path: none
+            left: 0
+            overflow: visible
+            position: static
+            width: auto
+            visibility: visible
+            // display: inherit
+
+    &:voidRxn
+        +at-all-breaks()
+            pointer-events: none
+
+    &:xyEq
+        &--set:hidden
+            +at-all-breaks()
+                overflow: hidden
+
+    // &:empty
+    //     +at-all-breaks()
+    //         &:empty
+    //             visibility: hidden
+    //             display: none
+    // &:first
+    //     +at-all-breaks()
+    //         &:first-of-type
+    //             display: none
+
+    // &:last
+    //     +at-all-breaks()
+    //         &:last-of-type
+    //             display: none
+
+
+setAlphaLimits = limits.setAlpha
+--set:alpha
+    if !!((setAlphaLimits)px)
+        for num in range(setAlphaLimits[0], setAlphaLimits[1] || 100, 5)
+            &{num}
+                +at-all-breaks()
+                    opacity: (num/100)
+
+shiftAlphaLimits = limits.shiftAlpha
+--shift:alpha
+    if !!((shiftAlphaLimits)px)
+        for num in range(shiftAlphaLimits[0], shiftAlphaLimits[1] || 100, 5)
+            &{num}
+                +at-all-breaks()
+                    +on-all-states()
+                        opacity: (num/100)

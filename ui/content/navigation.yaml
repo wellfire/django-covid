@@ -1,0 +1,46 @@
+primary public:
+    routes:
+    -   label: Add a Resource
+        route: "{% url 'orb_resource_create' %}"
+    -   label: Help
+        route: "#"
+        subnav: help
+    -   label: Login
+        route: "{% url 'profile_login' %}"
+    -   label: Register
+        route: "{% url 'profile_register' %}"
+
+help:
+    routes:
+    -   label: How to use COVID-19 Library
+        route: "{% url 'orb_how_to' %}"
+    -   label: Resource Guidelines
+        route: "{% url 'orb_guidelines' %}"
+    -   label: Content Review Process
+        route: "{% url 'orb_content_review_process' %}"
+    -   label: Creative Commons FAQs
+        route: "{% url 'orb_cc_faq' %}"
+
+
+colophon:
+    routes:
+    -   label: About
+        subnav:
+        -   label: About COVID-19 Library
+            route: "{% url 'orb_about' %}"
+        -   label: How to use COVID-19 Library
+            route: "{% url 'orb_how_to' %}"
+        -   label: Creative Commons FAQs
+            route: "{% url 'orb_cc_faq' %}"
+        -   label: Resource Guidelines
+            route: "{% url 'orb_guidelines' %}"
+        -   label: Content Review Process
+            route: "{% url 'orb_content_review_process' %}"
+    -   label: Contact
+        subnav:
+        -   label: Twitter
+            route: https://twitter.com/lastmilehealth
+        -   label: Website
+            route: https://lastmilehealth.org/chacademy/
+        -   label: info@covid-19digitalclassroom.org
+            route: mailto:info@covid-19digitalclassroom.org

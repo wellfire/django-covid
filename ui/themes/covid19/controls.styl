@@ -1,0 +1,62 @@
+.control{":"}
+    +at-class()
+        // --hue-bg: initial
+        // --sat-bg: initial
+        // --lux-bg: initial
+        // --alpha-bg: initial
+        // --hue-fg: initial
+        // --sat-fg: initial
+        // --lux-fg: initial
+        // --alpha-fg: initial
+        --rxn-bg: var(--current-bg)
+        --rxn-fg: var(--current-fg)
+        --rxn-edge: var(--current-edge)
+        --active-bg: var(--rxn-bg)
+        --active-fg: var(--rxn-fg)
+        --active-edge: var(--rxn-edge)
+
+        background-color: var(--current-bg)
+        color: var(--current-fg)
+        border-color: var(--current-edge)
+
+        .fx:shift
+            +at-class()
+                +on-hover()
+                    background-color: var(--rxn-bg)
+                    color: var(--rxn-fg)
+                    border-color: var(--rxn-edge)
+
+                +on-active()
+                    background-color: var(--active-bg)
+                    color: var(--active-fg)
+                    border-color: var(--active-edge)
+
+    &primary--link
+        +at-class()
+            --current-bg: var(--color-primary-shade)
+            --current-fg: var(--color-bright)
+            --rxn-bg: var(--color-primary-tint)
+            --rxn-fg: var(--color-primary-shade)
+
+    &accent--link
+        +at-class()
+            --current-bg: var(--color-accent-shade)
+            --current-fg: var(--color-bright)
+            --rxn-bg: var(--color-accent)
+            // --rxn-fg: var(--color-accent-tint)
+
+
+    //     &--ghost
+    //         +at-class()
+    //             background-color: var(--current-fg)
+    //             color: var(--current-bg)
+
+    //             +on-all-states()
+    //                 --lux-fg: 95%
+
+    &action
+        +at-class()
+            --current-bg: var(--color-primary)
+            // --current-bg: var(--color-secondary)
+            --current-fg: var(--color-bright)
+            --rxn-bg: var(--color-primary-shade)

@@ -1,0 +1,19 @@
+main:
+    at-base: module:balance--index:next flex:v--p:start
+    # at-economy: pad:xEq100 pad:yEq200 rhy:yStart200
+    # at-wide: aspect:xFull
+
+extendedNavControl:
+    element:
+        class: fx:shift
+    #     type:chrome--case:upper control:link--ghost fx:shift
+    #     at-base: module:static flex:hAuto--p:end--s:middle
+    #     # at-base: flex:hAuto--p:start--s:middle pad:xEq50 pad:yEq10 rhy:xStart25
+
+    icon:
+        at-base: aspect:xyEq150--rhy
+        at-compressed: aspect:xyEq200--rhy
+        # at-economy: aspect:xyEq150--text
+
+    label:
+        at-base: optics:a11y

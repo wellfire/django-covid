@@ -1,0 +1,67 @@
+// @domain      DROP SHADOWS
+// @namespsace  drop:
+// +++++++++++++++++++++++++++++++++
+if limits.shiftDropShadows or limits.setDropShadows
+    drop{":"}
+        +at-all-breaks()
+            position: relative
+            transform-style: preserve-3d
+            z-index: 1
+
+            &::after
+            &::before
+                content: ""
+                display: block
+                bottom: 0
+                left: 0
+                position: absolute
+                right: 0
+                transform: translateZ(-1px)
+                top: 0
+                z-index: -1
+
+
+if limits.setDropShadows
+    drop{":"}set
+        +at-all-breaks()
+            &::before
+                box-shadow: var(--set-drop, none)
+                opacity: 1
+
+            &::after
+                opacity: 0
+
+    drop
+        &:set0
+            +at-all-breaks()
+                --set-drop: none
+
+        for shadowKey, shadowValue in limits.setDropShadows
+            &:set{ unquote(shadowKey) }
+                +at-all-breaks()
+                    --set-drop: unquote(join(",", shadowValue))
+
+
+if limits.shiftDropShadows
+    drop{":"}shift
+        +at-all-breaks()
+            &::after,
+            &::before
+                will-change: opacity
+
+            +on-all-states()
+                &::before
+                    opacity: 0
+
+                &::after
+                    box-shadow: var(--shift-drop, none)
+                    opacity: 1
+    drop
+        &:shift0
+            +at-all-breaks()
+                --shift-drop: none
+
+        for shadowKey, shadowValue in limits.shiftDropShadows
+            &:shift{ unquote(shadowKey) }
+                +at-all-breaks()
+                    --shift-drop: unquote(join(",", shadowValue))

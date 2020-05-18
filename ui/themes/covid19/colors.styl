@@ -1,0 +1,98 @@
+.color{":"}
+    +at-class()
+        --rxn-fg: var(--current-fg)
+
+        color: var(--current-fg)
+
+        .fx:shift
+            +at-class()
+                +on-hover()
+                    color: var(--rxn-fg)
+
+
+    // ++++++++++++++++++++++++++
+    &bright
+        +at-class()
+            --current-fg: var(--color-bright)
+            --rxn-fg: var(--color-primary-shade)
+
+    &dark
+        +at-class()
+            --current-fg: var(--color-dark)
+
+    // ++++++++++++++++++++++++++
+    &tint
+        +at-class()
+            --current-fg: var(--color-tint)
+            --rxn-fg: var(--color-secondary-shade)
+
+    &neutral
+        +at-class()
+            --current-fg: var(--color-neutral)
+            --rxn-fg: var(--color-secondary-shade)
+
+    &shade
+        +at-class()
+            --current-fg: var(--color-shade)
+            --rxn-fg: var(--color-secondary-shade)
+
+
+    // ++++++++++++++++++++++++++
+    &primary
+        +at-class()
+            --current-fg: var(--color-primary)
+            --rxn-fg: var(--color-secondary-shade)
+
+        &--tint
+            +at-class()
+                --current-fg: var(--color-primary-tint)
+                --rxn-fg: var(--color-primary-shade)
+
+        &--shade
+            +at-class()
+                --current-fg: var(--color-primary-shade)
+                --rxn-fg: var(--color-dark)
+
+        &--hilite
+            +at-class()
+                --current-fg: var(--color-primary-hilite)
+                --rxn-fg: var(--color-dark)
+
+
+    &secondary
+        +at-class()
+                --current-fg: var(--color-secondary)
+
+        &--tint
+            +at-class()
+                --current-fg: var(--color-secondary-tint)
+                --rxn-fg: var(--color-primary-shade)
+
+        &--shade
+            +at-class()
+                --current-fg: var(--color-secondary-shade)
+                --rxn-fg: var(--color-dark)
+
+        &--hilite
+            +at-class()
+                --current-fg: var(--color-secondary-hilite)
+                --rxn-fg: var(--color-dark)
+
+    &accent--shade
+        +at-class()
+            // --current-fg: var(--color-tertiary-tint)
+            --current-fg: var(--color-accent-shade)
+
+
+    // ++++++++++++++++++++++++++
+    &affirm
+        +at-class()
+            --current-fg: var(--color-affirm)
+
+    &warn
+        +at-class()
+            --current-fg: var(--color-warn)
+
+    &dissent
+        +at-class()
+            --current-fg: var(--color-dissent)
