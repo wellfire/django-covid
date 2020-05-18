@@ -22,8 +22,18 @@ module.exports = function ({ onCreateNode, loadSource, createPages }) {
 
     createPages(({ createPage }) => {
         createPage({
-            path: "/tag/view/:id",
+            path: "/tag/view/:category",
             component: "./src/apps/Categories/CategoryView.vue"
+        })
+
+        createPage({
+            path: "/:content",
+            component: "./src/pages/Content.vue"
+        })
+
+        createPage({
+            path: "/resource/:resource",
+            component: "./src/pages/Content.vue"
         })
     })
 }

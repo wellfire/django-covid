@@ -2,13 +2,6 @@
     "status": "done",
     "publicPath": "/",
     "chunks": {
-        "vendors~page--src--apps--categories--category-view-vue~page--src--pages--category-vue": [
-            {
-                "name": "../../static/covid/js/vendors~page--src--apps--categories--category-view-vue~page--src--pages--category-vue.js",
-                "publicPath": "/../../static/covid/js/vendors~page--src--apps--categories--category-view-vue~page--src--pages--category-vue.js",
-                "path": "/Volumes/Wellfire/lmh/django-covid/orb/static/covid/js/vendors~page--src--apps--categories--category-view-vue~page--src--pages--category-vue.js"
-            }
-        ],
         "app": [
             {
                 "name": "../../static/covid/js/app.js",
@@ -37,6 +30,13 @@
                 "path": "/Volumes/Wellfire/lmh/django-covid/orb/static/covid/js/page--src--pages--category-vue.js"
             }
         ],
+        "page--src--pages--content-vue": [
+            {
+                "name": "../../static/covid/js/page--src--pages--content-vue.js",
+                "publicPath": "/../../static/covid/js/page--src--pages--content-vue.js",
+                "path": "/Volumes/Wellfire/lmh/django-covid/orb/static/covid/js/page--src--pages--content-vue.js"
+            }
+        ],
         "page--src--pages--index-vue": [
             {
                 "name": "../../static/covid/js/page--src--pages--index-vue.js",
@@ -44,11 +44,25 @@
                 "path": "/Volumes/Wellfire/lmh/django-covid/orb/static/covid/js/page--src--pages--index-vue.js"
             }
         ],
+        "vendors~page--src--apps--categories--category-view-vue~page--src--pages--category-vue~page--src--pag~090b819a": [
+            {
+                "name": "../../static/covid/js/vendors~page--src--apps--categories--category-view-vue~page--src--pages--category-vue~page--src--pag~090b819a.js",
+                "publicPath": "/../../static/covid/js/vendors~page--src--apps--categories--category-view-vue~page--src--pages--category-vue~page--src--pag~090b819a.js",
+                "path": "/Volumes/Wellfire/lmh/django-covid/orb/static/covid/js/vendors~page--src--apps--categories--category-view-vue~page--src--pages--category-vue~page--src--pag~090b819a.js"
+            }
+        ],
+        "vendors~page--src--apps--categories--category-view-vue~page--src--pages--category-vue~page--src--pag~394609fe": [
+            {
+                "name": "../../static/covid/js/vendors~page--src--apps--categories--category-view-vue~page--src--pages--category-vue~page--src--pag~394609fe.js",
+                "publicPath": "/../../static/covid/js/vendors~page--src--apps--categories--category-view-vue~page--src--pages--category-vue~page--src--pag~394609fe.js",
+                "path": "/Volumes/Wellfire/lmh/django-covid/orb/static/covid/js/vendors~page--src--apps--categories--category-view-vue~page--src--pages--category-vue~page--src--pag~394609fe.js"
+            }
+        ],
         "styles": [
             {
-                "name": "../../static/covid/css/0.styles.css",
-                "publicPath": "/../../static/covid/css/0.styles.css",
-                "path": "/Volumes/Wellfire/lmh/django-covid/orb/static/covid/css/0.styles.css"
+                "name": "../../static/covid/css/styles.styles.css",
+                "publicPath": "/../../static/covid/css/styles.styles.css",
+                "path": "/Volumes/Wellfire/lmh/django-covid/orb/static/covid/css/styles.styles.css"
             },
             {
                 "name": "../../static/covid/js/styles.js",

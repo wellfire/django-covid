@@ -39,7 +39,7 @@
     </head>
     <body {% block bodyAttrs %}{% endblock %}>
         {% block app %}{% endblock %}
-        {% render_bundle "app" "js" "COVID_LIBRARY" %}
+        {% comment %} {% render_bundle "app" "js" "COVID_LIBRARY" %} {% endcomment %}
         <script>
             (function (i, s, o, g, r, a, m) {
                 i['GoogleAnalyticsObject'] = r;

@@ -47,7 +47,7 @@ module.exports = {
     // siteData.favicon || null,
     plugins: gridsomePlugins,
     templates,
-    chainWebpack: chainWebpack({ aliases }),
+    chainWebpack: chainWebpack({ aliases, devMode: true }),
     configureWebpack: {
         module: {
             rules: [
