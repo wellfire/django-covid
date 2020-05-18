@@ -1,6 +1,7 @@
 require("yamlify/register")
 const path = require("path")
 const sortCSSmq = require("sort-css-media-queries")
+const BundleTracker = require("webpack-bundle-tracker")
 
 const aliases = require("./src/data/aliases.yaml")
 const robotsData = require("./src/data/robots.yaml")
@@ -13,8 +14,8 @@ const {
 
 const sources = [
     ["SitePages", "pages"],
-    ["Categories", "categories", "/tag/view/:slug", "./src/apps/Categories/CategoryView.vue"],
-    ["Resources", "resources", "/resource/view/:title", "./src/apps/Resources/ResourceView.vue"]
+    ["Categories", "categories", "/tag/view/:slug",], // "./src/apps/Categories/CategoryView.vue"
+    ["Resources", "resources", "/resource/view/:title",] // "./src/apps/Resources/ResourceView.vue"]
 ]
 
 const {
@@ -26,10 +27,6 @@ const gridsomePlugins = [
     {
         use: "gridsome-plugin-webpack-size",
         options: { development: true }
-    },
-    {
-        use: "gridsome-plugin-robots-txt",
-        options: robotsData
     },
     ...contentSources,
 ]
@@ -60,7 +57,12 @@ module.exports = {
                 }
             ]
         },
-        plugins: []
+        plugins: [
+            new BundleTracker({
+                filename: "generated-source-map.json",
+                indent: "    "
+            })
+        ]
     },
     css: {
         loaderOptions: {

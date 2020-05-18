@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'orb.analytics',
     'modeltranslation_exim',
     'django_extensions',
-    'ckeditor'
+    'ckeditor',
+    'webpack_loader',
 ]
 
 
@@ -128,6 +129,16 @@ STATIC_ROOT = os.path.join(BASE_DIR, '..', 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
+
+# DJANGO WEBPACK BUNDLING
+WEBPACK_LOADER = {
+    "COVID_LIBRARY": {
+        "CACHE": not DEBUG,
+        # "CACHE": False,
+        "BUNDLE_DIR_NAME": 'covid/',  # must end with slash
+        "STATS_FILE": os.path.join(BASE_DIR, "orb/webpack-stats.json"),
+    },
+}
 #####################################################################
 
 

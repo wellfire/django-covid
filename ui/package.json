@@ -7,15 +7,11 @@
         "explore": "gridsome explore"
     },
     "dependencies": {
-        "@firebase/app-types": "^0.6.0",
         "@vue/composition-api": "^0.5.0",
         "@vuex-orm/core": "^0.36.3",
         "axios": "^0.19.2",
         "date-fns": "^2.12.0",
-        "firebase": "^7.14.2",
         "gridsome": "^0.7.14",
-        "gridsome-plugin-robots-txt": "^1.0.2",
-        "typeface-montserrat": "^0.0.75",
         "v-click-outside": "^3.0.1",
         "vuex": "^3.3.0"
     },
@@ -38,18 +34,6 @@
         "eslint-plugin-vue": "^6.2.2",
         "graphql-import-loader": "^0.2.1",
         "gridsome-plugin-webpack-size": "^1.0.2",
-        "isomorphic-fetch": "^2.2.1",
-        "markdown-it": "^10.0.0",
-        "markdown-it-attrs": "^3.0.2",
-        "markdown-it-container": "^2.0.0",
-        "markdown-it-deflist": "^2.0.3",
-        "markdown-it-figure": "^0.2.0",
-        "markdown-it-footnote": "^3.0.2",
-        "markdown-it-image-lazy-loading": "^1.0.2",
-        "markdown-it-ins": "^3.0.0",
-        "markdown-it-mark": "^3.0.0",
-        "markdown-it-responsive": "^0.1.0",
-        "markdown-it-video": "^0.6.3",
         "pug": "^2.0.4",
         "pug-plain-loader": "^1.0.0",
         "remark-attr": "^0.8.3",
@@ -59,6 +43,7 @@
         "svg-to-vue-component": "^0.3.8",
         "typogr": "^0.6.8",
         "vue-eslint-parser": "^7.0.0",
+        "webpack-bundle-tracker": "^0.4.3",
         "yaml-front-matter": "^4.1.0",
         "yamlify": "^0.2.0"
     }

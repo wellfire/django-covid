@@ -1,0 +1,26 @@
+{% extends "covid_base.html" %}
+
+{% block htmlAttrs %}
+${htmlAttrs}
+{% endblock %}
+
+{% block bodyAttrs %}
+${bodyAttrs}
+{% endblock %}
+
+{% block head %}
+${hash}
+${base}
+${noscript}
+{% comment %} ${vueMetaTags}
+${vueMetaLinks}
+ {% endcomment %}
+{% endblock %}
+
+{% block app %}
+${app}
+{% endblock %}
+
+{% block scripts %}
+${scripts}
+{% endblock %}

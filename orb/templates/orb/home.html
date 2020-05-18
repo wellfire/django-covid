@@ -1,7 +1,10 @@
-{% extends "base.html" %}
+{% extends "covid/index.html" %}
+{% comment %} {% extends "base.html" %} {% endcomment %}
+
 {% load i18n %}
 {% load static %}
 {% load thumbnail %}
+
 
 {% block extra_head_title %}{% trans 'COVID-19 Library' %}{% endblock extra_head_title %}
 
@@ -10,20 +13,18 @@
       href="{% url 'orb_feed' %}">
 {% endblock extra_head_feed %}
 
+{% block content_scripts %}
+{{ block.super }}
+{% endblock %}
+
+{% block app %}
+{{ block.super }}
+{% endblock %}
+
+
 {% block content %}
-
-{% include 'orb/includes/search_bar.html' %}
-
-<h3 style="text-align: center">
-    <img src="{% static 'orb/images/covid-typelogo.png' %}" alt="{%  trans 'COVID-19 Library' %}"/>
-</h3>
-
 <div style="position: relative; margin: 20px auto; overflow: hidden; text-align: center;">
-
- {% include "orb/home_topics.html" %}
-
-
+    {% include "orb/home_topics.html" %}
 	<div style="clear:both"></div>
 </div>
-
 {% endblock %}

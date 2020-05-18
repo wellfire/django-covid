@@ -43,20 +43,40 @@
             --current-fg: var(--color-primary)
             --rxn-fg: var(--color-secondary-shade)
 
+        &--tint
+            +at-class()
+                --current-fg: var(--color-primary-tint)
+                --rxn-fg: var(--color-primary-shade)
+
         &--shade
             +at-class()
                 --current-fg: var(--color-primary-shade)
+                --rxn-fg: var(--color-dark)
+
+        &--hilite
+            +at-class()
+                --current-fg: var(--color-primary-hilite)
                 --rxn-fg: var(--color-dark)
 
 
     &secondary
         +at-class()
                 --current-fg: var(--color-secondary)
-    //             --rxn-fg: var(--color-secondary-shade)
-    //     &--shade
-    //         +at-class()
-    //             --current-fg: var(--color-primary-hilite)
-    //             --rxn-fg: var(--color-secondary)
+
+        &--tint
+            +at-class()
+                --current-fg: var(--color-secondary-tint)
+                --rxn-fg: var(--color-primary-shade)
+
+        &--shade
+            +at-class()
+                --current-fg: var(--color-secondary-shade)
+                --rxn-fg: var(--color-dark)
+
+        &--hilite
+            +at-class()
+                --current-fg: var(--color-secondary-hilite)
+                --rxn-fg: var(--color-dark)
 
     &accent--shade
         +at-class()

@@ -108,6 +108,12 @@ xyGap = limits.xyGap
 xGap = limits.xGap
 yGap = limits.yGap
 
+--area{":"}
+    for i in 1..5
+        &{i}
+            +at-breaks()
+                grid-area: "area-%s" % i
+
 --gap
     if !!((xyGap)px)
         &:xyEq

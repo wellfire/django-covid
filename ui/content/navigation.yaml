@@ -1,25 +1,25 @@
 primary public:
     routes:
     -   label: Add a Resource
-        route: "#"
+        route: "{% url 'orb_resource_create' %}"
     -   label: Help
         route: "#"
         subnav: help
     -   label: Login
-        route: "#"
+        route: "{% url 'profile_login' %}"
     -   label: Register
-        route: "#"
+        route: "{% url 'profile_register' %}"
 
 help:
     routes:
     -   label: How to use COVID-19 Library
-        route: "#"
+        route: "{% url 'orb_how_to' %}"
     -   label: Resource Guidelines
-        route: "#"
+        route: "{% url 'orb_guidelines' %}"
     -   label: Content Review Process
-        route: "#"
+        route: "{% url 'orb_content_review_process' %}"
     -   label: Creative Commons FAQs
-        route: "#"
+        route: "{% url 'orb_cc_faq' %}"
 
 
 colophon:
@@ -27,15 +27,15 @@ colophon:
     -   label: About
         subnav:
         -   label: About COVID-19 Library
-            route: "#"
+            route: "{% url 'orb_about' %}"
         -   label: How to use COVID-19 Library
-            route: "#"
+            route: "{% url 'orb_how_to' %}"
         -   label: Creative Commons FAQs
-            route: "#"
+            route: "{% url 'orb_cc_faq' %}"
         -   label: Resource Guidelines
-            route: "#"
+            route: "{% url 'orb_guidelines' %}"
         -   label: Content Review Process
-            route: "#"
+            route: "{% url 'orb_content_review_process' %}"
     -   label: Contact
         subnav:
         -   label: Twitter

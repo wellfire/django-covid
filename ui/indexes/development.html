@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html ${htmlAttrs}>
+    <head>
+        ${head}
+        <script id="CATEGORIES_MATRIX" type="application/json">
+        [
+            {
+                "id": "case-finding-contact-tracing-management",
+                "title": "Case Finding, Contact Tracing &amp; Management",
+                "route": "/tag/view/case-finding-contact-tracing-management",
+                "media": "/media/cache/44/18/4418da2c4478d332ba02cff7079e6b45.png",
+                "resourceCount": "0 resources"
+            },
+            {
+                "id": "surveillance",
+                "title": "Surveillance",
+                "route": "/tag/view/surveillance",
+                "media": "/media/cache/25/af/25afa1200219f20b1d6bcae4f1c513d3.png",
+                "resourceCount": "0 resources"
+            },
+            {
+                "id": "public-health-prevention-measures",
+                "title": "Public Health Prevention Measures",
+                "route": "/tag/view/public-health-prevention-measures",
+                "media": "/media/cache/0d/64/0d6409e7e2f43f92e0ca0a78248cf6d8.png",
+                "resourceCount": "0 resources"
+            },
+            {
+                "id": "infection-prevention-and-control",
+                "title": "Infection Prevention and Control",
+                "route": "/tag/view/infection-prevention-and-control",
+                "media": "/media/cache/a8/3c/a83cea53f379e2b6043c470475797e2d.png",
+                "resourceCount": "3 resources"
+            },
+            {
+                "id": "lab-testing",
+                "title": "Lab Testing",
+                "route": "/tag/view/lab-testing",
+                "media": "/media/cache/a4/10/a4109c680156354d470776506a253098.png",
+                "resourceCount": "0 resources"
+            },
+            {
+                "id": "case-management-and-hospital-response",
+                "title": "Case Management and Hospital Response",
+                "route": "/tag/view/case-management-and-hospital-response",
+                "media": "/media/cache/c0/15/c01586d65f7b4f26449e4512a97b2928.png",
+                "resourceCount": "2 resources"
+            },
+            {
+                "id": "emergency-response",
+                "title": "Emergency Response",
+                "route": "/tag/view/emergency-response",
+                "media": "/media/cache/80/12/801263f6ce678f8cc1b5389b0d050d76.png",
+                "resourceCount": "2 resources"
+            },
+            {
+                "id": "societal-response",
+                "title": "Societal Response",
+                "route": "/tag/view/societal-response",
+                "media": "/media/cache/6a/0a/6a0a20a0d17171cf26c5c64b1d65c984.png",
+                "resourceCount": "0 resources"
+            },
+            {
+                "id": "risk-management-community-engagement",
+                "title": "Risk Management &amp; Community Engagement",
+                "route": "/tag/view/risk-management-community-engagement",
+                "media": "/media/cache/e2/e1/e2e125176099307b547b3184b6d77413.png",
+                "resourceCount": "0 resources"
+            }
+        ]
+        </script>
+
+        <script id="NAVIGATION" type="application/json">
+        {
+            "HOME": {
+                "routes": [
+                    { "route": "{% url 'orb_home' %}" }
+                ]
+            },
+
+            "ADVANCED_SEARCH": {
+                "routes" : [
+                    {
+                        "label": "Expand Your Search",
+                        "route": "{% url 'orb_search_advanced' %}"
+                    }
+                ]
+            },
+
+            "ORG": {
+                "routes": [
+                    {
+                        "label": "COVID-19 Digital Classroom",
+                        "route": "https://lastmilehealth.org/chacademy/"
+                    }
+                ]
+            },
+
+            "TERMS": {
+                "routes": [
+                    {
+                        "label": "Terms & Privacy Policy",
+                        "route": "{% url 'orb_terms' %}"
+                    }
+                ]
+            },
+
+            "CATEGORIES": {
+                "routes": [
+                    {
+                        "label": "Case Finding, Contact Tracing &amp; Management",
+                        "route": "/tag/view/case-finding-contact-tracing-management"
+                    },
+                    {
+                        "label": "Surveillance",
+                        "route": "/tag/view/surveillance"
+                    },
+                    {
+                        "label": "Public Health Prevention Measures",
+                        "route": "/tag/view/public-health-prevention-measures"
+                    },
+                    {
+                        "label": "Infection Prevention and Control",
+                        "route": "/tag/view/infection-prevention-and-control"
+                    },
+                    {
+                        "label": "Lab Testing",
+                        "route": "/tag/view/lab-testing"
+                    },
+                    {
+                        "label": "Case Management and Hospital Response",
+                        "route": "/tag/view/case-management-and-hospital-response"
+                    },
+                    {
+                        "label": "Emergency Response",
+                        "route": "/tag/view/emergency-response"
+                    },
+                    {
+                        "label": "Societal Response",
+                        "route": "/tag/view/societal-response"
+                    },
+                    {
+                        "label": "Risk Management &amp; Community Engagement",
+                        "route": "/tag/view/risk-management-community-engagement"
+                    }
+                ]
+            },
+
+            "PRIMARY_PUBLIC": {
+                "routes": [
+                    {
+                        "label": "Browse Resources",
+                        "subnav": "CATEGORIES"
+                    },
+                    {
+                        "label": "Add a Resource",
+                        "route": "{% url 'orb_resource_create' %}"
+                    },
+                    {
+                        "label": "Help",
+                        "route": "#",
+                        "subnav": "HELP"
+                    },
+                    {
+                        "label": "Log In",
+                        "route": "{% url 'profile_login' %}"
+                    },
+                    {
+                        "label": "Register",
+                        "route": "{% url 'profile_register' %}"
+                    }
+                ]
+            },
+
+            "HELP": {
+                "routes": [
+                    {
+                        "label": "How to use COVID-19 Library",
+                        "route": "{% url 'orb_how_to' %}"
+                    },
+                    {
+                        "label": "Resource Guidelines",
+                        "route": "{% url 'orb_guidelines' %}"
+                    },
+                    {
+                        "label": "Content Review Process",
+                        "route": "{% url 'orb_content_review_process' %}"
+                    },
+                    {
+                        "label": "Creative Commons FAQs",
+                        "route": "{% url 'orb_cc_faq' %}"
+                    }
+                ]
+            },
+
+            "COLOPHON_ABOUT": {
+                "routes": [
+                    {
+                        "label": "About COVID-19 Library",
+                        "route": "{% url 'orb_about' %}"
+                    },
+                    {
+                        "label": "How to use COVID-19 Library",
+                        "route": "{% url 'orb_how_to' %}"
+                    },
+                    {
+                        "label": "Creative Commons FAQs",
+                        "route": "{% url 'orb_cc_faq' %}"
+                    },
+                    {
+                        "label": "Resource Guidelines",
+                        "route": "{% url 'orb_guidelines' %}"
+                    },
+                    {
+                        "label": "Content Review Process",
+                        "route": "{% url 'orb_content_review_process' %}"
+                    }
+                ]
+            },
+
+            "COLOPHON_CONTACT": {
+                "routes": [
+                    {
+                        "label": "Twitter",
+                        "route": "https://twitter.com/lastmilehealth"
+                    },
+                    {
+                        "label": "Website",
+                        "route": "https://lastmilehealth.org/chacademy/"
+                    },
+                    {
+                        "label": "info@covid-19digitalclassroom.org",
+                        "route": "mailto:info@covid-19digitalclassroom.org"
+                    }
+                ]
+            }
+        }
+        </script>
+    </head>
+    <body ${bodyAttrs}>
+        ${app}
+        ${scripts}
+    </body>
+</html>
