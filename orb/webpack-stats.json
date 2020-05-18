@@ -26,12 +26,6 @@
                 "publicPath": "/static/covid/js/page--src--pages--404-vue.js"
             }
         ],
-        "page--src--pages--base-vue": [
-            {
-                "name": "covid/js/page--src--pages--base-vue.js",
-                "publicPath": "/static/covid/js/page--src--pages--base-vue.js"
-            }
-        ],
         "page--src--pages--index-vue": [
             {
                 "name": "covid/js/page--src--pages--index-vue.js",

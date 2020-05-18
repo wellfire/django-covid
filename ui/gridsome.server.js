@@ -19,6 +19,13 @@ module.exports = function ({ onCreateNode, loadSource, createPages }) {
                 : optCode.Default()
         }
     )
+
+    createPages(({ createPage }) => {
+        createPage({
+            path: "/tag/view/:id",
+            component: "./src/apps/Categories/CategoryView.vue"
+        })
+    })
 }
 // module.exports = function ({ loadSource, createPages }) {
 //     createPages(

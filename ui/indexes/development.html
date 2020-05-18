@@ -236,9 +236,33 @@
             }
         }
         </script>
+        <script id="CURRENT_CATEGORY" type="application/json">
+        {
+            "id": "emergency-response",
+            "title": "Emergency Response",
+
+            "media": "/media/cache/65/5f/655f0d64ceadbf7e68be5d6a406d05ac.png",
+            "description": "\u003Cp\u003EEmergency Response mechanisms, are a part of a comprehensive program of public health emergency preparedness, planning and capacity building provided within the WHO publication: \u003Ca href\u003D\u0022https://www.who.int/ihr/publications/9789241565134_eng/en/\u0022\u003EFramework for a Public Health Emergency Operations Centre\u003C/a\u003E.\u003C/p\u003E\u000D\u000A\u000D\u000A\u003Cp\u003EAudience: Those responsible for implementing policy around the emergency response. The policy group should include heads of involved organizations, subject matter experts (including legal counsel and an ethics advisor), government officials, and other executive officers and professionals tasked to provide strategic level leadership.\u003C/p\u003E\u000D\u000A\u000D\u000A\u003Cp\u003ESuch a program includes, but is not limited to:\u003C/p\u003E\u000D\u000A\u000D\u000A\u003Col\u003E\u000D\u000A\u0009\u003Cli\u003EPrevention and mitigation of hazards\u003C/li\u003E\u000D\u000A\u0009\u003Cli\u003EEnhancing readiness by planning for and stockpiling response resources\u003C/li\u003E\u000D\u000A\u0009\u003Cli\u003EEstablishing related institutional and technical capacities and capabilities (e.g. laboratories, community clinics, and rapid response teams)\u003C/li\u003E\u000D\u000A\u0009\u003Cli\u003EImplementing public health surveillance programs\u003C/li\u003E\u000D\u000A\u0009\u003Cli\u003EEnhancing environmental health programs\u003C/li\u003E\u000D\u000A\u0009\u003Cli\u003EEngaging communities\u003C/li\u003E\u000D\u000A\u0009\u003Cli\u003ETraining staff and validating plans\u003C/li\u003E\u000D\u000A\u003C/ol\u003E",
+
+            "resourceCount": " resources",
+            "contact": {
+
+            }
+        }
+        </script>
     </head>
     <body ${bodyAttrs}>
         ${app}
+        <div id="addResourceBlock" classs="optics:no">
+            <p>There are no resources yet for {{ name }}.</p>
+            <p>
+                Do you have resources relevant to {{ name }}?
+                You can <a href="{{ add_resource_url }}">add openly licensed content resources</a> and improve
+                the knowledge base for frontline health workers.
+            </p>
+            <a href="{{ add_resource_url }}">Add your resource &raquo;</a>
+            <p>If you have not yet registered, please <a href="{{ registration_url }}">take a moment to do so</a> first.</p>
+        </div>
         ${scripts}
     </body>
 </html>

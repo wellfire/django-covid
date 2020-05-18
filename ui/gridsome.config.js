@@ -14,7 +14,7 @@ const {
 
 const sources = [
     ["SitePages", "pages"],
-    ["Categories", "categories", "/tag/view/:slug",], // "./src/apps/Categories/CategoryView.vue"
+    ["Categories", "categories"], //, "/tag/view/:slug"
     ["Resources", "resources", "/resource/view/:title",] // "./src/apps/Resources/ResourceView.vue"]
 ]
 
