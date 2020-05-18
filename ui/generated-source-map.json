@@ -2,11 +2,11 @@
     "status": "done",
     "publicPath": "/",
     "chunks": {
-        "page--src--apps--categories--category-view-vue": [
+        "vendors~page--src--apps--categories--category-view-vue~page--src--pages--category-vue": [
             {
-                "name": "../../static/covid/js/page--src--apps--categories--category-view-vue.js",
-                "publicPath": "/../../static/covid/js/page--src--apps--categories--category-view-vue.js",
-                "path": "/Volumes/Wellfire/lmh/django-covid/orb/static/covid/js/page--src--apps--categories--category-view-vue.js"
+                "name": "../../static/covid/js/vendors~page--src--apps--categories--category-view-vue~page--src--pages--category-vue.js",
+                "publicPath": "/../../static/covid/js/vendors~page--src--apps--categories--category-view-vue~page--src--pages--category-vue.js",
+                "path": "/Volumes/Wellfire/lmh/django-covid/orb/static/covid/js/vendors~page--src--apps--categories--category-view-vue~page--src--pages--category-vue.js"
             }
         ],
         "app": [
@@ -14,6 +14,13 @@
                 "name": "../../static/covid/js/app.js",
                 "publicPath": "/../../static/covid/js/app.js",
                 "path": "/Volumes/Wellfire/lmh/django-covid/orb/static/covid/js/app.js"
+            }
+        ],
+        "page--src--apps--categories--category-view-vue": [
+            {
+                "name": "../../static/covid/js/page--src--apps--categories--category-view-vue.js",
+                "publicPath": "/../../static/covid/js/page--src--apps--categories--category-view-vue.js",
+                "path": "/Volumes/Wellfire/lmh/django-covid/orb/static/covid/js/page--src--apps--categories--category-view-vue.js"
             }
         ],
         "page--src--pages--404-vue": [

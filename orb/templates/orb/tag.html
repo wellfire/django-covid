@@ -1,4 +1,4 @@
-{% extends "covid/category/index.html" %}
+{% extends "covid/tag/view/_id.html" %}
 {% comment %} {% extends "base.html" %} {% endcomment %}
 
 {% load i18n %}
@@ -19,8 +19,8 @@
 {% endblock %}
 
 {% block app %}
-
 {{ block.super }}
+
 {% comment %} will need to include pagination at some point{% endcomment %}
 <script id="CURRENT_CATEGORY" type="application/json">
 {
@@ -48,20 +48,57 @@
     }
 }
 </script>
-{% if not page.object_list %}
-<script id="CURRENT_RESOURCES" type="application/json">script>
+{% if page.object_list %}
+<script id="CURRENT_RESOURCES" type="application/json">
 [
 {% for resource in page.object_list %}
     {
         "id": "{{ resource.slug }}",
         "title": "{{ resource.title }}",
-        "route": "{% url 'orb_resource' resource.slug %}"
-    }
+        "route": "{% url 'orb_resource' resource.slug %}",
+		"rating": {
+            "userCount": {{resource.get_rating.count}},
+            "minUserCount": {{ ORB_RESOURCE_MIN_RATINGS }},
+            "score": "{{ resource.get_rating.rating|default_if_none:'' }}"
+        },
+        "typeTags": [
+            {% for t in resource.get_type_tags %}
+			"{{ t.name }}"{% if not forloop.last %}, {% endif %}
+		    {% endfor %}
+        ],
+        "orgs": [
+            {% for o in resource.get_organisations %}
+            {% if forloop.first %}"{% trans 'from ' %} ",{% endif %}
+			"{{ o.name }}"{% if not forloop.last %}, {% endif %}
+		    {% endfor %}
+        ],
+        "description": "{{ resource.description|striptags|truncatewords:40|escapejs }}",
+        "languages": [
+            {% for c in resource.get_languages %}
+                {
+                    "name": "{{ c.name }}",
+                    "media": "{% thumbnail c.image "30x30"  crop="center" format="PNG" padding=True as im %}{{ im.url }}{% endthumbnail %}"
+                }{% if not forloop.last %}, {% endif %}
+			{% endfor %}
+        ],
+        "reviewTime": {
+            "label": "{% trans 'Study time:' %}",
+            "time": "{% if resource.study_time_number %}{{ resource.study_time_number }} {{ resource.study_time_unit }}{% endif %}"
+        },
+        "geographies": [
+            {% for c in resource.get_geographies %}
+                {
+                    "label": "{{ c.name }}",
+                    "media": "{% thumbnail c.image "30x30"  crop="center" format="PNG" padding=True as im %}{{ im.url }}{% endthumbnail %}"
+                }{% if not forloop.last %}, {% endif %}
+			{% endfor %}
+        ]
+    }{% if not forloop.last %}, {% endif %}
 {% endfor %}
 ]
 </script>
 {% else %}
-    <div id="addResourceBlock" classs="optics:no">
+    <div id="addResourceBlock" at-base="pad:xyEq100 rhy:yStart50" class="Category-emptySlot motif:tint type:minor--face:hed--weight:700">
         {% if not is_geo_tag %}
             <p>{% trans 'There are no resources tagged with ' %}{{ tag.name }}.</p>
         {% else %}
@@ -82,16 +119,6 @@
 {% endif %}
 {% endblock %}
 
-
-
-{% comment %}
-"description": "<p>This category is intended for content that supports clinicians taking care of hospitalised adult and paediatric patients with severe acute respiratory infection (SARI) when a nCoV infection is suspected. It should provide information that strengthens clinical management of these patients and provide up-to-date guidance. Best practices for SARI including IPC and optimized supportive care for severely ill patients are essential. Further information on this topic can be found <a href="https://www.who.int/publications-detail/clinical-management-of-severe-acute-respiratory-infection-when-novel-coronavirus-(ncov)-infection-is-suspected">here</a>.</p>",
-{% extends "base.html" %}
-{% load i18n %}
-{% load add_get_parameter %}
-{% load thumbnail %}
-
-{% block extra_head_title %}{{ tag.name }}{% endblock extra_head_title %}
 {% block content %}
 
     {% include 'orb/includes/search_bar.html' %}
@@ -173,5 +200,3 @@ $("select#id_order").change(function(){
 });
 </script>
 {% endblock %}
-
-  {% endcomment %}

@@ -33,7 +33,9 @@
         &--tint
             +at-class()
                 --current-bg: var(--color-primary-tint)
-                --current-fg: var(--color-bright)
+                --current-fg: var(--color-shade)
+                --content-link-color: var(--color-primary-shade)
+                --rxn-content-link-color: var(--color-primary-hilite)
 
     &accent--tint
         +at-class()
@@ -48,3 +50,9 @@
             --current-fg: var(--color-dark)
             --content-link-color: var(--color-primary-shade)
             --rxn-content-link-color: var(--color-primary-hilite)
+            --content-control-bg: var(--color-neutral)
+            --content-control-fg: var(--color-bright)
+            --content-control-filter: brightness(125%)
+            --rxn-content-control-bg: var(--color-primary-hilite)
+            --rxn-content-control-fg: var(--color-primary-shade)
+            --rxn-content-control-filter: brightness(100%)
