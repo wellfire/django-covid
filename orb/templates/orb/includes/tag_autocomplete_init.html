@@ -1,29 +1,38 @@
 {% load static from staticfiles %}
-    <script src="{% static 'orb/js/jquery.autocomplete.js'%}"></script>
-    <script src="{% static 'orb/js/jquery.tagsinput.js'%}"></script>
-    <script>
-        $('#id_organisations').tagsInput({
-            'autocomplete_url': '{% url 'orb_simple_orgs_list' %}',
-            'height': '45px',
-            'width': '100%',
-            'defaultText': ''
-        });
-       $('#id_languages').tagsInput({
-           'autocomplete_url': '{% url 'orb_simple_language_list' %}',
-           'height': '45px',
-           'width': '100%',
-           'defaultText': ''
-       });
-       $('#id_geography').tagsInput({
-           'autocomplete_url': '{% url 'orb_simple_geography_list' %}',
-           'height': '45px',
-           'width': '100%',
-           'defaultText': ''
-       });
-       $('#id_other_tags').tagsInput({
-           'autocomplete_url': '{% url 'orb_simple_tags_list' %}',
-           'height': '45px',
-           'width': '100%',
-           'defaultText': ''
-       });
-    </script>
+<script src="{% static 'orb/js/jquery.autocomplete.js' %}"></script>
+<script src="{% static 'orb/js/jquery.tagsinput.js' %}"></script>
+<script src="{% static 'orb/js/tagify.min.js' %}"></script>
+<script>
+  var iDsAndWhitelists = [
+    {
+      "id": "id_organisations",
+      "whitelist": [{{ tags_by_category.organisation|safe }}],
+    },
+    {
+      "id": "id_languages",
+      "whitelist": [{{ tags_by_category.language|safe }}],
+    },
+    {
+      "id": "id_geography",
+      "whitelist": [{{ tags_by_category.geography|safe }}],
+    },
+    {
+      "id": "id_other_tags",
+      "whitelist": [{{ tags_by_category.other|safe }}],
+    },
+  ];
+  iDsAndWhitelists.forEach(function (item, index) {
+    new Tagify(document.querySelector("input#" + item.id), {
+      whitelist: item.whitelist,
+      maxTags: 10,
+      dropdown: {
+        maxItems: 20,
+        classname: "tags-look",
+        enabled: 0,             // <- show suggestions on focus
+        closeOnSelect: false
+      }
+    });
+  });
+
+
+</script>
