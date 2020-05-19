@@ -255,7 +255,7 @@ DOWNLOAD_EXTRA_INFO = False
 
 
 try:
-    from local_settings import *  # noqa
+    from .local_settings import *  # noqa
 except ImportError:
     import warnings
     warnings.warn("Using default settings. Add `config.local_settings.py` for custom settings.")
