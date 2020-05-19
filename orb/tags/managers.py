@@ -11,6 +11,9 @@ from orb.resources.managers import approved_queryset
 
 class TagQuerySet(models.QuerySet):
 
+    def names(self):
+        return self.values_list("name", flat=True)
+
     def public(self):
         return self.filter(published=True)
 
