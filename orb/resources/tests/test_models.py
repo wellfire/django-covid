@@ -92,15 +92,16 @@ class TestResource(object):
         """Instance method should return list of available languages"""
         settings.LANGUAGES = [
             ('en','English'),
-            ('es','Español'),
-            ('pt-br','Português'),
+            # ('es','Español'),
+            # ('pt-br','Português'),
         ]
         test_resource.title_en = "Hey"
-        test_resource.title_pt_br = "Hey"
+        # test_resource.title_pt_br = "Hey"
         test_resource.description_en = "Hey"
-        test_resource.description_pt_br = "Hey"
-        test_resource.title_es = "hola"
-        assert test_resource.available_languages() == ["en", "pt-br"]
+        # test_resource.description_pt_br = "Hey"
+        # test_resource.title_es = "hola"
+        # assert test_resource.available_languages() == ["en", "pt-br"]
+        assert test_resource.available_languages() == ["en"]
 
 
 class TestResourceURL(object):
@@ -232,8 +233,8 @@ class TestResourceFromAPI(object):
         # assert result.create_date.date == date(2015, 5, 18)
         assert result.description == "<p>Dosing Guidelines Poster</p>"
         assert result.description_en == "<p>Dosing Guidelines Poster</p>"
-        assert result.description_es == "<p>Pautas de dosificación</p>"
-        assert result.description_pt_br == "<p>Diretrizes de dosagem</p>"
+        # assert result.description_es == "<p>Pautas de dosificación</p>"
+        # assert result.description_pt_br == "<p>Diretrizes de dosagem</p>"
         assert result.source_url == "http://www.cool-org.org/resource/view/dosing-guidelines-poster"
 
         assert not result.resourcefile_set.all().exists()
