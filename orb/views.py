@@ -1,22 +1,22 @@
 from __future__ import unicode_literals
 
-import os
+import json
 from collections import defaultdict
 
 from django.conf import settings
 from django.contrib import messages
 from django.core.paginator import EmptyPage, InvalidPage, Paginator
-from django.urls import reverse
-from django.db.models import Count, Q
+from django.db.models import Q
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
+from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 from haystack.query import SearchQuerySet
 
 from orb.forms import AdvancedSearchForm, ResourceRejectForm, ResourceStep1Form, ResourceStep2Form, SearchForm
 from orb.models import (Category, Collection, Resource, ResourceCriteria, ResourceFile, ResourceRating, ResourceTag,
                         ResourceURL, ReviewerRole, SearchTracker, Tag, TagOwner, home_resources)
-from orb.signals import (resource_file_viewed, resource_submitted, resource_url_viewed, resource_viewed,
+from orb.signals import (resource_submitted, resource_viewed,
                          resource_workflow, search, tag_viewed)
 from orb.tags.forms import TagPageForm
 
@@ -209,6 +209,7 @@ def resource_create_step1_view(request):
                 resource, form.cleaned_data.get('organisations'), request.user, 'organisation')
             resource_add_free_text_tags(
                 resource, form.cleaned_data.get('geography'), request.user, 'geography')
+
             resource_add_free_text_tags(
                 resource, form.cleaned_data.get('languages'), request.user, 'language')
             resource_add_free_text_tags(
@@ -438,12 +439,14 @@ def resource_pending_mep_view(request, id):
 
 
 def resource_edit_view(request, resource_id):
+
     resource = get_object_or_404(Resource, pk=resource_id)
     if not resource_can_edit(resource, request.user):
         raise Http404()
 
     if request.method == 'POST':
         form = ResourceStep1Form(data=request.POST, files=request.FILES)
+
         resource_form_set_choices(form)
 
         if form.is_valid():
@@ -777,7 +780,13 @@ def resource_add_free_text_tags(resource, tag_text, user, category_slug):
         None
 
     """
-    free_text_tags = [x.strip() for x in tag_text.split(',') if x.strip()]
+
+    # Here we account for sending data using a JSON format, e.g.
+    # [{"value": "Some Tag"}, {"value": "Other Tag"}...]
+    try:
+        free_text_tags = [x["value"].strip() for x in json.loads(tag_text)]
+    except (json.JSONDecodeError, TypeError, KeyError):
+        free_text_tags = [x.strip() for x in tag_text.split(',') if x.strip()]
 
     category = Category.objects.get(slug=category_slug)
 
