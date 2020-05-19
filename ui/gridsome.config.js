@@ -13,7 +13,9 @@ const {
 } = require("./src/utils/gridsome/defaultConfigSetup.js")
 
 const sources = [
-    ["SitePages", "pages"],
+    // ["SitePages", "pages"],
+    ["Homepage", "home.yaml"],
+    ["CustomPages", "pages"],
     ["Categories", "categories"], //, "/tag/view/:slug"
     ["Resources", "resources", "/resource/view/:title",] // "./src/apps/Resources/ResourceView.vue"]
 ]

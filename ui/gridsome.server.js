@@ -12,7 +12,7 @@ module.exports = function ({ onCreateNode, loadSource, createPages }) {
             }
 
             //  change "public" id to match fileInfo.path for ease of use if needed
-            options.id = options.fileInfo.path
+            options.id = options.slug || options.fileInfo.path
 
             optCode[typeName]
                 ? optCode[typeName]()
@@ -27,7 +27,7 @@ module.exports = function ({ onCreateNode, loadSource, createPages }) {
         })
 
         createPage({
-            path: "/:content",
+            path: "/:id",
             component: "./src/pages/Content.vue"
         })
 

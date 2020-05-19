@@ -39,7 +39,14 @@
     </head>
     <body {% block bodyAttrs %}{% endblock %}>
         {% block app %}{% endblock %}
-        {% comment %} {% render_bundle "app" "js" "COVID_LIBRARY" %} {% endcomment %}
+
+        {% comment %} overloads a hidden div to load in content when front-end mounts{% endcomment %}
+        {% comment %} <div id="contentBlock" hidden>
+        {% block staticContext %}{% block content %}{% endblock %}{% endblock %}
+	    </div> {% endcomment %}
+
+        {% render_bundle "app" "js" "COVID_LIBRARY" %}
+
         <script>
             (function (i, s, o, g, r, a, m) {
                 i['GoogleAnalyticsObject'] = r;
