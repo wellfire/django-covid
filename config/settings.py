@@ -84,6 +84,7 @@ TEMPLATES = [
                 'orb.context_processors.get_menu',
                 'orb.context_processors.get_version',
                 'orb.context_processors.base_context_processor',
+                'orb.tags.context_processors.tags_by_category',
             ],
             'debug': DEBUG,
         },
