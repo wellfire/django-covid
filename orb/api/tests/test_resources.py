@@ -77,6 +77,7 @@ class TestOrbResource(object):
         resource_data = get_resource_data(test_resource, ResourceResource)
         assert resource_data['languages'] == ['en', 'es']
 
+    @pytest.mark.skip("We're down to one language")
     def test_language_fields(self, test_resource, mocker):
         mocker.patch.object(test_resource, 'title_es','Español')
         mocker.patch.object(test_resource, 'title_pt_br','português')
