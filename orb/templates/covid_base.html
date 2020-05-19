@@ -8,6 +8,12 @@
 <!DOCTYPE html>
 <html {% block htmlAttrs %}{% endblock %}>
     <head>
+        {% if page_title %}
+            <title>{% trans 'COVID resources' %}</title>
+        {% else %}
+            <title>{% block extra_head_title %}{% endblock extra_head_title %}
+                - {% trans 'COVID' %}</title>
+        {% endif %}
         {% block head %}{% endblock %}
 
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
@@ -32,11 +38,13 @@
         {% block extra_head_feed %}{% endblock extra_head_feed %}
 
         {% render_bundle "styles" "css" "COVID_LIBRARY" %}
+        {% block extra_styles %}{% endblock extra_styles %}
 
         {% block content_scripts %}
         {% include "covid_data/routes.html" %}
         {% include "covid_data/category_matrix.html" %}
         {% endblock %}
+        {% block extra_scripts %}{% endblock extra_scripts %}
     </head>
     <body {% block bodyAttrs %}{% endblock %}>
         {% block app %}{% endblock %}

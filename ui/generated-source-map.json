@@ -23,25 +23,25 @@
                 "path": "/Volumes/Wellfire/lmh/django-covid/ui/dist/assets/js/page--src--apps--categories--category-view-vue.js"
             }
         ],
+        "page--src--apps--content--content-view-vue": [
+            {
+                "name": "assets/js/page--src--apps--content--content-view-vue.js",
+                "publicPath": "/assets/js/page--src--apps--content--content-view-vue.js",
+                "path": "/Volumes/Wellfire/lmh/django-covid/ui/dist/assets/js/page--src--apps--content--content-view-vue.js"
+            }
+        ],
+        "page--src--apps--profile--form-view-vue": [
+            {
+                "name": "assets/js/page--src--apps--profile--form-view-vue.js",
+                "publicPath": "/assets/js/page--src--apps--profile--form-view-vue.js",
+                "path": "/Volumes/Wellfire/lmh/django-covid/ui/dist/assets/js/page--src--apps--profile--form-view-vue.js"
+            }
+        ],
         "page--src--pages--404-vue": [
             {
                 "name": "assets/js/page--src--pages--404-vue.js",
                 "publicPath": "/assets/js/page--src--pages--404-vue.js",
                 "path": "/Volumes/Wellfire/lmh/django-covid/ui/dist/assets/js/page--src--pages--404-vue.js"
-            }
-        ],
-        "page--src--pages--category-vue": [
-            {
-                "name": "assets/js/page--src--pages--category-vue.js",
-                "publicPath": "/assets/js/page--src--pages--category-vue.js",
-                "path": "/Volumes/Wellfire/lmh/django-covid/ui/dist/assets/js/page--src--pages--category-vue.js"
-            }
-        ],
-        "page--src--pages--content-vue": [
-            {
-                "name": "assets/js/page--src--pages--content-vue.js",
-                "publicPath": "/assets/js/page--src--pages--content-vue.js",
-                "path": "/Volumes/Wellfire/lmh/django-covid/ui/dist/assets/js/page--src--pages--content-vue.js"
             }
         ],
         "page--src--pages--index-vue": [
@@ -51,25 +51,25 @@
                 "path": "/Volumes/Wellfire/lmh/django-covid/ui/dist/assets/js/page--src--pages--index-vue.js"
             }
         ],
-        "vendors~page--src--apps--categories--category-view-vue~page--src--pages--category-vue": [
+        "vendors~page--src--apps--categories--category-view-vue": [
             {
-                "name": "assets/js/vendors~page--src--apps--categories--category-view-vue~page--src--pages--category-vue.js",
-                "publicPath": "/assets/js/vendors~page--src--apps--categories--category-view-vue~page--src--pages--category-vue.js",
-                "path": "/Volumes/Wellfire/lmh/django-covid/ui/dist/assets/js/vendors~page--src--apps--categories--category-view-vue~page--src--pages--category-vue.js"
+                "name": "assets/js/vendors~page--src--apps--categories--category-view-vue.js",
+                "publicPath": "/assets/js/vendors~page--src--apps--categories--category-view-vue.js",
+                "path": "/Volumes/Wellfire/lmh/django-covid/ui/dist/assets/js/vendors~page--src--apps--categories--category-view-vue.js"
             }
         ],
-        "vendors~page--src--apps--categories--category-view-vue~page--src--pages--category-vue~page--src--pag~090b819a": [
+        "vendors~page--src--apps--categories--category-view-vue~page--src--pages--index-vue": [
             {
-                "name": "assets/js/vendors~page--src--apps--categories--category-view-vue~page--src--pages--category-vue~page--src--pag~090b819a.js",
-                "publicPath": "/assets/js/vendors~page--src--apps--categories--category-view-vue~page--src--pages--category-vue~page--src--pag~090b819a.js",
-                "path": "/Volumes/Wellfire/lmh/django-covid/ui/dist/assets/js/vendors~page--src--apps--categories--category-view-vue~page--src--pages--category-vue~page--src--pag~090b819a.js"
+                "name": "assets/js/vendors~page--src--apps--categories--category-view-vue~page--src--pages--index-vue.js",
+                "publicPath": "/assets/js/vendors~page--src--apps--categories--category-view-vue~page--src--pages--index-vue.js",
+                "path": "/Volumes/Wellfire/lmh/django-covid/ui/dist/assets/js/vendors~page--src--apps--categories--category-view-vue~page--src--pages--index-vue.js"
             }
         ],
-        "vendors~page--src--pages--content-vue": [
+        "vendors~page--src--apps--content--content-view-vue~page--src--apps--profile--form-view-vue": [
             {
-                "name": "assets/js/vendors~page--src--pages--content-vue.js",
-                "publicPath": "/assets/js/vendors~page--src--pages--content-vue.js",
-                "path": "/Volumes/Wellfire/lmh/django-covid/ui/dist/assets/js/vendors~page--src--pages--content-vue.js"
+                "name": "assets/js/vendors~page--src--apps--content--content-view-vue~page--src--apps--profile--form-view-vue.js",
+                "publicPath": "/assets/js/vendors~page--src--apps--content--content-view-vue~page--src--apps--profile--form-view-vue.js",
+                "path": "/Volumes/Wellfire/lmh/django-covid/ui/dist/assets/js/vendors~page--src--apps--content--content-view-vue~page--src--apps--profile--form-view-vue.js"
             }
         ]
     }
