@@ -20,6 +20,6 @@ HAYSTACK_SIGNAL_PROCESSOR = "haystack.signals.BaseSignalProcessor"
 # ctypes.CDLL(GDAL_LIBRARY_PATH)
 LANGUAGES = [
     ('en','English'),
-    ('es','Español'),
-    ('pt-br','Português'),
+    # ('es','Español'),
+    # ('pt-br','Português'),
 ]
