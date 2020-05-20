@@ -15,7 +15,7 @@ def staff_test(user):
 
     PermissionDenied excpetion is returned as an HTTP 403 response
     """
-    if not user.is_authenticated():
+    if not user.is_authenticated:
         return False
     if user.is_active and user.is_staff:
         return True
