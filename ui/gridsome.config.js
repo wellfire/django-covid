@@ -15,18 +15,18 @@ const {
 const isDev = process.env.NODE_ENV == "development"
 
 const sources = [
-    // ["SitePages", "pages"],
     ["Homepage", "home.yaml"],
-    ["CustomPages", "pages"],
-    ["Categories", "categories"],
-    // , "/tag/view/:slug", "./src/apps/Categories/CategoryView.vue"], //, "/tag/view/:slug"
-    // ["Resources", "resources", "/resource/view/:title",] // "./src/apps/Resources/ResourceView.vue"]
 ]
 
 if (isDev) {
+    // ["SitePages", "pages"],
+    // , "/tag/view/:slug", "./src/apps/Categories/CategoryView.vue"], //, "/tag/view/:slug"
     const devRoutes = [
-        ["Analytics", "for-development/analytics", "/analytics/:slug", "./src/pages/Analytics.vue"],
+        ["CustomPages", "pages"],
+        ["Categories", "categories"],
         ["ProfileForms", "for-development/profile"]
+        // ["Analytics", "for-development/analytics", "/analytics/:slug", "./src/pages/Analytics.vue"],
+        // ["Resources", "resources", "/resource/view/:title",] // "./src/apps/Resources/ResourceView.vue"]
     ]
     sources.push(...devRoutes)
 }

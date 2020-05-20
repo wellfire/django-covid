@@ -11,7 +11,7 @@ echo ""
 echo ""
 
 echo "Clearing and switching index files"
-cp ./indexes/$env.html ./src/index.html
+cp ./environments/$env.index.html ./src/index.html
 echo "completed."
 echo ""
 echo ""
