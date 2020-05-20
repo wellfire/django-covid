@@ -151,7 +151,7 @@ def resource_view(request, resource_slug):
     resource_viewed.send(sender=resource, resource=resource, request=request)
 
     user_rating = 0
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         try:
             user_rating = ResourceRating.objects.get(
                 resource=resource, user=request.user).rating
