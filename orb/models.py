@@ -387,7 +387,7 @@ class Resource(TimestampBase):
     def user_can_view(self, user):
         if self.status == Resource.APPROVED:
             return True
-        elif user.is_anonymous():
+        elif user.is_anonymous:
             return False
         elif ((user.is_staff or
                        user == self.create_user or

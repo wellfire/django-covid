@@ -180,7 +180,7 @@ def resource_view(request, resource_slug):
 
 
 def resource_create_step1_view(request):
-    if request.user.is_anonymous():
+    if request.user.is_anonymous:
         return render(request, 'orb/login_required.html', {
             'message': _('You need to be logged in to add a resource.'),
         })
@@ -239,7 +239,7 @@ def resource_create_step1_view(request):
 
 
 def resource_create_step2_view(request, id):
-    if request.user.is_anonymous():
+    if request.user.is_anonymous:
         # TODO use contrib.messages
         return render(request, 'orb/login_required.html', {
             'message': _('You need to be logged in to add a resource.'),
@@ -554,7 +554,7 @@ def resource_edit_view(request, resource_id):
 
 
 def resource_edit_step2_view(request, resource_id):
-    if request.user.is_anonymous():
+    if request.user.is_anonymous:
         # TODO use contrib.messages
         return render(request, 'orb/login_required.html', {
             'message': _('You need to be logged in to add a resource.'),
