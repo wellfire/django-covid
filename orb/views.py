@@ -101,6 +101,7 @@ def tag_view(request, tag_slug):
 
     return render(request, 'orb/tag.html', {
         'tag': tag,
+        'resource_count': paginator.count,
         'page': resources,
         'params_form': params_form,
         'show_filter_link': show_filter_link,
