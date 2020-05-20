@@ -4,6 +4,7 @@ Utility functions for enhancing the reusability and readability of test code
 
 from __future__ import unicode_literals
 
+import unicodedata
 from functools import wraps
 from importlib import import_module
 
@@ -12,6 +13,16 @@ from django.conf import settings
 from django.contrib.auth import SESSION_KEY
 from django.contrib.auth.models import AnonymousUser
 from django.test import RequestFactory
+
+
+def remove_control_characters(text):
+    """Removes unicode control characters from a string"""
+    return "".join(ch for ch in text if unicodedata.category(ch)[0] != "C")
+
+
+def clean_and_strip(text):
+    """Removes unicode control characters and leading/trailing whitespace"""
+    return remove_control_characters(text).strip()
 
 
 def request_factory(factory=None, user=None, userprofile=None, method='GET', **kwargs):
