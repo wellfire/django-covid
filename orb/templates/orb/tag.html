@@ -39,7 +39,7 @@
         "route": "{% url 'orb_tag_view_link' tag.id %}",
     },
     {% endif %}
-    "resourceCount": "{% blocktrans count tag.resource_count as resource_count %}{{ resource_count }} resource{% plural %}{{ resource_count }} resources{% endblocktrans %}",
+    "resourceCount": "{% blocktrans count resource_count as resource_count %}{{ resource_count }} resource{% plural %}{{ resource_count }} resources{% endblocktrans %}",
     "contact": {
         {% if tag.contact_email %}
         "groupTitle": "{% trans 'Email:' %}",
