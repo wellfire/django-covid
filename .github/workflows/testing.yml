@@ -11,10 +11,12 @@ jobs:
       fail-fast: false
       matrix:
         python: [2.7, 3.6]
-        django: [1.11.29, 2.0.13]
+        django: [1.11.29, 2.0.13, 2.2.12]
         exclude:
           - python: 2.7
             django: 2.0.13
+          - python: 2.7
+            django: 2.2.12
 
     steps:
 
