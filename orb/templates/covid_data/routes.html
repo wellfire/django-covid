@@ -68,6 +68,13 @@
                     "route": "#",
                     "subnav": "HELP"
                 },
+                {% if header_owns_tags or user.is_staff %}
+                {
+                    "label": "{% trans 'Analytics' %}",
+                    "route": "#",
+                    "subnav": "ANALYTICS"
+                },
+                {% endif %}
                 {% if user.is_authenticated %}
                 {
                     "label": "{% trans 'My COVID-19 Library' %}",
@@ -86,6 +93,39 @@
                 {% endif %}
             ]
         },
+        {% if header_owns_tags or user.is_staff %}
+        "ANALYTICS": {
+            "routes": [
+                {% for h in header_owns_tags %}
+                {
+                    "label": "{{ h.tag.name }}",
+                    "route": "{% url 'orb_analytics_tag' h.tag.id %}"
+                },
+                {% endfor %}
+                {% if user.is_staff %}
+                {
+                    "label": "{% trans 'Site analytics' %}",
+                    "route": "{% url 'orb_analytics_home' %}"
+                },
+                {
+                    "label": "{% trans 'Monthly Analytics' %}",
+                    "route": "{% url 'orb_analytics_visitor' %}"
+                },
+                {
+                    "label": "{% trans 'KPI Report' %}",
+                    "route": "{% url 'orb_analytics_kpi' %}"
+                },
+                {% endif %}
+                {% if user.is_staff or reviewer %}
+                {
+                    "label": "{% trans 'Pending Resources' %}",
+                    "route": "{% url 'orb_pending_resources' %}"
+                },
+                {% endif %}
+                {}
+            ]
+        },
+        {% endif %}
 
         "ACCOUNT": {
             "routes": [

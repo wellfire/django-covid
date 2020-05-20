@@ -90,3 +90,5 @@ userdocs/build
 vue/coverage
 
 webpack-vue/
+
+ui/generated-source-map.json

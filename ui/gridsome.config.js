@@ -12,13 +12,24 @@ const {
     chainWebpack
 } = require("./src/utils/gridsome/defaultConfigSetup.js")
 
+const isDev = process.env.NODE_ENV == "development"
+
 const sources = [
     // ["SitePages", "pages"],
     ["Homepage", "home.yaml"],
     ["CustomPages", "pages"],
-    ["Categories", "categories"], //, "/tag/view/:slug"
-    ["Resources", "resources", "/resource/view/:title",] // "./src/apps/Resources/ResourceView.vue"]
+    ["Categories", "categories"],
+    // , "/tag/view/:slug", "./src/apps/Categories/CategoryView.vue"], //, "/tag/view/:slug"
+    // ["Resources", "resources", "/resource/view/:title",] // "./src/apps/Resources/ResourceView.vue"]
 ]
+
+if (isDev) {
+    const devRoutes = [
+        ["Analytics", "for-development/analytics", "/analytics/:slug", "./src/pages/Analytics.vue"],
+        ["ProfileForms", "for-development/profile"]
+    ]
+    sources.push(...devRoutes)
+}
 
 const {
     contentSources,
