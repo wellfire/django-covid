@@ -42,7 +42,7 @@ def login_view(request):
     else:
         form = LoginForm(initial={'next': request.GET.get('next'), })
 
-    return render(request, 'orb/covid_form_temp.html', {'username': username, 'form': form, 'title': _('Login')})
+    return render(request, 'covid/profile/login.html', {'username': username, 'form': form, 'title': _('Login')})
 
 
 class RegistrationView(FormView):
