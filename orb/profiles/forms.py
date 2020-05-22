@@ -395,9 +395,9 @@ class ProfileForm(forms.Form):
             ),
             'api_key',
             Div(
-                Submit('submit', _('Save'), css_class='btn btn-default'),
-                css_class='col-lg-offset-2 col-lg-4',
-            ),
+                HTML('<button class="control--primary" type="submit"><span>%s</span></button>' % (_('Save'))),
+                css_class='form-controls',
+            )
         )
 
     def clean(self):

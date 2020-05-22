@@ -42,11 +42,11 @@ def login_view(request):
     else:
         form = LoginForm(initial={'next': request.GET.get('next'), })
 
-    return render(request, 'orb/covid_form_temp.html', {'username': username, 'form': form, 'title': _('Login')})
+    return render(request, 'orb/form.html', {'username': username, 'form': form, 'title': _('Login')})
 
 
 class RegistrationView(FormView):
-    template_name = 'orb/covid_form_temp.html'
+    template_name = 'orb/form.html'
     form_class = RegisterForm
     initial = {'mailing': True}
 
@@ -98,7 +98,7 @@ def reset(request):
     else:
         form = ResetForm()  # An unbound form
 
-    return render(request, 'orb/covid_form_temp.html', {'form': form, 'title': _('Reset password')})
+    return render(request, 'orb/form.html', {'form': form, 'title': _('Reset password')})
 
 
 @login_required

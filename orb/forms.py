@@ -88,7 +88,7 @@ class ResourceStep1Form(forms.Form):
         required=False,
     )
     terms = forms.BooleanField(
-        label=_("Please tick the box to confirm that you have read the <a href='/resource/guidelines/' target='_blank' class='prominent'>guidelines and criteria</a> for submitting resources to ORB"),
+        label=_("<span>Please tick the box to confirm that you have read the <a href='/resource/guidelines/' target='_blank' class='prominent'>guidelines and criteria</a> for submitting resources to ORB</span>"),
         required=True,
         error_messages={'required': _('Please tick the box to confirm that you have read the guidelines for submitting resources to COVID-19 Library')})
     study_time_number = forms.IntegerField(
@@ -115,7 +115,7 @@ class ResourceStep1Form(forms.Form):
         super(ResourceStep1Form, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.attrs = {'novalidate': True}
-        self.helper.form_class = 'form-horizontal'
+        self.helper.form_class = 'CreateResourceForm'
         self.helper.label_class = 'col-lg-2'
         self.helper.field_class = 'col-lg-8'
         self.helper.layout = Layout(
@@ -123,49 +123,31 @@ class ResourceStep1Form(forms.Form):
             'organisations',
             'description',
             'image',
-            Row(HTML('<hr>')),
             'health_topic',
-            Row(HTML('<hr>')),
             'resource_type',
-            Row(HTML('<hr>')),
             Div(
-                Div(
-                    HTML(
-                        "<label class='control-label' style='float:right; padding-right:10px;'>{0}</label>".format(
-                            _("Study Time")
-                        )),
-                    css_class='col-lg-2 '
-                ),
+                HTML(
+                "<label class='control-label'>{0}</label>".format(
+                    _("Study Time")
+                )),
                 Div(
                     Field('study_time_number'),
-                    css_class='col-lg-2'
-                ),
-                Div(
                     Field('study_time_unit'),
-                    css_class='col-lg-2'
+                    css_class='controls multipart'
                 ),
-                css_class='row',
+                css_class='form-group',
             ),
-            Row(HTML('<hr>')),
             'audience',
-            Row(HTML('<hr>')),
             'geography',
-            Row(HTML('<hr>')),
             'languages',
-            Row(HTML('<hr>')),
             'device',
-            Row(HTML('<hr>')),
             'license',
             'attribution',
-            Row(HTML('<hr>')),
             'other_tags',
-            Row(HTML('<hr>')),
             'terms',
-            Row(HTML('<hr>')),
             Div(
-                Submit('submit', _('Continue &gt;&gt;'),
-                       css_class='btn btn-default'),
-                css_class='col-lg-offset-2 col-lg-8',
+                HTML('<button class="control--primary" type="submit"><span>%s</span></button>' % (_('Continue &gt;&gt;'))),
+                css_class='form-controls',
             ),
         )
 
@@ -230,9 +212,13 @@ class ResourceStep2Form(forms.Form):
             'file',
             'url',
             Div(
-                Submit('submit', _('Add'), css_class='btn btn-default'),
-                css_class='col-lg-offset-2 col-lg-8',
+                HTML('<button class="control--primary" type="submit"><span>%s</span></button>' % (_('Add'))),
+                css_class='form-controls',
             ),
+            # Div(
+            #     Submit('submit', _('Add'), css_class='btn btn-default'),
+            #     css_class='col-lg-offset-2 col-lg-8',
+            # ),
             Row(HTML('<div style="clear:both;"></div><hr>')),)
 
     def clean(self):
@@ -376,30 +362,19 @@ class AdvancedSearchForm(forms.Form):
         self.fields['language'].queryset = Tag.tags.approved().by_category('language')
         self.fields['device'].queryset = Tag.tags.approved().by_category('device')
         self.helper = FormHelper()
-        self.helper.form_class = 'form-horizontal'
-        self.helper.label_class = 'col-lg-2'
-        self.helper.field_class = 'col-lg-8'
+        self.helper.form_class = 'AdvancedSearchForm'
         self.helper.layout = Layout(
             'q',
-            Row(HTML('<hr>')),
             'health_topic',
-            Row(HTML('<hr>')),
             'resource_type',
-            Row(HTML('<hr>')),
             'audience',
-            Row(HTML('<hr>')),
             'geography',
-            Row(HTML('<hr>')),
             'language',
-            Row(HTML('<hr>')),
             'device',
-            Row(HTML('<hr>')),
             'license',
-            Row(HTML('<hr>')),
             Div(
-                Submit('submit', _('Search'),
-                       css_class='btn btn-default'),
-                css_class='col-lg-offset-2 col-lg-8',
+                HTML('<button class="control--primary" type="submit" name="submit"><span>%s</span></button>' % (_('Search'))),
+                css_class='form-controls',
             ),
         )
 

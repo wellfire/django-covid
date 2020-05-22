@@ -91,4 +91,12 @@ vue/coverage
 
 webpack-vue/
 
+# Generated trash templates for front-end build
+# to keep front-end routing checks sane
+#########################################
 ui/generated-source-map.json
+orb/templates/covid/profile/_slug/
+orb/templates/covid/profile/_slug.html
+orb/templates/covid/resource/_resource.html
+orb/templates/covid/tag/
+orb/templates/covid/_slug.html

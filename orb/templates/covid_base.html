@@ -37,25 +37,55 @@
             href="{% static 'orb/images/covid-logo.png' %}"/>
         {% block extra_head_feed %}{% endblock extra_head_feed %}
 
-        {% render_bundle "styles" "css" "COVID_LIBRARY" %}
-        {% block extra_styles %}{% endblock extra_styles %}
+        {% comment %} {% render_bundle "styles" "css" "COVID_LIBRARY" %} {% endcomment %}
 
-        {% block content_scripts %}
+        <link rel="stylesheet" href="{% static 'covid/css/covid.css' %}">
+        {% comment %}
+        <!-- Bootstrap -->
+        <link
+            href="{% static 'orb/bootstrap-3.1.1/css/bootstrap.min.css' %}"
+            rel="stylesheet"
+        />
+        <link href="{% static 'orb/style.css' %}?t=202005191645" rel="stylesheet"/>
+         {% endcomment %}
+        {% block extra_styles %}
+        {% endblock extra_styles %}
+
+        {% comment %} {% block content_scripts %}
         {% include "covid_data/routes.html" %}
         {% include "covid_data/category_matrix.html" %}
-        {% endblock %}
+        {% endblock %} {% endcomment %}
         {% block extra_scripts %}{% endblock extra_scripts %}
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
     </head>
     <body {% block bodyAttrs %}{% endblock %}>
         {% block app %}{% endblock %}
 
-        {% comment %} overloads a hidden div to load in content when front-end mounts{% endcomment %}
-        {% comment %} <div id="contentBlock" hidden>
-        {% block staticContext %}{% block content %}{% endblock %}{% endblock %}
-	    </div> {% endcomment %}
+        {% comment %}
 
-        {% render_bundle "app" "js" "COVID_LIBRARY" %}
 
+        <script>
+            $(".language-selection").click(function(e) {
+                e.preventDefault();
+                $.ajax({
+                    url : "{% url 'set_language' %}",
+                    type: "POST",
+                    data : {
+                        csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+                        language: $(this).data("code"),
+                        next: window.location.href
+                    },
+                    dataType : "json",
+                    success: function(){
+                        location.reload();
+                    },
+                    error: function(){
+                        location.reload();
+                    }
+                });
+            });
+        </script> {% endcomment %}
+        <script src="{% static 'orb/js/jquery-1.11.0.min.js' %}"></script>
         <script>
             (function (i, s, o, g, r, a, m) {
                 i['GoogleAnalyticsObject'] = r;
@@ -73,5 +103,6 @@
             ga('send', 'pageview');
         </script>
         {% block scripts %}{% endblock %}
+        {% block footer_js %}{% endblock %}
     </body>
 </html>

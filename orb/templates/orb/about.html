@@ -1,4 +1,4 @@
-{% extends "covid/content/index.html" %}
+{% extends "covid/content.html" %}
 {% comment %} {% extends "base.html" %}  {% endcomment %}
 
 {% load i18n %}
@@ -7,7 +7,7 @@
 	{% trans 'About' %}
 {% endblock extra_head_title %}
 
-{% block contentTitle %}{% trans 'About' %}{% endblock %}
+{% block content_title %}{% trans 'About' %}{% endblock %}
 {% block content %}
 	<h2>{% trans 'About COVID-19 Library' %}</h2>
 	{% url 'orb_terms' as orb_terms %}

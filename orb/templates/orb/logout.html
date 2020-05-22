@@ -1,11 +1,11 @@
-{% extends "covid/form/index.html" %}
+{% extends "covid/logout.html" %}
 {% comment %} {% extends "base.html" %} {% endcomment %}
 
 {% load i18n %}
 
 {% block extra_head_title %}{% trans 'Logged Out' %}{% endblock extra_head_title %}
 
-{% block contentTitle %}{% trans 'Logged Out' %}{% endblock %}
+{% block content_title %}{% trans 'Logged Out' %}{% endblock %}
 
 {% block notice %}
 {% url 'profile_login' as url_login %}

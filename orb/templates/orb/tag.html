@@ -1,4 +1,4 @@
-{% extends "covid/category/index.html" %}
+{% extends "covid/tag.html" %}
 {% comment %} {% extends "base.html" %} {% endcomment %}
 
 {% load i18n %}
@@ -13,15 +13,17 @@
           href="{% url 'orb_tag_feed' tag.slug %}">
 {% endblock extra_head_feed %}
 
-{% block content_scripts %}
-{{ block.super }}
-
+{% block content_title %}
+{{ tag.name }}
 {% endblock %}
 
-{% block app %}
-{{ block.super }}
+{% block content_overview %}
+{% if tag.description %}{{ tag.description|safe }}{% endif %}
+{% endblock %}
 
-{% comment %} will need to include pagination at some point{% endcomment %}
+{% block emptyResults %}{% endblock %}
+
+{% comment %} {% block app %}
 <script id="CURRENT_CATEGORY" type="application/json">
 {
     "id": "{{ tag.slug }}",
@@ -188,8 +190,7 @@
         {% endif %}
         </div>
     {% endif %}
-
-{% endblock %}
+{% endblock %} {% endcomment %}
 
 {% block footer_js %}
 <script>
