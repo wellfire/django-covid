@@ -196,14 +196,8 @@
 <script>
 //id_order
 //<!--<select name="order" onchange="OnOrderChange(this.form.order);">-->
-let pageId = document.getElementById("id_page").value
-document.getElementById("id_order").addEventListener(
-    'change',
-    function() { window.location.search = "?order=" + this.value + "&page=" + (pageId || 1); },
-    false
-)
-//$("select#id_order").change(function(){
-//    window.location.search = "?order=" + this.value + "&page=" + ($("input#id_page").value || 1);
-//});
+$("select#id_order").change(function(){
+    window.location.search = "?order=" + this.value + "&page=" + ($("input#id_page").value || 1);
+});
 </script>
 {% endblock %}
