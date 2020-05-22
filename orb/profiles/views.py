@@ -98,7 +98,7 @@ def reset(request):
     else:
         form = ResetForm()  # An unbound form
 
-    return render(request, 'orb/covid_form_temp.html', {'form': form, 'title': _('Reset password')})
+    return render(request, 'orb/form.html', {'form': form, 'title': _('Reset password')})
 
 
 @login_required

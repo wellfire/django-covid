@@ -376,30 +376,19 @@ class AdvancedSearchForm(forms.Form):
         self.fields['language'].queryset = Tag.tags.approved().by_category('language')
         self.fields['device'].queryset = Tag.tags.approved().by_category('device')
         self.helper = FormHelper()
-        self.helper.form_class = 'form-horizontal'
-        self.helper.label_class = 'col-lg-2'
-        self.helper.field_class = 'col-lg-8'
+        self.helper.form_class = 'AdvancedSearchForm'
         self.helper.layout = Layout(
             'q',
-            Row(HTML('<hr>')),
             'health_topic',
-            Row(HTML('<hr>')),
             'resource_type',
-            Row(HTML('<hr>')),
             'audience',
-            Row(HTML('<hr>')),
             'geography',
-            Row(HTML('<hr>')),
             'language',
-            Row(HTML('<hr>')),
             'device',
-            Row(HTML('<hr>')),
             'license',
-            Row(HTML('<hr>')),
             Div(
-                Submit('submit', _('Search'),
-                       css_class='btn btn-default'),
-                css_class='col-lg-offset-2 col-lg-8',
+                HTML('<button class="control--primary" type="submit" name="submit"><span>%s</span></button>' % (_('Search'))),
+                css_class='form-controls',
             ),
         )
 
