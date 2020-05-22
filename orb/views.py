@@ -101,6 +101,7 @@ def tag_view(request, tag_slug):
 
     return render(request, 'orb/tag.html', {
         'tag': tag,
+        'resource_count': paginator.count,
         'page': resources,
         'params_form': params_form,
         'show_filter_link': show_filter_link,
@@ -151,7 +152,7 @@ def resource_view(request, resource_slug):
     resource_viewed.send(sender=resource, resource=resource, request=request)
 
     user_rating = 0
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         try:
             user_rating = ResourceRating.objects.get(
                 resource=resource, user=request.user).rating
@@ -180,7 +181,7 @@ def resource_view(request, resource_slug):
 
 
 def resource_create_step1_view(request):
-    if request.user.is_anonymous():
+    if request.user.is_anonymous:
         return render(request, 'orb/login_required.html', {
             'message': _('You need to be logged in to add a resource.'),
         })
@@ -239,7 +240,7 @@ def resource_create_step1_view(request):
 
 
 def resource_create_step2_view(request, id):
-    if request.user.is_anonymous():
+    if request.user.is_anonymous:
         # TODO use contrib.messages
         return render(request, 'orb/login_required.html', {
             'message': _('You need to be logged in to add a resource.'),
@@ -554,7 +555,7 @@ def resource_edit_view(request, resource_id):
 
 
 def resource_edit_step2_view(request, resource_id):
-    if request.user.is_anonymous():
+    if request.user.is_anonymous:
         # TODO use contrib.messages
         return render(request, 'orb/login_required.html', {
             'message': _('You need to be logged in to add a resource.'),

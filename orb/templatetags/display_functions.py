@@ -38,7 +38,7 @@ def resourcefile_link(context, resourcefile, alternate_link):
     OR if the setting is turned off.
     """
     file_link = "href='{url}' title='{title}' class='{css_class}'"
-    if not conf.DOWNLOAD_LOGIN_REQUIRED or context['user'].is_authenticated():
+    if not conf.DOWNLOAD_LOGIN_REQUIRED or context['user'].is_authenticated:
         url = resourcefile.get_absolute_url()
         title = _("Download ") + resourcefile.filename()
         css_class = 'active-link'
@@ -57,7 +57,7 @@ def resourceurl_link(context, resourceurl, alternate_link):
     OR if the setting is turned off.
     """
     link_link = "href='{url}' title='{title}' class='{css_class}'"
-    if not conf.DOWNLOAD_LOGIN_REQUIRED or context['user'].is_authenticated():
+    if not conf.DOWNLOAD_LOGIN_REQUIRED or context['user'].is_authenticated:
         url = resourceurl.get_absolute_url()
         title = _("Go to ") + resourceurl.url
         css_class = 'active-link'
