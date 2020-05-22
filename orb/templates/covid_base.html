@@ -62,8 +62,7 @@
         {% block app %}{% endblock %}
 
         {% comment %}
-        <script src="{% static 'orb/js/jquery-1.11.0.min.js' %}"></script>
-        <script src="{% static 'orb/bootstrap-3.1.1/js/bootstrap.min.js' %}"></script>
+
 
         <script>
             $(".language-selection").click(function(e) {
@@ -104,5 +103,6 @@
             ga('send', 'pageview');
         </script>
         {% block scripts %}{% endblock %}
+        {% block footer_js %}{% endblock %}
     </body>
 </html>
