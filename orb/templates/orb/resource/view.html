@@ -53,7 +53,7 @@
     {% if user.is_authenticated %}
     <div
         class="edge:yStart--set:edgePrimary"
-        at-base="flex:h--p:start--s:base rhy:xStart50 pad:yEq50"
+        at-base="flex:h--p:start--s:middle rhy:xStart50 pad:yEq50"
         style="--edge-width: 4px"
     >
         <dt
@@ -79,6 +79,20 @@
         </dt>
 
         <dd>
+            {% if bookmarked %}
+            <img id="bookmark_image"
+                src="{% static 'orb/images/mono-bookmark.png' %}"
+                alt="{% trans 'Bookmarked' %}"
+                at-base="aspect:xyEq200--text"
+            />
+            {% else %}
+            <img id="bookmark_image"
+                onclick="bookmarkResource()"
+                src="{% static 'orb/images/mono-bookmark-add.png' %}"
+                alt="{% trans 'Bookmark this' %}"
+                at-base="aspect:xyEq200--text"
+            />
+            {% endif %}
         </dd>
     </div>
     {% endif %}
