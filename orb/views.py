@@ -616,7 +616,8 @@ def search_view(request):
     search_query = request.GET.get('q', '')
 
     if search_query:
-        search_results = SearchQuerySet().filter(content=search_query)
+        search_results = SearchQuerySet().filter(content=search_query).models(Resource).values_list('pk', flat=True)
+        results = Resource.objects.filter(pk__in=search_results)
     else:
         search_results = []
 
@@ -624,7 +625,7 @@ def search_view(request):
     data['q'] = search_query
     form = SearchForm(initial=data)
 
-    paginator = Paginator(search_results, settings.ORB_PAGINATOR_DEFAULT)
+    paginator = Paginator(results, settings.ORB_PAGINATOR_DEFAULT)
     # Make sure page request is an int. If not, deliver first page.
     try:
         page = int(request.GET.get('page', '1'))
@@ -639,7 +640,7 @@ def search_view(request):
     if search_query:
         search.send(sender=search_results, query=search_query,
                     no_results=search_results.count(), request=request, page=page)
-
+    
     return render(request, 'orb/search.html', {
         'form': form,
         'query': search_query,
