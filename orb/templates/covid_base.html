@@ -37,24 +37,19 @@
             href="{% static 'orb/images/covid-logo.png' %}"/>
         {% block extra_head_feed %}{% endblock extra_head_feed %}
 
-        {% comment %} {% render_bundle "styles" "css" "COVID_LIBRARY" %} {% endcomment %}
-
-        <link rel="stylesheet" href="{% static 'covid/css/covid.css' %}">
-        {% comment %}
         <!-- Bootstrap -->
         <link
             href="{% static 'orb/bootstrap-3.1.1/css/bootstrap.min.css' %}"
             rel="stylesheet"
         />
         <link href="{% static 'orb/style.css' %}?t=202005191645" rel="stylesheet"/>
-         {% endcomment %}
+
+        <link rel="stylesheet" href="{% static 'covid/css/covid.css' %}">
+
+
         {% block extra_styles %}
         {% endblock extra_styles %}
 
-        {% comment %} {% block content_scripts %}
-        {% include "covid_data/routes.html" %}
-        {% include "covid_data/category_matrix.html" %}
-        {% endblock %} {% endcomment %}
         {% block extra_scripts %}{% endblock extra_scripts %}
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
     </head>

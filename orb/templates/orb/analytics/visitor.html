@@ -1,11 +1,13 @@
-{% extends "base.html" %} {% load i18n %}
+{% extends "covid/content.html" %}
+{% comment %} {% extends "base.html" %} {% endcomment %}
+
+{% load i18n %}
 
 {% block extra_head_title %}{% trans 'Visitor Analytics' %}{% endblock extra_head_title %}
 
+{% block content_title %}{% trans 'Visitor Analytics' %} for {{ archive_month|date:"M Y" }}{% endblock %}
+
 {% block content %}
-
-<h2>{% trans 'Visitor Analytics' %} for {{ archive_month|date:"M Y" }}</h2>
-
 <div class="table-responsive">
 	<table class="table table-striped">
 		<thead>
