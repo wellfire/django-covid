@@ -620,6 +620,7 @@ def search_view(request):
         results = Resource.objects.filter(pk__in=search_results)
     else:
         search_results = []
+        results = Resource.objects.none()
 
     data = {}
     data['q'] = search_query
@@ -640,7 +641,7 @@ def search_view(request):
     if search_query:
         search.send(sender=search_results, query=search_query,
                     no_results=search_results.count(), request=request, page=page)
-    
+
     return render(request, 'orb/search.html', {
         'form': form,
         'query': search_query,
