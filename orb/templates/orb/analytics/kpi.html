@@ -1,16 +1,14 @@
-{% extends "base.html" %}
-{% comment %} {% extends "covid/content/index.html" %} {% endcomment %}
+{% extends "covid/content.html" %}
+{% comment %} {% extends "base.html" %} {% endcomment %}
 
 {% load i18n %}
 {% load humanize %}
 
 {% block extra_head_title %}{% trans 'Facts and Figures' %}{% endblock extra_head_title %}
 
-{% block contentTitle %}% trans 'Facts and Figures' %}{% endblock %}
+{% block content_title %}{% trans 'Facts and Figures' %} ({% now "d M Y" %}){% endblock %}
 
 {% block content %}
-<h2>{% trans 'Facts and Figures' %} ({% now "d M Y" %})</h2>
-
 <table class="table table-condensed">
     <thead>
         <tr>
