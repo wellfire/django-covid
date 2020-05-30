@@ -88,7 +88,7 @@ class ResourceStep1Form(forms.Form):
         required=False,
     )
     terms = forms.BooleanField(
-        label=_("<span>Please tick the box to confirm that you have read the <a href='/resource/guidelines/' target='_blank' class='prominent'>guidelines and criteria</a> for submitting resources to ORB</span>"),
+        label=_("<span>Please tick the box to confirm that you have read the <a href='/resource/guidelines/' target='_blank' class='prominent'>guidelines and criteria</a> for submitting resources to the COVID-19 Library</span>"),
         required=True,
         error_messages={'required': _('Please tick the box to confirm that you have read the guidelines for submitting resources to COVID-19 Library')})
     study_time_number = forms.IntegerField(
