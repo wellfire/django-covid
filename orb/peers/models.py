@@ -18,6 +18,23 @@ logger = logging.getLogger('orb')
 
 
 class PeersQuerySet(models.QuerySet):
+
+    def summary(self):
+        """
+        Returns data useful for summarizing available peers
+
+        Performance is largely irrelevant, even with hundreds of
+        rows this is little data and run briefly from management
+        commands
+        """
+        if not self:
+            return {}
+        return {
+            "inactive": self.inactive(),
+            "queryable": self.queryable(),
+            "unqueryable": self.active().unqueryable(),
+        }
+
     def active(self):
         return self.filter(active=True)
 
@@ -49,6 +66,10 @@ class Peer(models.Model):
 
     def __str__(self):
         return self.name
+
+    def is_queryable(self):
+        return bool(self.api_key and self.api_user)
+    is_queryable.description = "Can the peer be queried?"
 
     @cached_property
     def client(self):
@@ -94,7 +115,7 @@ class Peer(models.Model):
 
         total_count, resource_list = self.client.list_resources(**filters)
 
-        for initial_api_resource in resource_list:
+        for count, initial_api_resource in enumerate(resource_list, start=1):
 
             if initial_api_resource.get('status', '') != Resource.APPROVED:
                 writer("Skipping '{}' because it is '{}'".format(
