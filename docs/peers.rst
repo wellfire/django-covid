@@ -14,9 +14,10 @@ The starting requirement is API access to the target COVID-19 Library (e.g. the 
 Setting up peers
 ================
 
-A peer is added to your COVID-19 Library instance by adding three data items:
+A peer is added to your COVID-19 Library instance by adding four data items:
 
-- host name
+- peer name (identifying)
+- host name (web address)
 - user name
 - API key
 
@@ -79,7 +80,7 @@ COVID-19 Library to the local COVID-19 Library.
 Resoures are globally identified
 --------------------------------
 
-Every resource has a *globally unique identifier* which is copied with synced resource.
+Every resource (along with associated files, links, and tags) has a *globally unique identifier* which is copied with synced resource.
 This ensures that a resource can be downloaded from one COVID-19 Library and from yet another and
 still retain a non-overridable ID that tracks it across instances. This GUID is used to
 identify resources for update. It also ensures that the resources you have created for
@@ -112,6 +113,11 @@ Syncing data
 To sync data from a configured COVID-19 Library peer, use the `sync_peer_resources` management
 command. This can be used without arguments or the numeric primary keys of configured
 peers can be provided to sync only from select peers.
+
+The syncing action makes a log of each time it runs for each peer, and uses this log to add
+a time-based filter for retrieving resources from the target peer. This means that the first
+time it will look at all approved resources, and on subsquent runs it will only ask for approved
+resources that were updated *after* the last syncing action for that peer was run.
 
 The primary keys can be discovered via the Django admin or by using the management
 command `list_peers`.
