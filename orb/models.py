@@ -479,7 +479,7 @@ class ResourceURL(TimestampBase):
             the ResourceURL object (not saved to DB)
 
         """
-        for field in ['id', 'resource_uri']:
+        for field in ['id', 'resource_uri', 'file_extension', 'is_embeddable']:
             api_data.pop(field, None)
 
         api_data['url'] = api_data.pop('file')
