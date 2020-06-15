@@ -11,6 +11,8 @@ a:hover{
 }
 .Landing-header{
 	padding-right:67px;
+	padding-left:50px;
+	width:570px;
 }
 
 .liCategoryCard {
@@ -151,4 +153,91 @@ a:hover{
 }
 .Landing-content{
     background-color:#f5f5f5;
+}
+.SearchBarBtn{
+	margin-left:10px;
+font-family: Gilroy;
+  font-size: 13px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
+
+  background-color: #61c7cf;
+
+}
+.MenuText {
+  width: 30px;
+  height: 16px;
+  font-family: Gilroy;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #141414;
+}
+.LoginText {
+  
+  padding-left:15px !important;
+  padding-right:15px !important;;
+  padding-top:5px !important;;
+  padding-bottom:5px !important;;
+  background-color: #164780 !important;
+  width: 38px !important;
+  height: 17px !important;
+  font-family: Gilroy;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.44px !important;
+  color: #ffffff !important;
+}
+.RegisterText {
+  width: 54px !important;
+  height: 16px !important;
+  font-family: Gilroy;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  font-stretch: normal !important;
+  font-style: normal !important;
+  line-height: normal !important;
+  letter-spacing: normal !important;
+  color: #164780 !important;
+}
+
+.col1header{
+	
+	padding-right:100px !important;
+}
+.col2header{
+	padding-left:20% !important;
+	width:20%;
+
+}
+.col3header{
+		padding-left:15% !important;
+		width:24%;
+	
+
+}
+.col4header{
+		padding-left:5% !important;
+		width:10%;
+	
+
+}
+.col5header{
+	padding-left:15% !important;
+		width:10%;
+	
+}
+.col6header{
+	padding-left:7% !important;
+	
 }
