@@ -8,6 +8,7 @@ a:hover{
     --color-primary-shade:#164780;
     --current-edge:#c4c4c4;
     --color-neutral:#141414;
+    --color-bright:#000;
 }
 .Landing-header{
 	padding-right:67px;
@@ -240,4 +241,8 @@ font-family: Gilroy;
 .col6header{
 	padding-left:7% !important;
 	
+}
+.footerSpacing{
+	margin-left:200px !important;
+	width:200px !important;
 }
