@@ -220,7 +220,8 @@ font-family: Gilroy;
 
 }
 .col3header{
-		padding-left:15% !important;
+		padding-left:5% !important;
+		max-width: 170px !important;
 		width:24%;
 	
 
