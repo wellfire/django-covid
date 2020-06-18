@@ -101,9 +101,7 @@ a:hover{
 }
 .NewBox {
   width: 118.1px;
-  height: 28.9px;
   font-family: Gilroy;
-  padding-top: 40px !important;
   margin:0px !important;
   font-size: 13px !important;
   font-weight: bold !important;
@@ -165,10 +163,10 @@ font-family: Gilroy;
   line-height: normal;
   letter-spacing: normal;
   color: #000000;
-
   background-color: #61c7cf;
 
 }
+
 .MenuText {
   width: 30px;
   height: 16px;
