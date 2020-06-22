@@ -94,11 +94,18 @@ a:hover{
 	font-size:26px;
 	font-weight:500;
 }
+.NewNav{
+  padding:33px;
+  padding-left:100px;
+  width:100%;
+}
 .NewResource{ 
+  padding-left:570px;
 	color:#164780 !important;
 	font-size:13px;
 	font-weight:500 !important;
 }
+
 .NewBox {
   width: 118.1px;
   font-family: Gilroy;
@@ -167,6 +174,9 @@ font-family: Gilroy;
 
 }
 
+.ResourcesNote {
+  padding-top:30px !important
+}
 .MenuText {
   width: 30px;
   height: 16px;
@@ -244,4 +254,51 @@ font-family: Gilroy;
 .footerSpacing{
 	
 	
+}
+
+@media (max-width: 768px) {
+  .NewNav{
+    padding:33px;
+    padding-left:100px;
+    width:100%;
+    display:none;
+  }
+  .NewResource{
+      padding-left:120px;
+      color:#164780 !important;
+      font-size:13px;
+      font-weight:500 !important;
+  }
+  .liCategoryCard {
+    height:125px !important;
+    margin-left:-75px !important;
+  }
+  .ColophonNewNav{
+    padding-right:0px;"
+
+  }
+  .InfoEmail{
+    display:block;
+  }
+  
+  .LandingSmallImg{
+    display:none;
+  }
+  .CategoryCard{
+    width: 80% !important;
+    height: 120px !important;
+    padding:10px !important;
+    border:10px white;
+  }
+  .ResourcesNote {
+  padding-top:10px !important;
+  padding-bottom:5px !important;
+}
+
+  .LandingSmall{
+     display:block; 
+  }
+  .ExtendedNavigation{
+  background-color:white !important;
+}
 }

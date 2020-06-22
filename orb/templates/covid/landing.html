@@ -39,17 +39,17 @@
 <div at-base="module:balance flex:v" at-compressed="pad:xEq0" at-economy="pad:xEq100" at-standard="pad:xStart150" at-wide="pad:xEndFull">
 <ul xv-html="indexBlocks" class="motif:tint" ><li class="NewCategory">Categories</li>
 <li>
-	<a style="padding-left:570px" href="{% url 'orb_resource_create' %}" class="type:minor--face:copy--weight:900 color:neutral fx:shift NewResource" at-wide="type:base"><b>+</b>{% trans 'Add a Resource' %}</a>
+	<a href="{% url 'orb_resource_create' %}" class="type:minor--face:copy--weight:900 color:neutral fx:shift NewResource" at-wide="type:base"><b>+</b>{% trans 'Add a Resource' %}</a>
 </li>
 </div>
-	<ul xv-html="indexBlocks" class="Landing-categories motif:tint" at-base="flex:v pad:xyEq50 rhy:yStart50" at-compressed="flex:h grid:vAuto rhy:yStart0">
+	<ul xv-html="indexBlocks" class="Landing-categories motif:tint LandingSmall"  at-base="flex:v pad:xyEq50 rhy:yStart50" at-compressed="flex:h grid:vAuto rhy:yStart0">
 
 
 	{% for t in topics %}
 {% if not t.custom %}
 <li class="liCategoryCard">
 	<a href="{% url 'orb_tags' t.tag.slug %}" >
-	<article at-base="module:static" class="CategoryCard motif:bright {{t.tag.name}}"><header class="CategoryCard-header" at-base="module:fill flex:v--p:start pad:xyEq50 rhy:xStart50"><img alt="{{ t.tag.name }}" style="width:53px !important; height:55px !important;max-width:53px !important; max-height:55px !important;" src="{% thumbnail t.tag.image '53x53' format='PNG' crop='center' as im %}{{ im.url }}{% endthumbnail %}" class="color:primary" ><h3 class="type:base--face:hed--weight:900 color:dark NewBox" at-compressed="type:chrome--set:typePreWrap" at-economy="type:minor" at-enhanced="type:base" style="padding-top:10px">{{ t.tag.name }}</h3></header><footer class="CategoryCard-footer motif:primary" at-base="flex:h grid:h"><p class="type:minor--face:hed--weight:700" at-base="module:fill flex:h--p:start--s:middle pad:xyEq50" at-compressed="type:chrome" at-economy="type:minor" style="padding-top:30px !important">{% blocktrans count t.resource_count as resource_count %}{{ resource_count }} resource{% plural %}{{ resource_count }} resources{% endblocktrans %}</p></footer></article>
+	<article at-base="module:static" class="CategoryCard motif:bright {{t.tag.name}}"><header class="CategoryCard-header" at-base="module:fill flex:v--p:start pad:xyEq50 rhy:xStart50"><img alt="{{ t.tag.name }}" style="width:53px !important; height:55px !important;max-width:53px !important; max-height:55px !important;" src="{% thumbnail t.tag.image '53x53' format='PNG' crop='center' as im %}{{ im.url }}{% endthumbnail %}" class="color:primary LandingSmallImg" ><h3 class="type:base--face:hed--weight:900 color:dark NewBox" at-compressed="type:chrome--set:typePreWrap" at-economy="type:minor" at-enhanced="type:base" style="padding-top:10px">{{ t.tag.name }}</h3></header><footer class="CategoryCard-footer motif:primary" at-base="flex:h grid:h"><p class="type:minor--face:hed--weight:700 ResourcesNote"  at-base="module:fill flex:h--p:start--s:middle pad:xyEq50" at-compressed="type:chrome" at-economy="type:minor" >{% blocktrans count t.resource_count as resource_count %}{{ resource_count }} resource{% plural %}{{ resource_count }} resources{% endblocktrans %}</p></footer></article>
 </a>
 </li>
 {% else %}
