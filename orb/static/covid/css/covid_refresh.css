@@ -15,7 +15,6 @@ a:hover{
 	padding-left:50px;
 	width:570px;
 }
-
 .liCategoryCard {
 	padding:10px !important;
 
@@ -219,43 +218,31 @@ font-family: Gilroy;
   letter-spacing: normal !important;
   color: #164780 !important;
 }
-
 .col1header{
-	
 	padding-right:100px !important;
 }
 .col2header{
 	padding-left:20% !important;
 	width:20%;
-
 }
 .col3header{
 		padding-left:5% !important;
 		max-width: 170px !important;
 		width:24%;
-	
-
 }
 .col4header{
 		padding-left:5% !important;
 		width:10%;
-	
-
 }
 .col5header{
 	padding-left:15% !important;
 		width:10%;
-	
 }
 .col6header{
 	margin-left:7% !important;
-	
 }
 .footerSpacing{
-	
-	
 }
-
 @media (max-width: 768px) {
   .NewNav{
     padding:33px;
@@ -274,31 +261,28 @@ font-family: Gilroy;
     margin-left:-75px !important;
   }
   .ColophonNewNav{
-    padding-right:0px;"
-
-  }
+    padding-right:0px;
+}
   .InfoEmail{
     display:block;
   }
-  
   .LandingSmallImg{
-    display:none;
+ 
   }
   .CategoryCard{
     width: 80% !important;
-    height: 120px !important;
-    padding:10px !important;
-    border:10px white;
+    height: 160px !important;
+    padding:20px !important;
+    border:20px white;
   }
   .ResourcesNote {
-  padding-top:10px !important;
-  padding-bottom:5px !important;
-}
-
+    padding-top:10px !important;
+    padding-bottom:5px !important;  
+  }
   .LandingSmall{
      display:block; 
   }
   .ExtendedNavigation{
-  background-color:white !important;
-}
+    background-color:white !important;
+  }
 }
