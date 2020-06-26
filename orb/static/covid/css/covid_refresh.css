@@ -17,11 +17,10 @@ a:hover{
 }
 .liCategoryCard {
 	padding:10px !important;
-
 }
 .CategoryCard{
 	width: 165px !important;
-    height: 165px !important;
+  height: 165px !important;
 }
 .Landing-categories{
 	padding-left:140px;
@@ -104,7 +103,6 @@ a:hover{
 	font-size:13px;
 	font-weight:500 !important;
 }
-
 .NewBox {
   width: 118.1px;
   font-family: Gilroy;
@@ -129,7 +127,6 @@ a:hover{
 	background-color:#84c1bc;
 }
 .Societal {
-	
 	background-color:#c6579d;
 }
 .Risk {
@@ -144,10 +141,7 @@ a:hover{
 .Public {
 	background-color:#f289b7;
 }
-
 .CategoryCard-footer {
-  //width: 71px !important;
-  //height: 14px !important;
   font-size: 12px !important;
   font-weight: 600 !important;
   font-stretch: normal !important;
@@ -161,7 +155,7 @@ a:hover{
 }
 .SearchBarBtn{
 	margin-left:10px;
-font-family: Gilroy;
+  font-family: Gilroy;
   font-size: 13px;
   font-weight: 600;
   font-stretch: normal;
@@ -170,11 +164,9 @@ font-family: Gilroy;
   letter-spacing: normal;
   color: #000000;
   background-color: #61c7cf;
-
 }
-
 .ResourcesNote {
-  padding-top:30px !important
+  padding-top:40px !important
 }
 .MenuText {
   width: 30px;
@@ -189,7 +181,6 @@ font-family: Gilroy;
   color: #141414;
 }
 .LoginText {
-  
   padding-left:15px !important;
   padding-right:15px !important;;
   padding-top:5px !important;;
@@ -257,7 +248,8 @@ font-family: Gilroy;
       font-weight:500 !important;
   }
   .liCategoryCard {
-    height:125px !important;
+    max-height:160px !important;
+    height:160px !important;
     margin-left:-75px !important;
   }
   .ColophonNewNav{
@@ -268,13 +260,11 @@ font-family: Gilroy;
   }
   .LandingSmallImg{
     display:none;
- 
   }
   .CategoryCard{
     width: 80% !important;
     height: 160px !important;
-    padding:20px !important;
-    border:20px white;
+    max-height: 160px !important;
   }
   .ResourcesNote {
     padding-top:10px !important;
