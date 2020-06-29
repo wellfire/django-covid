@@ -248,8 +248,8 @@ a:hover{
       font-weight:500 !important;
   }
   .liCategoryCard {
-    max-height:160px !important;
-    height:160px !important;
+    max-height:100px !important;
+    height:100px !important;
     margin-left:-75px !important;
   }
   .ColophonNewNav{
@@ -258,15 +258,20 @@ a:hover{
   .InfoEmail{
     display:block;
   }
+  .CategoryCard-header{
+      flex-flow: row !important;
+  }
   .LandingSmallImg{
-    display:none;
+    margin-left:10px;
+    
   }
   .CategoryCard{
     width: 80% !important;
-    height: 160px !important;
-    max-height: 160px !important;
+    height: 100px !important;
+    max-height: 100px !important;
   }
   .ResourcesNote {
+    margin-left:  62px;
     padding-top:10px !important;
     padding-bottom:5px !important;  
   }
